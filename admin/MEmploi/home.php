@@ -14,7 +14,6 @@ catch (Exception $e) {
 }
 
 include('include/header.php');
-include('include/footer.php');
 
 $sql2 = $db->query("SELECT * FROM home WHERE id = 1");
 $sql = $db->query("SELECT * FROM home WHERE id != 1");
@@ -88,4 +87,6 @@ while ($row = $sql->fetch_assoc()) {
   , $row['id']
   , $row['id']);
 }
+include('include/footer.php');
+
    ?>
