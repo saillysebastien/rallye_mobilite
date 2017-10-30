@@ -1,6 +1,7 @@
 <?php
 
 require('../../../config/db_home.php');
+include('../include/header.php');
 
 try {
   $db = new mysqli(
@@ -13,12 +14,16 @@ try {
 catch (Exception $e) {
   die('Erreur : ' . $e->getMessage());
 }
+$informations = [];
+$error = [];
 
 $title = '';
 $number_street = null;
 $street = '';
 $postal_code = null;
 $city = '';
+$activity = '';
+$domain_activity = '';
 $contact = '';
 $phone = null;
 $mail = '';
@@ -42,8 +47,7 @@ if (isset($_POST['upload'])) {
     if ($imageError === 0) {
 
       if ($imageSize < 1000000) {
-        $imageNameNew = uniqid('', true) . " . " . $imageActualExt;
-        $imageDestination = '../images/' . $imageNameNew;
+        $imageDestination = '../images/' . $imageName;
         $uploadSuccess = move_uploaded_file($imageTmpName, $imageDestination);
 
         if ($uploadSuccess) {
@@ -52,6 +56,8 @@ if (isset($_POST['upload'])) {
           $street = $_POST['street'];
           $postal_code = $_POST['postal_code'];
           $city = $_POST['city'];
+          $activity = $_POST['activity'];
+          $domain_activity = strtolower($_POST['domain_activity']);
           $contact = $_POST['contact'];
           $phone = $_POST['phone'];
           $mail = $_POST['mail'];
@@ -61,24 +67,63 @@ if (isset($_POST['upload'])) {
             $done = true;
           }
 
-          $sql = "INSERT INTO entreprises (title, number_street, street, postal_code, city, contact, phone, mail, web, done) VALUES ('$title', '$number_street', '$street', '$postal_code', '$city', '$contact', '$phone', '$mail', '$web', '$done')";
-          mysqli_query($db, $sql);
+          $sql = "INSERT INTO entreprises (title, image, number_street, street, postal_code, city, activity, domain_activity, contact, phone, mail, web, done) VALUES ('$title', '$imageName', '$number_street', '$street', '$postal_code', '$city', '$activity', '$domain_activity', '$contact', '$phone', '$mail', '$web', '$done')";
+          $valid = mysqli_query($db, $sql);
 
-          // header("Location: ../entreprises.php");
+          if ($valid) {
+            $informations['success'] = "<div class='alert alert-success center'>Vos informations ont bien été inscrites dans la base de donnée et l'image uploadée dans le dossier images</div>\n
+            <br />
+            <a class='btn btn-success' href='enterprises.php'>Retour à la liste</a>";
+          }
         } else {
-          echo "Une erreur est survenue!";
-          printf('<div class="alert alert-warning">Une erreur est survenue!<div>
-          <div class="btn btn-success" href="create_entreprise.php"');
+          $error['upload'] = "<div class = 'alert alert-warning'>Une erreur est survenue!<div>\n
+          <br />
+          <a class='btn btn-danger' href='create_entreprise.php'> Retour à la création de l'entreprise</a>";
         }
       } else {
-        echo "Votre image est trop volumineuse!";
+        $error['size'] = "<div class = 'alert alert-warning'>La taille de l'image est trop volumineuse!<div>\n
+        <br />
+        <a class='btn btn-danger' href='create_entreprise.php'> Retour à la création de l'entreprise</a>";
       }
     } else {
-      echo "Une erreur est survenue lors du téléchargement!";
+      $error['download'] = "<div class = 'alert alert-warning'>Une erreur est survenue lors du téléchargement!<div>\n
+      <br />
+      <a class='btn btn-danger' href='create_entreprise.php'> Retour à la création de l'entreprise</a>";
     }
   } else {
-    echo "Votre fichier n'est pas au format image souhaité!";
+    $error['format'] = "<div class = 'alert alert-warning'>Votre fichier n'est pas au format image souhaité!<div>\n
+    <br />
+    <a class='btn btn-danger' href='create_entreprise.php'> Retour à la création de l'entreprise</a>";
   }
 }
 
+?>
+<div class="container-fluid">
+  <?php
+
+  if (isset($informations['success'])) {
+    echo $informations['success'];
+  }
+
+  if (isset($error['upload'])) {
+    echo $error['upload'];
+  }
+
+  if (isset($error['size'])) {
+    echo $error['size'];
+  }
+
+  if (isset($error['download'])) {
+    echo $error['download'];
+  }
+
+  if (isset($error['format'])) {
+    echo $error['format'];
+  }
+
+  ?>
+</div>
+
+<?php
+include('../include/footer.php');
 ?>

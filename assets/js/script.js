@@ -1,16 +1,61 @@
-// caroussel
-$(document).ready(function slider__pictureNumber() {
-  var $elem = $('.carousel-inner');
-  var $slider = $elem.closest(".carousel");
-  var counter = $("div", $elem).length;
-  var carouselIndicators = $slider.find('.carousel-indicators');
-  var carouselControlPrev = $slider.find('.carousel-control-prev');
-  var carouselControlNext = $slider.find('.carousel-control-next');
+// entreprises
+$("#filter_batîment").click(function() {
+  $("#no_selected").css("display", "none");
+  $("#commerce").css("display", "none");
+  $("#industrie").css("display", "none");
+  $("#logistique").css("display", "none");
+  $("#restauration").css("display", "none");
+  $("#travaux_publics").css("display", "none");
+  $("#batîment").show();
+})
 
+$("#filter_commerce").click(function() {
+  $("#no_selected").css("display", "none");
+  $("#no_selected").css("display", "none");
+  $("#batîment").css("display", "none");
+  $("#industrie").css("display", "none");
+  $("#logistique").css("display", "none");
+  $("#restauration").css("display", "none");
+  $("#travaux_publics").css("display", "none");
+  $("#commerce").show();
+})
 
-  if (counter < 2) {
-    carouselIndicators.hide();
-    carouselControlPrev.hide();
-    carouselControlNext.hide();
-  }
-});
+$("#filter_industrie").click(function() {
+  $("#no_selected").css("display", "none");
+  $("#batîment").css("display", "none");
+  $("#commerce").css("display", "none");
+  $("#logistique").css("display", "none");
+  $("#restauration").css("display", "none");
+  $("#travaux_publics").css("display", "none");
+  $("#industrie").show();
+})
+
+$("#filter_logistique").click(function() {
+  $("#no_selected").css("display", "none");
+  $("#batîment").css("display", "none");
+  $("#commerce").css("display", "none");
+  $("#industrie").css("display", "none");
+  $("#restauration").css("display", "none");
+  $("#travaux_publics").css("display", "none");
+  $("#logistique").show();
+})
+
+$("#filter_restauration").click(function() {
+  $("#no_selected").css("display", "none");
+  $("#batîment").css("display", "none");
+  $("#commerce").css("display", "none");
+  $("#industrie").css("display", "none");
+  $("#logistique").css("display", "none");
+  $("#travaux_publics").css("display", "none");
+  $("#restauration").show();
+})
+
+$("#filter_travaux_publics").click(function() {
+  $("#no_selected").css("display", "none");
+  $("#batîment").css("display", "none");
+  $("#commerce").css("display", "none");
+  $("#industrie").css("display", "none");
+  $("#logistique").css("display", "none");
+  $("#restauration").css("display", "none");
+  $("#travaux_publics").show();
+})

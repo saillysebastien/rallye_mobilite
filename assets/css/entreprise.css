@@ -1,0 +1,63 @@
+
+
+i.fa.fa-map-marker {
+  width: 10px;
+  height: 10px;
+}
+.img-thumbnail {
+  height: 32px;
+  width: 130px;
+}
+.card-body {
+  padding: 0;
+  background-color: #343a40;
+}
+h4.card-header.bg-dark.text-white {
+  padding: 12px;
+}
+a.btn.btn-raised.btn-danger {
+  height: 32px;
+  width: 32px;
+  padding: 5px;
+}
+.justify-content-center {
+  width: 94%;
+  margin-left: 3%;
+}
+.alert.alert-danger, .alert.alert-primary {
+  height: auto;
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 0;
+}
+.alert.alert-primary {
+  background-color: #3485ef;
+}
+.alert.alert-danger {
+  background-color: #dc3545;
+}
+.col-4 {
+  padding: 7px 0 7px 2px;
+  color: #fff;
+}
+.col-8 {
+  padding: 7px 0 7px 0;
+  color: #fff;
+}
+a {
+  color: #fff;
+}
+
+/*Card*/
+#user .panel-thumb {
+margin:5px auto;
+text-align:center;
+	}
+#user .panel-thumb .avatar-card > img{
+	max-width:200px;
+	max-height:200px;
+	}
+.card {
+  margin-bottom: 5px;
+  border-radius: 10%;
+}

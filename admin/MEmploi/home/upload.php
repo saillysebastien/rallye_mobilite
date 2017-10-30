@@ -1,6 +1,7 @@
 <?php
 require('../../../config/db_home.php');
 include('../include/header.php');
+
 try {
   $db = new mysqli(
     $db_host,
@@ -49,33 +50,30 @@ if (isset($_POST['upload'])) {
             $informations['success'] = "
             <div class='alert alert-success center'>Vos informations ont bien été inscrit dans la base de donnée et l\'image uploadé dans le dossier</div>\n
             <br />
-            <a class='btn btn-success' href='../home.php'>Retour à la liste</a>";          }
-
-            // header("Location: ../home.php");
-          } else {
-            echo "Une erreur est survenue!";
+            <a class='btn btn-success' href='home.php'>Retour à la liste</a>";
           }
+
         } else {
-          echo "Votre image est trop volumineuse!";
+          echo "Une erreur est survenue!";
         }
       } else {
-        echo "Une erreur est survenue lors du téléchargement!";
+        echo "Votre image est trop volumineuse!";
       }
     } else {
-      echo "Votre fichier n'est pas au format image souhaité!";
+      echo "Une erreur est survenue lors du téléchargement!";
     }
+  } else {
+    echo "Votre fichier n'est pas au format image souhaité!";
   }
-  ?>
-  <div class="container-fluid">
-    <?php
-    if (isset($informations['success'])) {
-      echo $informations['success'];
-    } ?>
-  </div>
+}
+?>
+<div class="container-fluid">
   <?php
+  if (isset($informations['success'])) {
+    echo $informations['success'];
+  } ?>
+</div>
 
-
-
-  include('../include/footer.php');
-
-  ?>
+<?php
+include('../include/footer.php');
+?>

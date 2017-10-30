@@ -47,7 +47,7 @@ if ($_POST) {
     $id = $_POST['id_caroussel'];
   } else {
     $valid = false;
-    $errors['id'] = '<div class="alert alert-danger>Vous devez remplir l\'id</div>';
+    $errors['id'] = "<div class='alert alert-danger'>Vous devez remplir l\'id</div>";
   }
 
   if (isset($_POST['title']) && !empty(trim($_POST['title']))) {
@@ -60,13 +60,6 @@ if ($_POST) {
     $text = $_POST['text'];
   } else {
     $text = null;
-  }
-
-  if (isset($_POST['image2']) && !empty(trim($_POST['image2']))) {
-    $image = $_POST['image2'];
-  } else {
-    $valid = false;
-    $errors['image'] = '<div class="alert alert-warning centered">Vous devez mettre une image</div>';
   }
 
   if (isset($_POST['done'])) {
@@ -83,7 +76,7 @@ if ($_POST) {
       exit();
     }
 
-    $informations['success'] = "<div class='alert alert-success center'>Photo modifiée (id : $id )</div>\n . <br /> . <a class='btn btn-success' href='../home.php'>Retour à la liste</a>";
+    $informations['success'] = "<div class='alert alert-success center'>Photo modifiée (id : $id )</div>\n . <br /> . <a class='btn btn-success' href='home.php'>Retour à la liste</a>";
   }
 }
 ?>
@@ -110,26 +103,31 @@ if ($_POST) {
   <form  method="post" enctype="multipart/form-data" class="home">
     <div class="form-group">
       <label class="col-2" for="id_caroussel">Identifiant de la photo</label>
-      <input type="numeric" placeholder="Uniquement le lieu exemple: Arvato" class="col-6" name="id_caroussel" id="id_caroussel" value="<?= htmlentities($id) ?>" />
+      <input type="numeric" class="col-6" name="id_caroussel" id="id_caroussel" value="<?= htmlentities($id) ?>" />
     </div>
+
     <div class="form-group">
       <label class="col-2" for="title">Lieu de la visite</label>
       <input type="text" placeholder="Uniquement le lieu exemple: Arvato" class="col-6" name="title" id="title" value="<?= htmlentities($title) ?>" />
     </div>
+
     <div class="form-group">
       <label class="col-2" for="text">Date de la visite</label>
-      <input class="col-6" type="text" name="text" placeholder="Uniquement la date exemple: Fevrier 2017" id="text" value="<?= htmlentities($text) ?>" />
+      <input class="col-6" type="text" name="text" placeholder="Uniquement la date exemple: Février 2017" id="text" value="<?= htmlentities($text) ?>" />
     </div>
+
     <div class="form-group">
       <label class="col-2" for="text">Nom de l'image</label>
-      <input class="col-6" type="text" name="image2" id="text" value="<?= htmlentities($image) ?>" />
+      <input class="col-6" type="text" name="image2" id="text" value="<?= htmlentities($image) ?>"  />
     </div>
+
     <div class="form-check">
       <label class="form-check-label col-9">
         <input type="checkbox" class="form-check-input col-1" name="done" value="1" <?php if ($done) { echo 'cheched'; } ?> />
         Cochez ici si vous voulez l'afficher sur la page accueil
       </label>
     </div>
+
     <button type="submit" name="update" class="btn btn-primary">Valider</button>
   </form>
 
