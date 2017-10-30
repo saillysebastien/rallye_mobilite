@@ -11,7 +11,6 @@ $("#filter_batîment").click(function() {
 
 $("#filter_commerce").click(function() {
   $("#no_selected").css("display", "none");
-  $("#no_selected").css("display", "none");
   $("#batîment").css("display", "none");
   $("#industrie").css("display", "none");
   $("#logistique").css("display", "none");

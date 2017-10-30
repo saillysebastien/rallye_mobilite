@@ -1,6 +1,6 @@
 <?php
 
-$sql_batiment = $db->query("SELECT * FROM entreprises WHERE domain_activity = 'batiment' AND done = 1");
+$sql_batiment = $db->query("SELECT * FROM entreprises WHERE domain_activity = 'batîment' AND done = 1");
 while($row_batiment = $sql_batiment->fetch_assoc()) {
   if (!empty($row_batiment['domain_activity'])) {
         printf('
