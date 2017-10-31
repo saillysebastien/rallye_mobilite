@@ -5,7 +5,7 @@ i.fa.fa-map-marker {
   height: 10px;
 }
 .img-thumbnail {
-  height: 32px;
+  height: 50px;
   width: 130px;
 }
 .card-body {
@@ -21,8 +21,8 @@ a.btn.btn-raised.btn-danger {
   padding: 5px;
 }
 .justify-content-center {
-  width: 94%;
-  margin-left: 3%;
+  width: 98%;
+  margin-left: 1%;
 }
 .alert.alert-danger, .alert.alert-primary {
   height: auto;
@@ -47,13 +47,26 @@ a.btn.btn-raised.btn-danger {
 a {
   color: #fff;
 }
-
+div.col-12.col-md-6.col-lg-4.text-left {
+  margin-bottom: 5px;
+}
+div.formations.col-12.col-md-6.col-lg-4.text-left {
+  padding: 0;
+  margin-bottom: 8px;
+}
+.container-fluid {
+  padding: 0 10px;
+}
 /*Card*/
-#user .panel-thumb {
-margin:5px auto;
+#user2 {
+  padding: 0;
+}
+#user.panel-thumb, #user2.panel-thumb {
+margin: 5px 0;
 text-align:center;
 	}
-#user .panel-thumb .avatar-card > img{
+#user .panel-thumb .avatar-card > img,
+#user2 .panel-thumb .avatar-card > img,{
 	max-width:200px;
 	max-height:200px;
 	}

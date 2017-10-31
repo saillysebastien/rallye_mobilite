@@ -1,6 +1,6 @@
 <?php
 
-$sql_industrie = $db->query("SELECT * FROM entreprises WHERE domain_activity = 'industrie' AND done = 1");
+$sql_industrie = $db->query("SELECT * FROM entreprises WHERE domain_activity = 'industrie' AND done = 1 ORDER BY title");
 while($row_industrie = $sql_industrie->fetch_assoc()) {
   if (!empty($row_industrie['domain_activity'])) {
         printf('
@@ -37,7 +37,7 @@ while($row_industrie = $sql_industrie->fetch_assoc()) {
     </div>
     <div class="alert alert-danger row">
     <div class="col-4">Téléphone :</div>
-    <div class="col-8"><a href="tel:0%s">0%s</a></div>
+    <div class="col-8"><a href="tel:%s">%s</a></div>
     </div>
     </div>
     </div>

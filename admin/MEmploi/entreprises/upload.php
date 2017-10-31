@@ -71,7 +71,7 @@ if (isset($_POST['upload'])) {
           $valid = mysqli_query($db, $sql);
 
           if ($valid) {
-            $informations['success'] = "<div class='alert alert-success center'>Vos informations ont bien été inscrites dans la base de donnée et l'image uploadée dans le dossier images</div>\n
+            $informations['success'] = "<div class='alert alert-success center'>Vos informations ont bien été inscrites dans la base de donnée et l'image uploadée dans le dossier 'images'</div>\n
             <br />
             <a class='btn btn-success' href='enterprises.php'>Retour à la liste</a>";
           }

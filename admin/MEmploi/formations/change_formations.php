@@ -5,6 +5,7 @@ require('../../../config/connect.php');
 
 $informations =[];
 $errors = [];
+$valid = true;
 
 $title = '';
 $image = '';
@@ -12,8 +13,6 @@ $number_street = null;
 $street = '';
 $postal_code = null;
 $city = '';
-$activity = '';
-$domain_activity = '';
 $contact = '';
 $phone = null;
 $mail = '';
@@ -23,7 +22,7 @@ $done = false;
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
-  $sql = sprintf("SELECT * FROM entreprises WHERE id =%s", $_GET['id']);
+  $sql = sprintf("SELECT * FROM formations WHERE id =%s", $_GET['id']);
   $result = $db->query($sql);
   $infos = $result->fetch_assoc();
 
@@ -33,33 +32,33 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $street = $infos['street'];
   $postal_code = $infos['postal_code'];
   $city = $infos['city'];
-  $activity = $infos['activity'];
-  $domain_activity = strtolower($infos['domain_activity']);
   $contact = $infos['contact'];
-  $phone = $infos['phone'];
   $mail = $infos['mail'];
   $web = $infos['web'];
 
+  if(!empty($phone) && $phone !== "N/C") {
+    $phone = $infos['phone'];
+  } else {
+    $phone = "N/C";
+  }
 } else {
   $valid = false;
-  $errors['id'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez spécifier une image à modifier !!!";
+  $errors['id'] = "<div class='alert alert-danger text-center' role='alert'>L'identifiant de l'organisme de formation doit être spécifié !!!";
 }
 
 if ($_POST) {
-  $valid = true;
-
   if (isset($_POST['id']) && !empty(trim($_POST['id']))) {
     $id2 = $_POST['id'];
   } else {
     $valid = false;
-    $errors['id_post'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez remplir l'id !!!</div>";
+    $errors['id_post'] = "<div class='alert alert-danger text-center role='alert''>Vous devez remplir l'id !!!</div>";
   }
 
   if (isset($_POST['title']) && !empty(trim($_POST['title']))) {
     $title = $_POST['title'];
   } else {
     $valid = false;
-    $error['title'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer l'adresse de l'entreprise !!!</div>";
+    $title = "<div class='alert alert-danger text-center role='alert''>Vous devez donner un nom à l'organisme de formation !!!</div>";
   }
 
   if (isset($_POST['number_street']) && !empty(trim($_POST['number_street']))) {
@@ -72,13 +71,13 @@ if ($_POST) {
     $street = $_POST['street'];
   } else {
     $valid = false;
-    $errors['street'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer l'adresse de l'entreprise !!!</div>";
+    $errors['street'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer l'adresse !!!</div>";
   }
 
   if (isset($_POST['postal_code']) && !empty(trim($_POST['postal_code']))) {
     $postal_code= $_POST['postal_code'];
   } else {
-    $valid = "N/C";
+    $valid = false;
     $errors['postal_code'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le code postal !!!</div>";
   }
 
@@ -87,19 +86,6 @@ if ($_POST) {
   } else {
     $valid = false;
     $errors['city'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer la ville !!!</div>";
-  }
-
-  if (isset($_POST['activity']) && !empty(trim($_POST['activity']))) {
-    $activity = $_POST['activity'];
-  } else {
-    $activity = "N/C";
-  }
-
-  if (isset($_POST['domain_activity']) && !empty(trim($_POST['domain_activity']))) {
-    $domain_activity = $_POST['domain_activity'];
-  } else {
-    $valid = false;
-    $errors['domain_activity'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le domaine d'activité !!!</div>";
   }
 
   if (isset($_POST['image2']) && !empty(trim($_POST['image2']))) {
@@ -113,6 +99,12 @@ if ($_POST) {
     $contact = $_POST['contact'];
   } else {
     $contact = "N/C";
+  }
+
+  if (isset($_POST['phone']) && !empty(trim($_POST['phone']))) {
+    $phone = $_POST['phone'];
+  } else {
+    $phone = "N/C";
   }
 
   if (isset($_POST['mail']) && !empty(trim($_POST['mail']))) {
@@ -133,7 +125,7 @@ if ($_POST) {
 
   if ($valid) {
     try {
-      $sql = sprintf("UPDATE entreprises SET id='$id2', title='$title', image='$image', number_street='$number_street', street='$street', postal_code='$postal_code', city='$city', activity='$activity', domain_activity='$domain_activity', contact='$contact', phone='$phone', mail='$mail', web='$web', done='$done' WHERE id='%s'", $_GET['id']);
+      $sql = sprintf("UPDATE formations SET id='$id2', title='$title', image='$image', number_street='$number_street', street='$street', postal_code='$postal_code', city='$city', contact='$contact', phone='$phone', mail='$mail', web='$web', done='$done' WHERE id='%s'", $_GET['id']);
       $valid_sql = mysqli_query($db, $sql);
 
     } catch (Exception $e) {
@@ -141,7 +133,7 @@ if ($_POST) {
       exit();
     }
     if ($valid_sql) {
-      $informations['success'] = "<div class='alert alert-success text-center' role='alert'>Entreprise $title modifiée<br /><a class='btn btn-success' href='enterprises.php'>Retour à la liste des entreprises</a></div>";
+      $informations['success'] = "<div class='alert alert-dark text-center' role='alert'>Organisme de formation $title modifiée <br /><br /><a class='btn btn-success' href='formations.php'>Retour à la liste des organismes de formations</a></div>\n";
     }
   }
 }
@@ -158,12 +150,12 @@ if ($_POST) {
     echo $errors['id'];
   }
 
-  if (isset($errors['title'])) {
-    echo $errors['title'];
-  }
-
   if (isset($errors['id_post'])) {
     echo $errors['id_post'];
+  }
+
+  if (isset($errors['title'])) {
+    echo $errors['title'];
   }
 
   if (isset($errors['street'])) {
@@ -186,21 +178,21 @@ if ($_POST) {
     echo $errors['image'];
   }
 
-   ?>
+  ?>
   <div class="row justify-content-center">
     <div class="col-12">
 
-      <legend>Modification d'une fiche ENTREPRISE</legend>
+      <legend>Modification d'une fiche FORMATION</legend>
       <form method="post" enctype="multipart/form-data">
 
         <div class="row">
           <div class="form-group col-6">
-            <label class="col-4" for="id">Identifiant de l'entreprise</label>
+            <label class="col-4" for="id">Identifiant de la formation</label>
             <input type="numeric" class="col-6" name="id" value="<?= htmlentities($id) ?>" required />
           </div>
 
           <div class="form-group col-6">
-            <label class="col-4" for="title">Nom de l'entreprise</label>
+            <label class="col-4" for="title">Nom de la formation</label>
             <input class="col-6" type="text" name="title" value="<?= htmlentities($title) ?>" required />
           </div>
         </div>
@@ -212,7 +204,7 @@ if ($_POST) {
           </div>
 
           <div class="form-group col-6">
-            <label class="col-4" for="street">Adresse de l'entreprise</label>
+            <label class="col-4" for="street">Adresse de la formation</label>
             <input class="col-6" type="text" name="street" value="<?= htmlentities($street) ?>" placeholder="exemple: avenue Jean Jaurès"required />
           </div>
         </div>
@@ -224,21 +216,8 @@ if ($_POST) {
           </div>
 
           <div class="form-group col-6">
-            <label class="col-4" for="city">Ville de l'entreprise</label>
+            <label class="col-4" for="city">Ville de la formation</label>
             <input class="col-6" type="text" name="city" value="<?= htmlentities($city) ?>" required />
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="form-group col-6">
-            <label class="col-4" for="activity">Secteur(s) d'activité(s)</label>
-            <input class="col-6" type="text" name="activity" value="<?= htmlentities($activity) ?>" placeholder="exemple: Métallurgie "required />
-          </div>
-
-          <div class="form-group col-6">
-            <label class="col-4" for="domain_activity">Domaine d'activité</label>
-            <input class="col-6" type="text" name="domain_activity" value="<?= htmlentities($domain_activity) ?>" placeholder="exemple: Industrie" required />
           </div>
         </div>
 
@@ -249,7 +228,7 @@ if ($_POST) {
           </div>
           <div class="form-group col-6">
             <label class="col-4" for="phone">Numéro de téléphone</label>
-            <input class="col-6" type="text" name="phone" value="<?= htmlentities($phone) ?>" placeholder="exemple: +33 3 21 28 15 10" />
+            <input class="col-6" type="numeric" name="phone" maxlength="10" value="<?= htmlentities($phone) ?>" placeholder="exemple: 0321281510" />
           </div>
         </div>
 

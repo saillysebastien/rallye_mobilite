@@ -1,18 +1,6 @@
 <?php
-require('config/db_home.php');
-try {
-  $db = new mysqli(
-    $db_host,
-    $db_user,
-    $db_password,
-    $db_base
-  );
-}
-catch (Exception $e) {
-  die('Erreur : ' . $e->getMessage());
-}
-
 include('include/header.php');
+
 ?>
 
 <div class="container-fluid">
@@ -49,41 +37,7 @@ include('include/header.php');
                 </ol>
                 <div class="carousel-inner" role="listbox">
                   <?php
-                  if ($sql = $db->query("SELECT * FROM home WHERE id = 1")) {
-                    while ($row = $sql->fetch_assoc()) {
-                      printf('
-                      <div class="carousel-item active">
-                      <img class="img img-fluid" src="admin/MEmploi/images/%s"
-                      alt="Visite de %s">
-                      <a class="carousel-caption">
-                      <h3 class="slide_color">Visite de %s</h3>
-                      <p class="slide_color">Réalisé en %s</p>
-                      </a>
-                      </div>'
-                      , $row["image"]
-                      , $row["title"]
-                      , $row["title"]
-                      , $row["text"]);
-                    }
-                  }
-                  if ($sql = $db->query("SELECT * FROM home WHERE done = 1")) {
-                    while ($row = $sql->fetch_assoc()) {
-                      printf('
-                      <div class="carousel-item">
-                      <img class="img img-fluid" src="admin/MEmploi/images/%s"
-                      alt="visite de  %s">
-                      <a class="carousel-caption">
-                      <h3 class="slide_color">Visite de %s</h3>
-                      <p class="slide_color">Réalisé en %s</p>
-                      </a>
-                      </div>'
-                      , $row["image"]
-                      , $row["title"]
-                      , $row["title"]
-                      , $row["text"]);
-                    }
-                  }
-
+                  include('accueil/caroussel.php');
                   ?>
                   <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -241,7 +195,7 @@ include('include/header.php');
 
             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
               <div class="panel-body">
-                <div class="container">
+                <div class="container-fluid">
                   <div class="row">
                     <div id="user" class="col-md-12" >
                       <div class="panel panel-primary panel-table">
@@ -257,10 +211,10 @@ include('include/header.php');
                             </div>
                           </div>
                         </div>
-                        <div class="row">
+                        <div class="row justify-content-center">
                           <div class="panel-thumb">
                             <div id="no_selected" class="animated slideInUp">
-                              Sélectionner un secteur d'activité pour voir apparaître ses fiches Entreprises
+                              Sélectionner un secteur d'activité pour voir apparaître ses fiches Entreprises.
                             </div>
                             <div id="batîment" class="animated slideInDown" style="display: none;">
                               <div class="row">
@@ -331,13 +285,23 @@ include('include/header.php');
                 </a>
               </h4>
             </div>
+
             <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
               <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                <div class="container-fluid">
+                  <div class="row justify-content-center">
+                    <div id="user2" class="col-md-12" >
+                      <div class="panel-thumb">
+                        <div class="animated rotateInUpLeft">
+                          <?php include('formations/formations.php'); ?>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div><!--!panel-body-->
             </div><!--!collapse-->
           </div><!--!panel-default-->
-
           <!-- Application -->
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingFive">
