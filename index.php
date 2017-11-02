@@ -293,7 +293,9 @@ include('include/header.php');
                     <div id="user2" class="col-md-12" >
                       <div class="panel-thumb">
                         <div class="animated rotateInUpLeft">
-                          <?php include('formations/formations.php'); ?>
+                          <div class="row">
+                            <?php include('formations/formations.php'); ?>
+                          </div>
                         </div>
                       </div>
                     </div>

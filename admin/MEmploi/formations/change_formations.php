@@ -253,7 +253,7 @@ if ($_POST) {
           <div class="form-check col-6">
             <label class="form-check-label col-12">
               <input type="checkbox" class="form-check-input col-3" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />
-              Cochez ici si vous voulez que cette entreprise soit affiché!
+              Cochez ici si vous voulez que cette formation soit affichée!
             </label>
           </div>
         </div>

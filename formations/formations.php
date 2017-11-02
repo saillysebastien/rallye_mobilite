@@ -16,7 +16,7 @@ while($row = $sql->fetch_assoc()) {
         <div class="card-body">
         <div class="row justify-content-center">
         <div class="alert alert-primary row">
-        <div class="col-4">Entreprise :</div>
+        <div class="col-4">Organisme :</div>
         <div class="col-8">%s</div>
         </div>
         <div class="alert alert-danger row">
