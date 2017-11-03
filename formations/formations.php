@@ -57,6 +57,6 @@ while($row = $sql->fetch_assoc()) {
         , $row["phone"]
         , $row["phone"]
       );
-    } // fin de 'batiment'
+    } // fin de 'formation'
 
  ?>

@@ -28,7 +28,7 @@ if ($valid) {
     if ($delete) {
       $request = sprintf("DELETE FROM upload WHERE id ='%s'", $id);
       $sql = $db->query($request);
-      $informations['delete'] = "<div class='alert alert-danger text-center' role='alert'>  L'image $image supprimée du dossier et l'image $image supprimée de la base de données<br/><a class='btn btn-primary' href='images.php'>Retour à la liste des images</a></div>\n";
+      $informations['delete'] = "<div class='alert alert-danger text-center' role='alert'>  L'image $image supprimée du dossier et supprimée de la base de données<br/><a class='btn btn-primary' href='images.php'>Retour à la liste des images</a></div>\n";
     }
   } catch (Exception $e) {
     header('Location: error500.html', true, 302);
