@@ -35,7 +35,7 @@ while($row = $sql->fetch_assoc()){
 
   printf("
   <td class = 'col-1'> %d </td>
-  <td class = 'col-1'><img class = 'img img-fluid' src = '../images/%s'></td>
+  <td class = 'col-1' style='height:60px; width:60px;'><img class = 'img img-fluid' src = '../images/%s'></td>
   <td class = 'col-1'> %s </td>
   <td class = 'col-2'> %s %s %d %s</td>
   <td class = 'col-1'> %s </td>

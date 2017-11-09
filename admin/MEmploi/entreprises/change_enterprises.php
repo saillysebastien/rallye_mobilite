@@ -147,7 +147,7 @@ if ($_POST) {
 }
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid text-center">
   <?php
 
   if (isset($informations['success'])) {
@@ -186,7 +186,7 @@ if ($_POST) {
     echo $errors['image'];
   }
 
-   ?>
+  ?>
   <div class="row justify-content-center">
     <div class="col-12">
 
