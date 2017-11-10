@@ -71,9 +71,11 @@
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../questionnaire/question.php" role="button" aria-haspopup="true" aria-expanded="false">Page Applications</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="../questionnaire/rebus.php">Liste des rébus</a>
+          <a class="dropdown-item" href="../questionnaire/question.php">Liste</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href=""></a>
+          <a class="dropdown-item" href="../questionnaire/create_rebus.php">Créer un rébus</a>
+          <a class="dropdown-item" href="../questionnaire/create_quizz.php">Créer un quizz</a>
+          <a class="dropdown-item" href="../questionnaire/create_who.php">Créer un quizz Qui est-ce?</a>
         </div>
       </li>
 

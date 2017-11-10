@@ -130,7 +130,6 @@ include('include/header.php');
                           <div class="card-separator-border"></div>
                           <div class="left">Grâce à cette page, vous aurez accès aux différents centres de formations disponibles dans les Hauts de France. Vous pourrez affiner votre recherche et contacter l’organisme de votre choix. N'hésitez pas.</div>
                           <div class="row justify-content-center">
-
                             <a href="#headingFour" class="btn btn-outline-danger">Explorer</a>
                           </div>
                         </div><!--!profile-info-->
@@ -201,13 +200,15 @@ include('include/header.php');
                       <div class="panel panel-primary panel-table">
                         <div class="panel-heading">
                           <div class="row">
-                            <div class="col col-xs-8 well text-center" style="padding:1px;">
-                              <button id="filter_batîment" title = "Batîment" class = "btn btn-outline-primary animated slideInDown">Batîment</button>
-                              <button id="filter_commerce" title = "Commerce" class = "btn btn-outline-primary animated slideInDown">Commerce</button>
-                              <button id="filter_industrie" title = "Industrie" class = "btn btn-outline-primary animated slideInDown">Industrie</button>
-                              <button id="filter_logistique" title = "Logistique" class = "btn btn-outline-primary animated slideInDown">Logistique</button>
-                              <button id="filter_restauration" title = "Restauration" class = "btn btn-outline-primary animated slideInDown">Restauration</button>
-                              <button id="filter_travaux_publics" title = "Travaux publics" class = "btn btn-outline-primary animated slideInDown">Travaux publics</button>
+                            <div class="col col-xs-8 well text-center" style="padding:5px;">
+                              <div class="btn-group animated slideInDown">
+                                <button id="filter_batîment" title = "Batîment" class = "btn btn-primary">Batîment</button>
+                                <button id="filter_commerce" title = "Commerce" class = "btn btn-danger">Commerce</button>
+                                <button id="filter_industrie" title = "Industrie" class = "btn btn-primary">Industrie</button>
+                                <button id="filter_logistique" title = "Logistique" class = "btn btn-danger">Logistique</button>
+                                <button id="filter_restauration" title = "Restauration" class = "btn btn-primary">Restauration</button>
+                                <button id="filter_travaux_publics" title = "Travaux publics" class = "btn btn-danger">Travaux publics</button>
+                              </div>
                             </div>
                           </div>
                         </div>

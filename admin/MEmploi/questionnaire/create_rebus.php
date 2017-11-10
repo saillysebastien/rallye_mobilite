@@ -15,6 +15,7 @@ $four = "";
 $five = "";
 $index = "";
 $response = "";
+$my_all = "";
 
 if (isset($_POST['valider'])) {
   $title = $_POST['title'];
@@ -24,6 +25,7 @@ if (isset($_POST['valider'])) {
   $four = $_POST['four'];
   $five = $_POST['five'];
   $index = $_POST['index'];
+  $my_all = $_POST['my_all'];
   $response = $_POST['response'];
 
   if(!empty($title)) {
@@ -37,21 +39,28 @@ if (isset($_POST['valider'])) {
     $one = strtolower($_POST['one']);
   } else {
     $valid = false;
-    $error['one'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer au moins 2 éléments dans un rébus</div>";
+    $error['one'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer au moins 2 éléments dans un rébus !!!</div>";
   }
 
   if(!empty($two)) {
     $two = strtolower($_POST['two']);
   } else {
     $valid = false;
-    $error['two'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer au moins 2 éléments dans un rébus</div>";
+    $error['two'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer au moins 2 éléments dans un rébus !!!</div>";
+  }
+
+  if(!empty($my_all)) {
+    $my_all = strtolower($_POST['my_all']);
+  } else {
+    $valid = false;
+    $error['my_all'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer ce qu'est mon tout !!!</div>";
   }
 
   if(!empty($response)) {
     $response = strtolower($_POST['response']);
   } else {
     $valid = false;
-    $error['response'] = "<div class='alert alert-danger text-center' role='alert'>Le rébus doit être composé d'une réponse</div>";
+    $error['response'] = "<div class='alert alert-danger text-center' role='alert'>Le rébus doit être composé d'une réponse !!!</div>";
   }
 
   if(!empty($three)) {
@@ -75,11 +84,11 @@ if (isset($_POST['valider'])) {
   if(!empty($index)) {
     $index = $_POST['index'];
   } else {
-    $in$indexdice = null;
+    $index = null;
   }
 
   if ($valid) {
-    $sql = "INSERT INTO rebus (name, one, two, three, four, five, indice, response) VALUES ('$title', '$one', '$two', '$three', '$four', '$five', '$index', '$response')";
+    $sql = "INSERT INTO rebus (name, one, two, three, four, five, indice, my_all, response) VALUES ('$title', '$one', '$two', '$three', '$four', '$five', '$index', '$my_all', '$response')";
     $valid_sql = mysqli_query($db, $sql);
 
     if ($valid_sql) {
@@ -109,6 +118,10 @@ if (isset($_POST['valider'])) {
 
   if (isset($error['two'])) {
     echo $error['two'];
+  }
+
+  if (isset($error['my_all'])) {
+    echo $error['my_all'];
   }
 
   if (isset($error['response'])) {
@@ -153,6 +166,11 @@ if (isset($_POST['valider'])) {
     <div class="form-group">
       <label class="col-2" for="index"> Indice </label>
       <input class="col-4" type="text" name="index" value="<?= htmlentities($index) ?>" />
+    </div>
+
+    <div class="form-group">
+      <label class="col-2" for="my_all"> Mon tout est ...</label>
+      <input class="col-4" type="text" placeholder="obligatoire" name="my_all" value="<?= htmlentities($my_all) ?>" />
     </div>
 
     <div class="form-group">
