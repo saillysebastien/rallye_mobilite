@@ -36,21 +36,21 @@ if (isset($_POST['valider'])) {
   }
 
   if(!empty($one)) {
-    $one = strtolower($_POST['one']);
+    $one = $_POST['one'];
   } else {
     $valid = false;
     $error['one'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer au moins 2 éléments dans un rébus !!!</div>";
   }
 
   if(!empty($two)) {
-    $two = strtolower($_POST['two']);
+    $two = $_POST['two'];
   } else {
     $valid = false;
     $error['two'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer au moins 2 éléments dans un rébus !!!</div>";
   }
 
   if(!empty($my_all)) {
-    $my_all = strtolower($_POST['my_all']);
+    $my_all = $_POST['my_all'];
   } else {
     $valid = false;
     $error['my_all'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer ce qu'est mon tout !!!</div>";
@@ -64,19 +64,19 @@ if (isset($_POST['valider'])) {
   }
 
   if(!empty($three)) {
-    $three = strtolower($_POST['three']);
+    $three = $_POST['three'];
   } else {
     $three = null;
   }
 
   if(!empty($four)) {
-    $four = strtolower($_POST['four']);
+    $four = $_POST['four'];
   } else {
     $four = null;
   }
 
   if(!empty($five)) {
-    $five = strtolower($_POST['five']);
+    $five = $_POST['five'];
   } else {
     $five = null;
   }
@@ -108,8 +108,8 @@ if (isset($_POST['valider'])) {
     echo $informations['success'];
   }
 
-  if (isset($error['name'])) {
-    echo $error['name'];
+  if (isset($error['title'])) {
+    echo $error['title'];
   }
 
   if (isset($error['one'])) {

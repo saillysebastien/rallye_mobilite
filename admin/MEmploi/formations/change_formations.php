@@ -58,7 +58,7 @@ if ($_POST) {
     $title = $_POST['title'];
   } else {
     $valid = false;
-    $title = "<div class='alert alert-danger text-center role='alert''>Vous devez donner un nom à l'organisme de formation !!!</div>";
+    $error['title'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner un nom à l'organisme de formation !!!</div>";
   }
 
   if (isset($_POST['number_street']) && !empty(trim($_POST['number_street']))) {

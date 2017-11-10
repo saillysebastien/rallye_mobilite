@@ -20,7 +20,7 @@ if (isset($_GET['id']) && !empty(trim($_GET['id'])) && $_GET['id'] != 0) {
 if ($valid) {
   $sql = sprintf("SELECT * FROM entreprises WHERE id=%s", $_GET["id"]);
   $result = $db->query($sql);
-  $infos= $result->fetch_assoc();
+  $infos = $result->fetch_assoc();
   $image = $infos['image'];
   $title = $infos['title'];
 
