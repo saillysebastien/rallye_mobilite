@@ -335,7 +335,19 @@ include('include/header.php');
             </div><!--!panel-heading-->
             <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
               <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                <div class="container-fluid">
+                  <div class="row justify-content-center">
+                    <div id="user2" class="col-md-12" >
+                      <div class="panel-thumb">
+                        <div class="animated rotateInUpRight">
+                          <div class="row">
+                            <?php include('contact/contact.php'); ?>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div><!--!panel-body-->
             </div><!--!collapse-->
           </div><!--!panel-default-->
