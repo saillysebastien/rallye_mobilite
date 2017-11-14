@@ -10,6 +10,7 @@
   <link rel ="stylesheet" href="../../../assets/vendor/bootstrap4/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../../../assets/css/style.css" />
   <link rel="stylesheet" href="../../../assets/css/responsive.css" />
+  <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
 </head>
 <body>
 
@@ -50,6 +51,17 @@
         </div>
       </li>
 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../questionnaire/question.php" role="button" aria-haspopup="true" aria-expanded="false">Page Application</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="../questionnaire/question.php">Liste des questionnaires</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="../questionnaire/create_rebus.php">Créer un rébus</a>
+          <a class="dropdown-item" href="../questionnaire/create_quizz.php">Créer un quizz</a>
+          <a class="dropdown-item" href="../questionnaire/create_who.php">Créer un quizz Qui est-ce?</a>
+        </div>
+      </li>
+
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../contact/contact.php" role="button" aria-haspopup="true" aria-expanded="false">Page Contact</a>
         <div class="dropdown-menu">
@@ -59,7 +71,7 @@
         </div>
       </li>
 
-        <li class="nav-item dropdown">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../upload/images.php" role="button" aria-haspopup="true" aria-expanded="false">Page Images</a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="../upload/images.php">Liste des images</a>
@@ -67,18 +79,6 @@
           <a class="dropdown-item" href="../upload/create_upload.php">Création d'une image</a>
         </div>
       </li>
-
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../questionnaire/question.php" role="button" aria-haspopup="true" aria-expanded="false">Page Applications</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="../questionnaire/question.php">Liste</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="../questionnaire/create_rebus.php">Créer un rébus</a>
-          <a class="dropdown-item" href="../questionnaire/create_quizz.php">Créer un quizz</a>
-          <a class="dropdown-item" href="../questionnaire/create_who.php">Créer un quizz Qui est-ce?</a>
-        </div>
-      </li>
-
 
     </ul>
       </div>

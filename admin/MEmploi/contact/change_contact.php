@@ -67,7 +67,7 @@ if ($_POST) {
   }
 
   if (isset($_POST['director']) && !empty(trim($_POST['director']))) {
-    $president = $_POST['director'];
+    $director = $_POST['director'];
   } else {
     $valid = false;
     $error['director'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le directeur de l'organisme !!!</div>";
