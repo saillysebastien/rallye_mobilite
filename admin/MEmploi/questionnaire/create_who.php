@@ -13,6 +13,8 @@ $question = '';
 $index = null;
 $response = '';
 
+
+
 if (isset($_POST['valider'])) {
   $image = $_FILES['image'];
   $imageName = $_FILES['image']['name'];

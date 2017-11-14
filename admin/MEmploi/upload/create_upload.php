@@ -29,15 +29,14 @@ if (isset($_POST['upload'])) {
 
         if ($uploadSuccess) {
           $image = $_POST['image'];
-            $upload = "INSERT INTO upload (image) VALUES ('$imageName')";
-            $valid_upload = mysqli_query($db, $upload);
+          $upload = "INSERT INTO upload (image) VALUES ('$imageName')";
+          $valid_upload = mysqli_query($db, $upload);
 
-            if ($valid_upload) {
-              $informations['success'] = "<div class='alert alert-info text-center' role='alert'>Le nom de l'image a bien été inscrite dans la base de données et l'image uploadée dans le dossier 'images'.</div>
-              <div class='text-center'>
-              <a class='btn btn-success' href='images.php'>Retour à la liste des images</a>
-              <a class='btn btn-info' href='create_uplaod.php'>Créer un autre téléchargement d'image</a></div>";
-            }
+          if ($valid_upload) {
+            $informations['success'] = "<div class='alert alert-info text-center' role='alert'>Le nom de l'image a bien été inscrite dans la base de données et l'image uploadée dans le dossier 'images'.</div>
+            <div class='text-center'>
+            <a class='btn btn-success' href='images.php'>Retour à la liste des images</a>
+            <a class='btn btn-info' href='create_uplaod.php'>Créer un autre téléchargement d'image</a></div>";
           } else {
             $error['valid'] = "<div class='alert alert-warning text-center' role='alert'>Une erreur est survenue lors du remplissage du formulaire !!!<div>";
           }
@@ -53,53 +52,53 @@ if (isset($_POST['upload'])) {
   } else {
     $error['format'] = "<div class='alert alert-warning text-center' role='alert'>Votre fichier n'est pas au format image souhaité!<div>";
   }
+}
 
 
+?>
 
- ?>
+<div class="container-fluid text-center">
 
- <div class="container-fluid">
+  <?php
 
- <?php
+  if (isset($informations['success'])) {
+    echo $informations['success'];
+  }
 
- if (isset($informations['success'])) {
-   echo $informations['success'];
- }
+  if (isset($error['valid'])) {
+    echo $error['valid'];
+  }
 
- if (isset($error['valid'])) {
-   echo $error['valid'];
- }
+  if (isset($error['upload'])) {
+    echo $error['upload'];
+  }
 
- if (isset($error['upload'])) {
-   echo $error['upload'];
- }
+  if (isset($error['size'])) {
+    echo $error['size'];
+  }
 
- if (isset($error['size'])) {
-   echo $error['size'];
- }
+  if (isset($error['download'])) {
+    echo $error['download'];
+  }
 
- if (isset($error['download'])) {
-   echo $error['download'];
- }
-
- if (isset($error['format'])) {
-   echo $error['format'];
- }
+  if (isset($error['format'])) {
+    echo $error['format'];
+  }
   ?>
 
- <legend>Téléchargement d'une image </legend>
-   <form  action="#" method="post" enctype="multipart/form-data">
+  <legend>Téléchargement d'une nouvelle image </legend>
+  <form  action="#" method="post" enctype="multipart/form-data">
 
-     <div class="form-inline">
-       <label for="image">Image à télécharger</label>
-       <input type="file" name="image" class="form-control-file" id='image' required />
-     </div>
+    <div class="form-group">
+      <label class="col-2" for="image">Image à télécharger</label>
+      <input type="file" name="image" class="form-control-file col-6" id='image' required />
+    </div><br />
 
-     <button type="submit" name="upload" id="upload" class="btn btn-primary">Valider</button>
+    <button type="submit" name="upload" id="upload" class="btn btn-primary">Valider</button>
 
-   </form>
- </div>
+  </form>
+</div>
 
- <?php
- include('../include/footer.php');
-  ?>
+<?php
+include('../include/footer.php');
+?>

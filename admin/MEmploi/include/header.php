@@ -64,7 +64,7 @@
         <div class="dropdown-menu">
           <a class="dropdown-item" href="../upload/images.php">Liste des images</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="../contact/create_upload.php">Création d'une image</a>
+          <a class="dropdown-item" href="../upload/create_upload.php">Création d'une image</a>
         </div>
       </li>
 

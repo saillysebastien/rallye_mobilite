@@ -204,7 +204,7 @@ $five = '';
       <div class="col-8">%s</div>
       </div>
       <div class ="btn-group">
-      <a class="btn btn-success" href="change_who.php?id=%s">Modifier</a>
+      <a class="btn btn-success" href="change_quizz.php?id=%s">Modifier</a>
       <a class="btn btn-danger" onclick="return window.confirm(&quot;Voulez vraiment supprimer ce rébus ?&quot;);" href="delete_quizz.php?id=%s">Supprimer</a>
       </div>
       </div>

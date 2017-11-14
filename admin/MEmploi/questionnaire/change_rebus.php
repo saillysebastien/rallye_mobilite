@@ -39,40 +39,40 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $errors['id'] = "<div class='alert alert-danger' role='alert'>L'identifiant du rébus à modifier doit être spécifié !!!";
 }
 
-if ($_POST) {
+if (isset($_POST['valider'])) {
   if (isset($_POST['title']) && !empty(trim($_POST['title']))) {
     $title = $_POST['title'];
   } else {
     $valid = false;
-    $error['title'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner un nom au rébus !!!</div>";
+    $errors['title'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner un nom au rébus !!!</div>";
   }
 
   if (isset($_POST['one']) && !empty(trim($_POST['one']))) {
     $one = $_POST['one'];
   } else {
     $valid = false;
-    $error['one'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner au moins 2 indices !!!</div>";
+    $errors['one'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner au moins 2 indices !!!</div>";
   }
 
   if (isset($_POST['two']) && !empty(trim($_POST['two']))) {
     $two = $_POST['two'];
   } else {
     $valid = false;
-    $error['two'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner au moins 2 indices !!!</div>";
+    $errors['two'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner au moins 2 indices !!!</div>";
   }
 
   if (isset($_POST['my_all']) && !empty(trim($_POST['my_all']))) {
     $my_all = $_POST['my_all'];
   } else {
     $valid = false;
-    $error['my_all'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner ce qu'est le tout pour le rébus !!!</div>";
+    $errors['my_all'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner ce qu'est le tout pour le rébus !!!</div>";
   }
 
   if (isset($_POST['response']) && !empty(trim($_POST['response']))) {
     $response = $_POST['response'];
   } else {
     $valid = false;
-    $error['response'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner au moins indiquer une réponse !!!</div>";
+    $errors['response'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner au moins indiquer une réponse !!!</div>";
   }
 
   if (isset($_POST['three']) && !empty(trim($_POST['three']))) {
@@ -121,23 +121,27 @@ if (isset($informations['success'])) {
   echo $informations['success'];
 }
 
-if (isset($error['title'])) {
+if (isset($errors['id'])) {
+  echo $errors['id'];
+}
+
+if (isset($errors['title'])) {
   echo $errors['title'];
 }
 
-if (isset($error['one'])) {
+if (isset($errors['one'])) {
   echo $errors['one'];
 }
 
-if (isset($error['two'])) {
+if (isset($errors['two'])) {
   echo $errors['two'];
 }
 
-if (isset($error['my_all'])) {
+if (isset($errors['my_all'])) {
   echo $errors['my_all'];
 }
 
-if (isset($error['response'])) {
+if (isset($errors['response'])) {
   echo $errors['response'];
 }
  ?>
@@ -147,47 +151,47 @@ if (isset($error['response'])) {
 
   <div class="form-group">
     <label class="col-2" for="title"> Nom du rébus</label>
-    <input class="col-4" type="text" placeholder="obligatoire" name="title" value="<?= htmlentities($title) ?>" required />
+    <input class="col-8" type="text" placeholder="obligatoire" name="title" value="<?= htmlentities($title) ?>" required />
   </div>
 
   <div class="form-group">
     <label class="col-2" for="one"> Question 1 </label>
-    <input class="col-4" type="text" placeholder="obligatoire" name="one" value="<?= htmlentities($one) ?>" required />
+    <input class="col-8" type="text" placeholder="obligatoire" name="one" value="<?= htmlentities($one) ?>" required />
   </div>
 
   <div class="form-group">
     <label class="col-2" for="two"> Question 2 </label>
-    <input class="col-4" type="text" placeholder="obligatoire" name="two" value="<?= htmlentities($two) ?>" required />
+    <input class="col-8" type="text" placeholder="obligatoire" name="two" value="<?= htmlentities($two) ?>" required />
   </div>
 
   <div class="form-group">
     <label class="col-2" for="three"> Question 3 </label>
-    <input class="col-4" type="text" name="three" value="<?= htmlentities($three) ?>" />
+    <input class="col-8" type="text" name="three" value="<?= htmlentities($three) ?>" />
   </div>
 
   <div class="form-group">
     <label class="col-2" for="four"> Question 4 </label>
-    <input class="col-4" type="text" name="four" value="<?= htmlentities($four) ?>" />
+    <input class="col-8" type="text" name="four" value="<?= htmlentities($four) ?>" />
   </div>
 
   <div class="form-group">
     <label class="col-2" for="five"> Question 5 </label>
-    <input class="col-4" type="text" name="five" value="<?= htmlentities($five) ?>" />
+    <input class="col-8" type="text" name="five" value="<?= htmlentities($five) ?>" />
   </div>
 
   <div class="form-group">
     <label class="col-2" for="index"> Indice </label>
-    <input class="col-4" type="text" name="index" value="<?= htmlentities($index) ?>" />
+    <input class="col-8" type="text" name="index" value="<?= htmlentities($index) ?>" />
   </div>
 
   <div class="form-group">
     <label class="col-2" for="my_all"> Mon tout est ...</label>
-    <input class="col-4" type="text" placeholder="obligatoire" name="my_all" value="<?= htmlentities($my_all) ?>" />
+    <input class="col-8" type="text" placeholder="obligatoire" name="my_all" value="<?= htmlentities($my_all) ?>" />
   </div>
 
   <div class="form-group">
     <label class="col-2" for="response">Réponse</label>
-    <input class="col-4" type="text" placeholder="obligatoire" name="response" value="<?= htmlentities($response) ?>" required />
+    <input class="col-8" type="text" placeholder="obligatoire" name="response" value="<?= htmlentities($response) ?>" required />
   </div>
 
   <button type="submit" name="valider" class="btn btn-primary">Valider</button>
