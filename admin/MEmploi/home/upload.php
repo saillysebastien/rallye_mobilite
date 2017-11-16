@@ -4,7 +4,7 @@ include('../include/header.php');
 $done = false;
 $text = '';
 $title = '';
-$informations = [];
+$infos = [];
 
 if (isset($_POST['upload'])) {
   $image = $_FILES['image'];
@@ -31,29 +31,26 @@ if (isset($_POST['upload'])) {
           $sql = "INSERT INTO home (title, image, text, done) VALUES ('$title', '$imageName', '$text', '$done')";
           $valid = mysqli_query($db, $sql);
           if ($valid) {
-            $informations['success'] = "
-            <div class='alert alert-success center'>Vos informations ont bien été inscrit dans la base de donnée et l\'image uploadé dans le dossier</div>\n
-            <br />
-            <a class='btn btn-success' href='home.php'>Retour à la liste</a>";
+            array_push($infos, "Les informations ont été inscrites à la base de données et l'ima $imageName uploadée dans le dossier.");
           }
         } else {
-          echo "Une erreur est survenue!";
+          array_push($errors, "Une erreur est survenue !");
         }
       } else {
-        echo "Votre image est trop volumineuse!";
+        array_push($errors, "Votre image est trop volumineuse !");
       }
     } else {
-      echo "Une erreur est survenue lors du téléchargement!";
+      array_push($errors, "Une erreur est survenue lors du téléchargement !");
     }
   } else {
-    echo "Votre fichier n'est pas au format image souhaité!";
+    array_push($errors, "Votre fichier image n'est pas au format souhaité !");
   }
 }
 ?>
 <div class="container-fluid">
   <?php
-  if (isset($informations['success'])) {
-    echo $informations['success'];
-  } ?>
+include("../infos.php");
+include("../errors.php");
+  ?>
 </div>
 <?php include('../include/footer.php');?>

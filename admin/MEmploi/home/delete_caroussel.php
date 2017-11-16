@@ -4,7 +4,7 @@ include('../include/header.php');
 $id = null;
 $valid = true;
 $errors = [];
-$informations = [];
+$infos = [];
 $image = null;
 $title = '';
 
@@ -12,22 +12,20 @@ if (isset($_GET['id']) && !empty(trim($_GET['id'])) && $_GET['id'] != 0) {
   $id = $_GET['id'];
 } else {
   $valid = false;
-  $errors['id'] = 'Vous devez spécifier une Photo à supprimer';
+  array_push($errors, "Vous devez spécifier une photo à supprimer !");
 }
 if ($valid) {
   $sql = sprintf("SELECT * FROM home WHERE id=%s", $_GET["id"]);
-  $result = $db->query($sql);
-  $infos= $result->fetch_assoc();
-  $image = $infos['image'];
-  $title = $infos['title'];
+  $query = $db->query($sql);
+  $result= $query->fetch_assoc();
+  $image = $result['image'];
+  $title = $result['title'];
   try {
     $delete = unlink ("../images/$image");
     if ($delete) {
       $request = sprintf("DELETE FROM home WHERE id ='%s'", $id);
       $sql = $db->query($request);
-      $informations['delete'] = "<div class='alert alert-danger center'>  $image supprimée du dossier et fiche avec le nom $title supprimée de la base de données</div>\n
-      <br/>
-      <a class='btn btn-primary' href='home.php'>Retour à la liste des photos</a>";
+      array_push($infos, "L'image $image a été supprimée et la fiche $title supprimée de la base de donnée.");
     }
   } catch (Exception $e) {
     header('Location: error500.html', true, 302);
@@ -37,12 +35,8 @@ if ($valid) {
 ?>
 <div class="container-fluid text-center">
   <?php
-  if (isset($informations['delete'])) {
-    echo $informations['delete'];
-  }
-  if (isset($errors['id'])) {
-    echo $errors['id'];
-  }
+  include("../infos.php");
+  include("../errors.php");
   ?>
 </div>
 <?php include('../include/footer.php');?>

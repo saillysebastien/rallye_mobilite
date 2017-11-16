@@ -3,7 +3,7 @@
 include('../include/header.php');
 
 $errors = [];
-$informations = [];
+$infos = [];
 $valid = true;
 $id = null;
 $image = null;
@@ -13,7 +13,7 @@ if (isset($_GET['id']) && !empty(trim($_GET['id'])) && $_GET['id'] != 0) {
   $id = $_GET['id'];
 } else {
   $valid = false;
-  $errors['id'] = 'Vous devez spécifier une formation à supprimer';
+  array_push($errors, "Vous devez spécifier une formation à supprimer");
 }
 
 if ($valid) {
@@ -27,9 +27,7 @@ if ($valid) {
     if ($delete) {
       $request = sprintf("DELETE FROM formations WHERE id ='%s'", $id);
       $sql = $db->query($request);
-      $informations['delete'] = "<div class='alert alert-danger center'>  L'image $image supprimée du dossier et la formation $title supprimée de la base de donnée</div>\n
-      <br/>
-      <a class='btn btn-primary' href='formations.php'>Retour à la liste des organismes de formations</a>";
+      array_push($infos, "L'image $image supprimée du dossier et la formation $title supprimée de la base de donnée");
     }
   } catch (Exception $e) {
     header('Location: error500.html', true, 302);
@@ -39,12 +37,8 @@ if ($valid) {
 ?>
 <div class="container-fluid text-center">
   <?php
-  if (isset($informations['delete'])) {
-    echo $informations['delete'];
-  }
-  if (isset($errors['id'])) {
-    echo $errors['id'];
-  }
+  include('../infos.php');
+  include('../errors.php');
   ?>
 </div>
 <?php include('../include/footer.php');?>

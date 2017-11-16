@@ -1,10 +1,9 @@
 <?php
 include('../include/header.php');
 
-$informations = [];
-$error = [];
+$infos = [];
+$errors = [];
 $valid = true;
-
 $title = '';
 $number_street = null;
 $street = '';
@@ -46,25 +45,25 @@ if (isset($_POST['upload'])) {
             $title = $_POST['title'];
           } else {
             $valid = false;
-            $error['title'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le nom de l'organisme de formation</div>";
+            array_push($errors, "Vous devez indique le nom de l'organisme de formation !");
           }
           if(!empty($street) && $street !== "N/C") {
             $street = $_POST['street'];
           } else {
             $valid = false;
-            $error['street'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer la rue de l'organisme de formation</div>";
+            array_push($errors, "Vous devez indiquer la rue de l'organisme de formation !");
           }
           if(!empty($postal_code) && $postal_code !== "N/C") {
             $postal_code = $_POST['postal_code'];
           } else {
             $valid = false;
-            $error['postal_code'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le code postal de l'organisme de formation</div>";
+            array_push($errors, "Vous devez indiquer le code postal de l'organisme de formation !");
           }
           if(!empty($city) && $city !== "N/C") {
             $city = $_POST['city'];
           } else {
             $valid = false;
-            $error['city'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer la ville de l'organisme de formation</div>";
+            array_push($errors, "Vous devez indiquer la ville de l'organisme de formation !");
           }
           if(!empty($phone) && $phone !== "N/C") {
             $phone = $_POST['phone'];
@@ -93,60 +92,29 @@ if (isset($_POST['upload'])) {
             $sql = "INSERT INTO formations (title, image, number_street, street, postal_code, city, contact, phone, mail, web, done) VALUES ('$title', '$imageName', '$number_street', '$street', '$postal_code', '$city', '$contact', '$phone', '$mail', '$web', '$done')";
             $valid_sql = mysqli_query($db, $sql);
             if ($valid_sql) {
-              $informations['success'] = "<div class='alert alert-info text-center' role='alert'>Vos informations ont bien été inscrites dans la base de donnée et l'image uploadée dans le dossier 'images'.</div>
-              <div class='text-center'>
-              <a class='btn btn-success' href='formations.php'>Retour à la liste des formations</a>
-              <a class='btn btn-info' href='create_formations.php'>Créer une autre formation</a></div>";
+              array_push($infos, "La formation $title a bien été crée et inscrit dans la base de données, le logo $imageName uploadé dans le dossier.");
             }
           } else {
-            $error['valid'] = "<div class='alert alert-warning text-center' role='alert'>Une erreur est survenue lors du remplissage du formulaire !!!<div>";
+            array_push($errors, "Une erreur est survenue lors du remplissage du formulaire !");
           }
         } else {
-          $error['upload'] = "<div class='alert alert-warning text-center' role='alert'>Une erreur est survenue!<div>";
+          array_push($errors, "Une erreur est survenue lors de l'upload de l'image !");
         }
       } else {
-        $error['size'] = "<div class='alert alert-warning text-center' role='alert'>La taille de l'image est trop volumineuse!<div>";
+        array_push($errors, "La taille de l'image est trop volumineuse !");
       }
     } else {
-      $error['download'] = "<div class='alert alert-warning text-center' role='alert'>Une erreur est survenue lors du téléchargement!<div>";
+      array_push($errors, "Une erreur est survenue !");
     }
   } else {
-    $error['format'] = "<div class='alert alert-warning text-center' role='alert'>Votre fichier n'est pas au format image souhaité!<div>";
+    array_push($errors, "Le fichier image n'est pas au format souhaité !");
   }
 }
 ?>
 <div class="container-fluid text-center">
   <?php
-  if (isset($informations['success'])) {
-    echo $informations['success'];
-  }
-  if (isset($error['valid'])) {
-    echo $error['valid'];
-  }
-  if (isset($error['upload'])) {
-    echo $error['upload'];
-  }
-  if (isset($error['size'])) {
-    echo $error['size'];
-  }
-  if (isset($error['download'])) {
-    echo $error['download'];
-  }
-  if (isset($error['format'])) {
-    echo $error['format'];
-  }
-  if (isset($error['title'])) {
-    echo $error['title'];
-  }
-  if (isset($error['street'])) {
-    echo $error['street'];
-  }
-  if (isset($error['postal_code'])) {
-    echo $error['postal_code'];
-  }
-  if (isset($error['city'])) {
-    echo $error['city'];
-  }
+  include('../infos.php');
+  include('../errors.php');
   ?>
   <legend>Creation d'une fiche formation</legend>
   <form  action="#" method="post" enctype="multipart/form-data">
@@ -212,6 +180,4 @@ if (isset($_POST['upload'])) {
     <button type="submit" name="upload" class="btn btn-primary">Valider</button>
   </form>
 </div>
-<?php
-include('../include/footer.php');
-?>
+<?php include('../include/footer.php');?>

@@ -1,10 +1,9 @@
 <?php
 include('../include/header.php');
 
-$informations = [];
-$error = [];
+$infos = [];
+$errors = [];
 $valid = true;
-
 $title = '';
 $adresse = '';
 $president = '';
@@ -18,51 +17,51 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
   $sql = sprintf("SELECT * FROM contact WHERE id =%s", $_GET['id']);
-  $result = $db->query($sql);
-  $infos = $result->fetch_assoc();
+  $query = $db->query($sql);
+  $result = $query->fetch_assoc();
 
-  $title = $infos['title'];
-  $adresse = $infos['adresse'];
-  $president = $infos['president'];
-  $director = $infos['director'];
-  $vice_director = $infos['vice_director'];
-  $phone = $infos['phone'];
-  $mail = $infos['mail'];
+  $title = $result['title'];
+  $adresse = $result['adresse'];
+  $president = $result['president'];
+  $director = $result['director'];
+  $vice_director = $result['vice_director'];
+  $phone = $result['phone'];
+  $mail = $result['mail'];
 
 } else {
   $valid = false;
-  $errors['id'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez spécifier un contact à modifier !!!";
+  array_push($errors, "Vous devez spécifier un contact à modifier !!!");
 }
 if ($_POST) {
   if (isset($_POST['id']) && !empty(trim($_POST['id']))) {
     $id2 = $_POST['id'];
   } else {
     $valid = false;
-    $errors['id_post'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez remplir l'id !!!</div>";
+    array_push($errors,"Vous devez remplir l'id !!!");
   }
   if (isset($_POST['title']) && !empty(trim($_POST['title']))) {
     $title = $_POST['title'];
   } else {
     $valid = false;
-    $error['title'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer l'adresse de l'entreprise !!!</div>";
+    array_push($errors,"Vous devez indiquer l'adresse de l'entreprise !!!");
   }
   if (isset($_POST['adresse']) && !empty(trim($_POST['adresse']))) {
     $adresse = $_POST['adresse'];
   } else {
     $valid = false;
-    $error['adresse'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer l'adresse de l'organisme !!!</div>";
+    array_push($errors,"Vous devez indiquer l'adresse de l'organisme !!!");
   }
   if (isset($_POST['president']) && !empty(trim($_POST['president']))) {
     $president = $_POST['president'];
   } else {
     $valid = false;
-    $error['president'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le président de l'organisme !!!</div>";
+    array_push($errors, "Vous devez indiquer le président de l'organisme !!!");
   }
   if (isset($_POST['director']) && !empty(trim($_POST['director']))) {
     $director = $_POST['director'];
   } else {
     $valid = false;
-    $error['director'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le directeur de l'organisme !!!</div>";
+    array_push($errors, "Vous devez indiquer le directeur de l'organisme !!!");
   }
   if (isset($_POST['vice_director']) && !empty(trim($_POST['vice_director']))) {
     $vice_director = $_POST['vice_director'];
@@ -91,31 +90,15 @@ if ($_POST) {
       exit();
     }
     if ($valid_sql) {
-      $informations['success'] = "<div class='alert alert-success text-center' role='alert'>Contact $title modifié<br /><a class='btn btn-success' href='contact.php'>Retour à la liste des contacts</a></div>";
+      array_push($infos, "Le contact $title a été modifié" );
     }
   }
 }
 ?>
 <div class="container-fluid text-center">
   <?php
-  if (isset($informations['success'])) {
-    echo $informations['success'];
-  }
-  if (isset($errors['id'])) {
-    echo $errors['id'];
-  }
-  if (isset($errors['title'])) {
-    echo $errors['title'];
-  }
-  if (isset($errors['adresse'])) {
-    echo $errors['adresse'];
-  }
-  if (isset($errors['president'])) {
-    echo $errors['president'];
-  }
-  if (isset($errors['director'])) {
-    echo $errors['director'];
-  }
+  include('../infos.php');
+  include('../errors.php');
   ?>
   <div class="row justify-content-center">
     <div class="col-12">
@@ -124,28 +107,28 @@ if ($_POST) {
 
         <div class="form-group">
           <label class="col-2" for="id">Id</label>
-          <input class="col-4" type="numeric" name="id" value="<?= htmlentities($id) ?>" required />
+          <input class="col-4" type="numeric" name="id" value="<?= htmlentities($id) ?>" />
         </div>
 
         <div class="form-group">
           <label class="col-2" for="title">Organisme</label>
-          <input class="col-4" type="text" name="title" value="<?= htmlentities($title) ?>" required />
+          <input class="col-4" type="text" name="title" value="<?= htmlentities($title) ?>" />
         </div>
 
 
         <div class="form-group">
           <label class="col-2" for="adresse">Adresse</label>
-          <input class="col-4" type="text" name="adresse" value="<?= htmlentities($adresse) ?>" required />
+          <input class="col-4" type="text" name="adresse" value="<?= htmlentities($adresse) ?>" />
         </div>
 
         <div class="form-group">
           <label class="col-2" for="president">Président</label>
-          <input class="col-4" type="text" name="president" value="<?= htmlentities($president) ?>" required />
+          <input class="col-4" type="text" name="president" value="<?= htmlentities($president) ?>" />
         </div>
 
         <div class="form-group">
           <label class="col-2" for="director">Directeur</label>
-          <input class="col-4" type="text" name="director" value="<?= htmlentities($director) ?>" required />
+          <input class="col-4" type="text" name="director" value="<?= htmlentities($director) ?>" />
         </div>
 
         <div class="form-group">
@@ -174,6 +157,4 @@ if ($_POST) {
     </div>
   </div>
 </div>
-<?php
-include('../include/footer.php');
-?>
+<?php include('../include/footer.php');?>

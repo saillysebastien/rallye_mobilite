@@ -1,8 +1,8 @@
 <?php
 include('../include/header.php');
 
-$informations = [];
-$error = [];
+$infos = [];
+$errors = [];
 $valid = true;
 $title = '';
 $number_street = null;
@@ -48,37 +48,37 @@ if (isset($_POST['upload'])) {
             $title = $_POST['title'];
           } else {
             $valid = false;
-            $error['title'] = "<div class='alert alert-danger' role='alert'>Vous devez indiquer le nom de l'entreprise</div>";
+            array_push($errors, "Vous devez indiquer le nom de l'entreprise !");
           }
           if(!empty($street) && $street !== "N/C") {
             $street = $_POST['street'];
           } else {
             $valid = false;
-            $error['street'] = "<div class='alert alert-danger' role='alert'>Vous devez indiquer la rue de  l'entreprise</div>";
+            array_push($errors, "Vous devez indiquer la rue de l'entreprise !");
           }
           if(!empty($postal_code) && $postal_code !== "N/C") {
             $postal_code = $_POST['postal_code'];
           } else {
             $valid = false;
-            $error['postal_code'] = "<div class='alert alert-danger' role='alert'>Vous devez indiquer le code postal de l'organisme de formation</div>";
+            array_push($errors, "Vous devez indiquer le code postal de l'entreprise !");
           }
           if(!empty($city) && $city !== "N/C") {
             $city = $_POST['city'];
           } else {
             $valid = false;
-            $error['city'] = "<div class='alert alert-danger' role='alert'>Vous devez indiquer la ville de l'organisme de formation</div>";
+            array_push($errors, "Vous devez indiquer la ville de l'entreprise !");
           }
           if(!empty($activity) && $activity !== "N/C") {
             $activity = $_POST['activity'];
           } else {
             $valid = false;
-            $error['activity'] = "<div class='alert alert-danger' role='alert'>Vous devez indiquer l'activité de l'entreprise</div>";
+            array_push($errors, "Vous devez indiquer l'activité de l'entreprise !");
           }
           if(!empty($domain_activity) && $domain_activity !== "N/C") {
             $domain_activity = $_POST['domain_activity'];
           } else {
             $valid = false;
-            $error['domain_activity'] = "<div class='alert alert-danger' role='alert'>Vous devez indiquer le domaine d'activité de l'entreprise</div>";
+            array_push($errors, "Vous devez indiquer le domaine d'activité de l'entreprise !");
           }
           if(!empty($phone) && $phone !== "N/C") {
             $phone = $_POST['phone'];
@@ -107,66 +107,28 @@ if (isset($_POST['upload'])) {
             $sql = "INSERT INTO entreprises (title, image, number_street, street, postal_code, city, activity, domain_activity, contact, phone, mail, web, done) VALUES ('$title', '$imageName', '$number_street', '$street', '$postal_code', '$city', '$activity', '$domain_activity', '$contact', '$phone', '$mail', '$web', '$done')";
             $valid_sql = mysqli_query($db, $sql);
             if ($valid_sql) {
-              $informations['success'] = "<div class='alert alert-black' role='alert'>Vos informations ont bien été inscrites dans la base de données et l'image uploadée dans le dossier 'images'.</div>
-              <div class='btn-group'>
-              <a class='btn btn-success' href='enterprises.php'>Retour à la liste des entreprises</a>
-              <a class='btn btn-info' href='create_enterprises.php'>Créer une autre entreprise</a></div>";
+              array_push($infos, "L'entreprise $title a été créée et inscrite dans la base de données, l'image $imageName uploadée dans le dossier");
             }
           }
         } else {
-          $error['upload'] = "<div class='alert alert-warning' role='alert'>Une erreur est survenue !!!<div>";
+          array_push($errors, "Une erreur est survenue !");
         }
       } else {
-        $error['size'] = "<div class='alert alert-warning' role='alert'>La taille de l'image est trop volumineuse !!!<div>";
+        array_push($errors, "La taille de l'image est trop volumineuse !");
       }
     } else {
-      $error['download'] = "<div class='alert alert-warning role='alert'>Une erreur est survenue lors du téléchargement !!!<div>";
+      array_push($errors, "Une erreur est survenue lors du téléchargement !");
     }
   } else {
-    $error['format'] = "<div class='alert alert-warning' role='alert'>Votre fichier n'est pas au format image souhaité !!!<div>";
+    array_push($errors, "Votre fichier n'est pas au format image souhaité");
   }
 }
 ?>
 <div class="container-fluid text-center">
   <?php
-  if (isset($informations['success'])) {
-    echo $informations['success'];
-  }
-  if (isset($error['valid'])) {
-    echo $error['valid'];
-  }
-  if (isset($error['upload'])) {
-    echo $error['upload'];
-  }
-  if (isset($error['size'])) {
-    echo $error['size'];
-  }
-  if (isset($error['download'])) {
-    echo $error['download'];
-  }
-  if (isset($error['format'])) {
-    echo $error['format'];
-  }
-  if (isset($error['title'])) {
-    echo $error['title'];
-  }
-  if (isset($error['street'])) {
-    echo $error['street'];
-  }
-  if (isset($error['postal_code'])) {
-    echo $error['postal_code'];
-  }
-  if (isset($error['city'])) {
-    echo $error['city'];
-  }
-  if (isset($error['activity'])) {
-    echo $error['activity'];
-  }
-  if (isset($error['domain_activity'])) {
-    echo $error['domain_activity'];
-  }
+  include('../infos.php');
+  include('../errors.php');
    ?>
-
 <legend>Creation d'une fiche entreprise</legend>
 <form action="#" method="post" enctype="multipart/form-data">
 

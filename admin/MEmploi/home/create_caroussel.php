@@ -6,7 +6,7 @@ $done = false;
 $text = '';
 ?>
   <div class="container text-align create_home">
-    <legend>Création pour la rubrique accueil (photos et commentaires)</legend><br />
+    <h1>Création pour la rubrique accueil (photos et commentaires)</h1>
     <form  action="upload.php" method="post" enctype="multipart/form-data" class="home">
 
       <div class="form-group">

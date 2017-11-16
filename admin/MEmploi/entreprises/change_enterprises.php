@@ -1,9 +1,8 @@
 <?php
 include('../include/header.php');
 
-$informations =[];
+$infos =[];
 $errors = [];
-
 $title = '';
 $image = '';
 $number_street = null;
@@ -21,24 +20,24 @@ $done = false;
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
   $sql = sprintf("SELECT * FROM entreprises WHERE id =%s", $_GET['id']);
-  $result = $db->query($sql);
-  $infos = $result->fetch_assoc();
+  $query = $db->query($sql);
+  $result = $query->fetch_assoc();
 
-  $title = $infos['title'];
-  $image = $infos['image'];
-  $number_street = $infos['number_street'];
-  $street = $infos['street'];
-  $postal_code = $infos['postal_code'];
-  $city = $infos['city'];
-  $activity = $infos['activity'];
-  $domain_activity = strtolower($infos['domain_activity']);
-  $contact = $infos['contact'];
-  $phone = $infos['phone'];
-  $mail = $infos['mail'];
-  $web = $infos['web'];
+  $title = $result['title'];
+  $image = $result['image'];
+  $number_street = $result['number_street'];
+  $street = $result['street'];
+  $postal_code = $result['postal_code'];
+  $city = $result['city'];
+  $activity = $result['activity'];
+  $domain_activity = strtolower($result['domain_activity']);
+  $contact = $result['contact'];
+  $phone = $result['phone'];
+  $mail = $result['mail'];
+  $web = $result['web'];
 } else {
   $valid = false;
-  $errors['id'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez spécifier une image à modifier !!!";
+  array_push($errors, "Vous devez spécifier une image à supprimer !");
 }
 if ($_POST) {
   $valid = true;
@@ -46,13 +45,13 @@ if ($_POST) {
     $id2 = $_POST['id'];
   } else {
     $valid = false;
-    $errors['id_post'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez remplir l'id !!!</div>";
+    array_push($errors, "Vous devez donner un identifiant (id) !");
   }
   if (isset($_POST['title']) && !empty(trim($_POST['title']))) {
     $title = $_POST['title'];
   } else {
     $valid = false;
-    $error['title'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer l'adresse de l'entreprise !!!</div>";
+    array_push($errors, "Vous devez indiquer le nom de l'entreprise !");
   }
   if (isset($_POST['number_street']) && !empty(trim($_POST['number_street']))) {
     $number_street = $_POST['number_street'];
@@ -63,19 +62,19 @@ if ($_POST) {
     $street = $_POST['street'];
   } else {
     $valid = false;
-    $errors['street'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer l'adresse de l'entreprise !!!</div>";
+    array_push($errors, "Vous devez indiquer la rue de l'entreprise !");
   }
   if (isset($_POST['postal_code']) && !empty(trim($_POST['postal_code']))) {
     $postal_code= $_POST['postal_code'];
   } else {
     $valid = "N/C";
-    $errors['postal_code'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le code postal !!!</div>";
+    array_push($errors, "Vous devez indiquer le code postal de l'entreprise !");
   }
   if (isset($_POST['city']) && !empty(trim($_POST['city']))) {
     $city = $_POST['city'];
   } else {
     $valid = false;
-    $errors['city'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer la ville !!!</div>";
+    array_push($errors, "Vous devez indiquer la ville de l'entreprise !");
   }
   if (isset($_POST['activity']) && !empty(trim($_POST['activity']))) {
     $activity = $_POST['activity'];
@@ -86,13 +85,13 @@ if ($_POST) {
     $domain_activity = $_POST['domain_activity'];
   } else {
     $valid = false;
-    $errors['domain_activity'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le domaine d'activité !!!</div>";
+    array_push($errors, "Vous devez indiquer le domaine d'activité de l'entreprise !");
   }
   if (isset($_POST['image2']) && !empty(trim($_POST['image2']))) {
     $image = $_POST['image2'];
   } else {
     $valid = false;
-    $errors['image'] = "<div class='alert alert-danger text-center' role='alert'>Vous ne pouvez pas enlever l'image !!!</div>";
+    array_push($errors, "Vous ne pouvez pas enlever l'image !");
   }
   if (isset($_POST['contact']) && !empty(trim($_POST['contact']))) {
     $contact = $_POST['contact'];
@@ -121,40 +120,15 @@ if ($_POST) {
       exit();
     }
     if ($valid_sql) {
-      $informations['success'] = "<div class='alert alert-success text-center' role='alert'>Entreprise $title modifiée<br /><a class='btn btn-success' href='enterprises.php'>Retour à la liste des entreprises</a></div>";
+      array_push($infos, "Entreprise $title modifiée");
     }
   }
 }
 ?>
 <div class="container-fluid text-center">
   <?php
-  if (isset($informations['success'])) {
-    echo $informations['success'];
-  }
-  if (isset($errors['id'])) {
-    echo $errors['id'];
-  }
-  if (isset($errors['title'])) {
-    echo $errors['title'];
-  }
-  if (isset($errors['id_post'])) {
-    echo $errors['id_post'];
-  }
-  if (isset($errors['street'])) {
-    echo $errors['street'];
-  }
-  if (isset($errors['postal_code'])) {
-    echo $errors['postal_code'];
-  }
-  if (isset($errors['city'])) {
-    echo $errors['city'];
-  }
-  if (isset($errors['domain_activity'])) {
-    echo $errors['domain_activity'];
-  }
-  if (isset($errors['image'])) {
-    echo $errors['image'];
-  }
+  include("../infos.php");
+  include("../errors.php");
   ?>
   <div class="row justify-content-center">
     <div class="col-12">

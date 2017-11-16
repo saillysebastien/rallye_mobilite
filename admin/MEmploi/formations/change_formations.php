@@ -1,7 +1,7 @@
 <?php
 include('../include/header.php');
 
-$informations =[];
+$infos =[];
 $errors = [];
 $valid = true;
 $title = '';
@@ -20,40 +20,40 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
   $sql = sprintf("SELECT * FROM formations WHERE id =%s", $_GET['id']);
-  $result = $db->query($sql);
-  $infos = $result->fetch_assoc();
+  $query = $db->query($sql);
+  $result = $query->fetch_assoc();
 
-  $title = $infos['title'];
-  $image = $infos['image'];
-  $number_street = $infos['number_street'];
-  $street = $infos['street'];
-  $postal_code = $infos['postal_code'];
-  $city = $infos['city'];
-  $contact = $infos['contact'];
-  $mail = $infos['mail'];
-  $web = $infos['web'];
+  $title = $result['title'];
+  $image = $result['image'];
+  $number_street = $result['number_street'];
+  $street = $result['street'];
+  $postal_code = $result['postal_code'];
+  $city = $result['city'];
+  $contact = $result['contact'];
+  $mail = $result['mail'];
+  $web = $result['web'];
 
   if(!empty($phone) && $phone !== "N/C") {
-    $phone = $infos['phone'];
+    $phone = $result['phone'];
   } else {
     $phone = "N/C";
   }
 } else {
   $valid = false;
-  $errors['id'] = "<div class='alert alert-danger text-center' role='alert'>L'identifiant de l'organisme de formation doit être spécifié !!!";
+  array_push($errors, "L'identifiant de l'organisme de formation doit être spécifié !");
 }
 if ($_POST) {
   if (isset($_POST['id']) && !empty(trim($_POST['id']))) {
     $id2 = $_POST['id'];
   } else {
     $valid = false;
-    $errors['id_post'] = "<div class='alert alert-danger text-center role='alert''>Vous devez remplir l'id !!!</div>";
+    array_push($errors, "Vous devez indiquer l'identifiant (id) !");
   }
   if (isset($_POST['title']) && !empty(trim($_POST['title']))) {
     $title = $_POST['title'];
   } else {
     $valid = false;
-    $error['title'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner un nom à l'organisme de formation !!!</div>";
+    array_push($errors, "Vous devez donner un nom à l'organisme de formation !");
   }
   if (isset($_POST['number_street']) && !empty(trim($_POST['number_street']))) {
     $number_street = $_POST['number_street'];
@@ -64,25 +64,25 @@ if ($_POST) {
     $street = $_POST['street'];
   } else {
     $valid = false;
-    $errors['street'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer l'adresse !!!</div>";
+    array_push($errors, "Vous devez indiquer l'adresse de l'organisme de formation !");
   }
   if (isset($_POST['postal_code']) && !empty(trim($_POST['postal_code']))) {
     $postal_code= $_POST['postal_code'];
   } else {
     $valid = false;
-    $errors['postal_code'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le code postal !!!</div>";
+    array_push($errors, "Vous devez indiquer le code postal de l'organisme de formation !");
   }
   if (isset($_POST['city']) && !empty(trim($_POST['city']))) {
     $city = $_POST['city'];
   } else {
     $valid = false;
-    $errors['city'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer la ville !!!</div>";
+    array_push($errors, "Vous devez indiquer la ville de l'organisme de formation !");
   }
   if (isset($_POST['image2']) && !empty(trim($_POST['image2']))) {
     $image = $_POST['image2'];
   } else {
     $valid = false;
-    $errors['image'] = "<div class='alert alert-danger text-center' role='alert'>Vous ne pouvez pas enlever l'image !!!</div>";
+    array_push($errors, "Vous ne pouvez pas enlever l'image !");
   }
   if (isset($_POST['contact']) && !empty(trim($_POST['contact']))) {
     $contact = $_POST['contact'];
@@ -116,44 +116,19 @@ if ($_POST) {
       exit();
     }
     if ($valid_sql) {
-      $informations['success'] = "<div class='alert alert-dark text-center' role='alert'>Organisme de formation $title modifiée <br /><br /><a class='btn btn-success' href='formations.php'>Retour à la liste des organismes de formations</a></div>\n";
+      array_push($infos, "L'organisme de formation $title a été modifié.");
     }
   }
 }
 ?>
 <div class="container-fluid">
   <?php
-  if (isset($informations['success'])) {
-    echo $informations['success'];
-  }
-  if (isset($errors['id'])) {
-    echo $errors['id'];
-  }
-  if (isset($errors['id_post'])) {
-    echo $errors['id_post'];
-  }
-  if (isset($errors['title'])) {
-    echo $errors['title'];
-  }
-  if (isset($errors['street'])) {
-    echo $errors['street'];
-  }
-  if (isset($errors['postal_code'])) {
-    echo $errors['postal_code'];
-  }
-  if (isset($errors['city'])) {
-    echo $errors['city'];
-  }
-  if (isset($errors['domain_activity'])) {
-    echo $errors['domain_activity'];
-  }
-  if (isset($errors['image'])) {
-    echo $errors['image'];
-  }
+  include('../infos.php');
+  include('../errros.php');
   ?>
   <div class="row justify-content-center">
     <div class="col-12">
-      <legend>Modification d'une fiche FORMATION</legend>
+      <h1>Modification d'une fiche FORMATION</h1>
       <form method="post" enctype="multipart/form-data">
 
         <div class="row">
@@ -219,7 +194,7 @@ if ($_POST) {
           <div class="form-check col-6">
             <label class="form-check-label col-12">
               <input type="checkbox" class="form-check-input col-3" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />
-              Cochez ici si vous voulez que cette formation soit affichée!
+              Cochez ici si vous voulez que cette formation soit affichée !
             </label>
           </div>
         </div>
@@ -228,6 +203,4 @@ if ($_POST) {
     </div>
   </div>
 </div>
-<?php
-include('../include/footer.php');
-?>
+<?php include('../include/footer.php');?>

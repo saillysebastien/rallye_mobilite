@@ -14,15 +14,15 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
   $sql = sprintf("SELECT * FROM home WHERE id=%s", $_GET["id"]);
-  $result = $db->query($sql);
-  $infos = $result->fetch_assoc();
+  $query = $db->query($sql);
+  $result = $query->fetch_assoc();
 
-  $image = $infos['image'];
-  $title = $infos['title'];
-  $text = $infos['text'];
+  $image = $result['image'];
+  $title = $result['title'];
+  $text = $result['text'];
 } else {
   $valid = false;
-  $errors['id'] = "<div class='alert alert-danger'>Vous devez spécifier une image à modifier";
+  array_push($errors, "Vous devez spécifier une image à supprimer !");
 }
 if ($_POST) {
   $valid = true;
@@ -30,7 +30,7 @@ if ($_POST) {
     $id = $_POST['id_caroussel'];
   } else {
     $valid = false;
-    $errors['id'] = "<div class='alert alert-danger'>Vous devez remplir l\'id</div>";
+    array_push($errors, "Vous devez indiquer l'Identifiant (id) de l'entreprise !");
   }
   if (isset($_POST['title']) && !empty(trim($_POST['title']))) {
     $title = $_POST['title'];
@@ -53,21 +53,14 @@ if ($_POST) {
       header('Location: error500.html', true, 302);
       exit();
     }
-    $informations['success'] = "<div class='alert alert-success center'>Photo modifiée (id : $id )</div>\n . <br /> . <a class='btn btn-success' href='home.php'>Retour à la liste</a>";
+    array_push($infos, "Photo $title modifiée.");
   }
 }
 ?>
 <div class="container create_home text-center">
   <?php
-  if (isset($informations['success'])) {
-    echo $informations['success'];
-  }
-  if (isset($errors['id'])) {
-    echo $errors['id'];
-  }
-  if (isset($errors['image'])) {
-    echo $errors['image'];
-  }
+  include("../infos.php");
+  include("../errors.php");
   ?>
   <legend>Création pour la rubrique accueil (photos et commentaires)</legend><br />
   <form  method="post" enctype="multipart/form-data" class="home">

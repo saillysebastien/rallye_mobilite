@@ -2,8 +2,8 @@
 include('../include/header.php');
 require('../../../config/connect.php');
 
-$informations = [];
-$error = [];
+$infos = [];
+$errors = [];
 $valid = true;
 $title = '';
 $adresse = '';
@@ -27,28 +27,25 @@ if (isset($_POST['valider'])) {
     $title = $_POST['title'];
   } else {
     $valid = false;
-    $error['title'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le nom de l'organisme</div>";
+    array_push($errors,  "Vous devez indiquer le nom de l'organisme !");
   }
-
   if(!empty($adresse) && $adresse !== "N/C") {
     $adresse = $_POST['adresse'];
   } else {
     $valid = false;
-    $error['adresse'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer l'adresse de l'organisme</div>";
+    array_push($errors, "Vous devez indiquer l'adresse de l'organisme !");
   }
-
   if(!empty($president) && $president !== "N/C") {
     $president = $_POST['president'];
   } else {
     $valid = false;
-    $error['president'] = "<div class='alert alert-danger text-center' role='alert'>Vous avez oublier d'indiquer le président de l'organisme</div>";
+    array_push($errors, "Vous devez indiquer le président !");
   }
-
   if(!empty($director) && $director !== "N/C") {
     $director = $_POST['director'];
   } else {
     $valid = false;
-    $error['director'] = "<div class='alert alert-danger text-center' role='alert'>Vous avez oublier d'indiquer le directeur de l'organisme</div>";
+    array_push($errors, "Vous devez indiquer le directeur !");
   }
 
   if(!empty($vice_director) && $vice_director !== "N/C") {
@@ -78,41 +75,17 @@ if (isset($_POST['valider'])) {
     $valid_sql = mysqli_query($db, $sql);
 
     if ($valid_sql) {
-      $informations['success'] = "<div class='alert alert-info text-center' role='alert'>Vos informations ont bien été inscrites dans la base de donnée.</div>
-      <div class='text-center'>
-      <a class='btn btn-success' href='contact.php'>Retour à la liste des contacts</a>
-      <a class='btn btn-info' href='create_contact.php'>Créer une autre contact</a></div>";
+      array_push($informations, "Le contact $title a été créé et inscrit dans la base de données.");
     }
   } else {
-    $error['valid'] = "<div class='alert alert-warning text-center' role='alert'>Une erreur est survenue lors du remplissage du formulaire !!!<div>";
+    array_push($errors, "Une erreur est survenue lors du remplissage du formulaire.");
   }
 }
 ?>
-
 <div class="container-fluid text-center">
-
   <?php
-
-  if (isset($informations['success'])) {
-    echo $informations['success'];
-  }
-
-  if (isset($error['title'])) {
-    echo $error['title'];
-  }
-
-  if (isset($error['adresse'])) {
-    echo $error['adresse'];
-  }
-
-  if (isset($error['president'])) {
-    echo $error['president'];
-  }
-
-  if (isset($error['director'])) {
-    echo $error['director'];
-  }
-
+  include("../infos.php");
+  include("../errors.php")
   ?>
   <legend>Création d'une fiche contact</legend>
 
@@ -159,12 +132,7 @@ if (isset($_POST['valider'])) {
         Cochez ici si vous voulez l'afficher sur la page contact
       </label>
     </div>
-
     <button type="submit" name="valider" class="btn btn-primary">Valider</button>
-
   </form>
 </div>
-
-<?php
-include('../include/footer.php');
-?>
+<?php include('../include/footer.php');?>
