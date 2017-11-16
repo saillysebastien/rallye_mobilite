@@ -6,10 +6,6 @@ require('../../../config/connect.php');
 $errors = [];
 $informations = [];
 
-$sql_entreprises = $db->query("SELECT * FROM entreprises ORDER BY domain_activity");
-$sql_formations = $db->query("SELECT * FROM formations ORDER BY title");
-$sql_upload = $db->query("SELECT * FROM upload ORDER BY title");
-
 ?>
 
 <div class="container-fluid text-center">
@@ -19,15 +15,15 @@ $sql_upload = $db->query("SELECT * FROM upload ORDER BY title");
       <button id="filter_home" class="btn btn-info">Page "Accueil"</button>
       <button id="filter_enterprises" class="btn btn-dark">Page "Entreprises"</button>
       <button id="filter_formations" class="btn btn-info">Page "Formations"</button>
-      <button id="filter_application" class="btn btn-info">Page "Application"</button>
-      <button id="filter_anyplace" class="btn btn-dark">Dans aucune page</button>
+      <button id="filter_application" class="btn btn-dark">Page "Application"</button>
+      <button id="filter_anyplace" class="btn btn-info">Dans aucune page</button>
     </div>
   </div>
 
   <div id="home" style="display:none;" class="animated slideInLeft"><br />
     <div>
       <h1>ATTENTION</h1>
-      Ne pas supprimer l'id numéro 1 sous peine de ne plus voir apparaître le caroussel de photos.<br />
+      Ne pas supprimer l'id numéro 1 sous peine de voir disparaitre le caroussel de photos.<br />
       Si vous modifiez l'id numéro 1 pour qu'il apparaisse plus loin ou plus tard n'oubliez pas d'en mettre un autre sur cet identifiant.<br />
     </div>
     <div class="row justify-content-center">

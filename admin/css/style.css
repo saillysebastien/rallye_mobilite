@@ -1,0 +1,57 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-size: 120%;
+  background: #F8F8FF;
+}
+
+/*login.php et register.php*/
+.header {
+  width: 30%;
+  margin: 50px auto 0px auto;
+  color: white;
+  background: #5F9EA0;
+  border: 1px solid #B0C4DE;
+  border-bottom: none;
+  border-radius: 10px 10px 0px 0px;
+  padding: 20px;
+}
+
+form {
+  width: 30%;
+  margin: 0px auto;
+  padding: 20px;
+  border: 1px solid #B0C4DE;
+  background: white;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.form-group {
+  margin: 10px 0px 10px 0px;
+}
+
+.form-group label {
+  display: block;
+  margin: 3px;
+}
+
+.form-group input {
+  height: 30px
+  width: 93%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.btn {
+  border-radius: 5px;
+}
+
+.error {
+  border-radius: 5px;
+  border: 1px solid #a94442;
+}
