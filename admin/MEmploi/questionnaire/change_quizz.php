@@ -1,7 +1,7 @@
 <?php
 include('../include/header.php');
 
-$informations = [];
+$infos = [];
 $errors = "";
 $valid = true;
 $title = "";
@@ -13,35 +13,35 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
   $sql = sprintf("SELECT * FROM quizz WHERE id =%s", $_GET['id']);
-  $result = $db->query($sql);
-  $infos = $result->fetch_assoc();
+  $query = $db->query($sql);
+  $result = $query->fetch_assoc();
 
-  $title = $infos['title'];
-  $question = $infos['question'];
-  $index = $infos['indice'];
-  $response = $infos['response'];
+  $title = $result['title'];
+  $question = $result['question'];
+  $index = $result['indice'];
+  $response = $result['response'];
 } else {
   $valid = false;
-  $errors['id'] = "<div class='alert alert-danger' role='alert'>L'identifiant du rébus à modifier doit être spécifié !!!";
+  array_push($errors, "L'identifiant du rébus doit être spécifié !");
 }
 if (isset($_POST['valider'])) {
   if (isset($_POST['title']) && !empty(trim($_POST['title']))) {
     $title = $_POST['title'];
   } else {
     $valid = false;
-    $errors['title'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner un nom au Qui est-ce? !!!</div>";
+    array_push($errors, "Vous devez spécifier un nom au quizz !");
   }
   if (isset($_POST['question']) && !empty(trim($_POST['question']))) {
     $question = $_POST['question'];
   } else {
     $valid = false;
-    $errors['question'] = "<div class='alert alert-danger text-center role='alert''>Vous devez indiquer la question !!!</div>";
+    array_push($errors, "Vous devez indiquer la question !");
   }
   if (isset($_POST['response']) && !empty(trim($_POST['response']))) {
     $response = $_POST['response'];
   } else {
     $valid = false;
-    $errors['response'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner au moins indiquer une réponse !!!</div>";
+    array_push($errors, "Vous devez donner la réponse !");
   }
   if (isset($_POST['index']) && !empty(trim($_POST['index']))) {
     $index = $_POST['index'];
@@ -57,28 +57,15 @@ if (isset($_POST['valider'])) {
       exit();
     }
     if ($valid_sql) {
-      $informations['success'] = "<div class='alert alert-dark text-center' role='alert'>Quizz Qui est-ce ? $title modifié";
+      array_push($infos, "Quizz $title modifié");
     }
   }
 }
 ?>
 <div class="container text-center">
   <?php
-  if (isset($errors['id'])) {
-    echo $errors['id'];
-  }
-  if (isset($informations['success'])) {
-    echo $informations['success'];
-  }
-  if (isset($errors['title'])) {
-    echo $errors['title'];
-  }
-  if (isset($errors['question'])) {
-    echo $errors['question'];
-  }
-  if (isset($errors['response'])) {
-    echo $errors['response'];
-  }
+  include("../infos.php");
+  include("../errors.php");
 ?>
   <h1 class="text-center"> Modification du quizz <?= $title ?></h1>
   <form action="#" method="post" enctype="multipart/form-data">
