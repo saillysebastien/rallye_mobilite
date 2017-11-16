@@ -1,7 +1,5 @@
 <?php
-
 include('../include/header.php');
-require('../../../config/connect.php');
 ?>
 <div class='container-fluid text-center'>
   <div class='row justify-content-center'>
@@ -24,18 +22,14 @@ require('../../../config/connect.php');
         </tr>
       </thead>
       <tbody>
-
-
         <?php
         $sql = $db->query("SELECT * FROM entreprises ORDER BY domain_activity");
-
         while($row = $sql->fetch_assoc()){
           if ($row['done'] === "1") {
             $row['done'] =  "Actif";
           } else {
             $row['done'] = "Inactif";
           }
-
           printf("
           <td class = 'col-1'> %d </td>
           <td class = 'col-1'> %s </td>
@@ -69,11 +63,9 @@ require('../../../config/connect.php');
         );
       }
       ?>
-
     </tbody>
   </div>
 </div>
-
 <?php
 include('../include/footer.php');
 ?>

@@ -1,12 +1,9 @@
 <?php
-
 include('../include/header.php');
-require('../../../config/connect.php');
 
 $errors = [];
 $informations = [];
 $valid = true;
-
 $id = null;
 $title = '';
 
@@ -16,13 +13,11 @@ if (isset($_GET['id']) && !empty(trim($_GET['id'])) && $_GET['id'] != 0) {
   $valid = false;
   $errors['id'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez spécifier un contact à supprimer</div>";
 }
-
 if ($valid) {
   $sql = sprintf("SELECT * FROM contact WHERE id=%s", $_GET["id"]);
   $result = $db->query($sql);
   $infos = $result->fetch_assoc();
   $title = $infos['title'];
-
   try {
     if ($result) {
       $request = sprintf("DELETE FROM contact WHERE id ='%s'", $id);
@@ -36,18 +31,15 @@ if ($valid) {
 }
 ?>
 <div class="container-fluid text-center">
-
   <?php
   if (isset($informations['delete'])) {
     echo $informations['delete'];
   }
-
   if (isset($errors['id'])) {
     echo $errors['id'];
   }
   ?>
 </div>
-
 <?php
 include('../include/footer.php');
 ?>

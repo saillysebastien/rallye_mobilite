@@ -1,7 +1,6 @@
 <?php
 
 include('../include/header.php');
-require('../../../config/connect.php');
 
 $sql = $db->query("SELECT * FROM formations ORDER BY title");
 
@@ -25,14 +24,12 @@ printf("
 </tr>
 <tbody>
 ");
-
 while($row = $sql->fetch_assoc()){
   if ($row['done'] === "1") {
     $row['done'] =  "Actif";
   } else {
     $row['done'] = "Inactif";
   }
-
   printf("
   <td class = 'col-1'> %d </td>
   <td class = 'col-1' style='height:60px; width:60px;'><img class = 'img img-fluid' src = '../images/%s'></td>
@@ -63,11 +60,9 @@ while($row = $sql->fetch_assoc()){
 );
 }
 ?>
-
-    </tbody>
-  </div>
+</tbody>
 </div>
-
+</div>
 <?php
 include('../include/footer.php');
 ?>

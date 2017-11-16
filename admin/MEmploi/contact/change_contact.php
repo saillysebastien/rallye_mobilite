@@ -1,7 +1,5 @@
 <?php
-
 include('../include/header.php');
-require('../../../config/connect.php');
 
 $informations = [];
 $error = [];
@@ -35,71 +33,59 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $valid = false;
   $errors['id'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez spécifier un contact à modifier !!!";
 }
-
 if ($_POST) {
-
   if (isset($_POST['id']) && !empty(trim($_POST['id']))) {
     $id2 = $_POST['id'];
   } else {
     $valid = false;
     $errors['id_post'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez remplir l'id !!!</div>";
   }
-
   if (isset($_POST['title']) && !empty(trim($_POST['title']))) {
     $title = $_POST['title'];
   } else {
     $valid = false;
     $error['title'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer l'adresse de l'entreprise !!!</div>";
   }
-
   if (isset($_POST['adresse']) && !empty(trim($_POST['adresse']))) {
     $adresse = $_POST['adresse'];
   } else {
     $valid = false;
     $error['adresse'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer l'adresse de l'organisme !!!</div>";
   }
-
   if (isset($_POST['president']) && !empty(trim($_POST['president']))) {
     $president = $_POST['president'];
   } else {
     $valid = false;
     $error['president'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le président de l'organisme !!!</div>";
   }
-
   if (isset($_POST['director']) && !empty(trim($_POST['director']))) {
     $director = $_POST['director'];
   } else {
     $valid = false;
     $error['director'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le directeur de l'organisme !!!</div>";
   }
-
   if (isset($_POST['vice_director']) && !empty(trim($_POST['vice_director']))) {
     $vice_director = $_POST['vice_director'];
   } else {
     $vice_director = "N/C";
   }
-
   if (isset($_POST['phone']) && !empty(trim($_POST['phone']))) {
     $phone = $_POST['phone'];
   } else {
     $phone = "N/C";
   }
-
   if (isset($_POST['mail']) && !empty(trim($_POST['mail']))) {
     $mail = $_POST['mail'];
   } else {
     $mail = "N/C";
   }
-
   if (isset($_POST['done'])) {
     $done = true;
   }
-
   if ($valid) {
     try {
       $sql = sprintf("UPDATE contact SET id='$id2', title='$title', president='$president', adresse='$adresse', director='$director', vice_director='$vice_director', phone='$phone', mail='$mail', done='$done' WHERE id='%s'", $_GET['id']);
       $valid_sql = mysqli_query($db, $sql);
-
     } catch (Exception $e) {
       header('Location: error500.html', true, 302);
       exit();
@@ -110,30 +96,23 @@ if ($_POST) {
   }
 }
 ?>
-
 <div class="container-fluid text-center">
   <?php
-
   if (isset($informations['success'])) {
     echo $informations['success'];
   }
-
   if (isset($errors['id'])) {
     echo $errors['id'];
   }
-
   if (isset($errors['title'])) {
     echo $errors['title'];
   }
-
   if (isset($errors['adresse'])) {
     echo $errors['adresse'];
   }
-
   if (isset($errors['president'])) {
     echo $errors['president'];
   }
-
   if (isset($errors['director'])) {
     echo $errors['director'];
   }
@@ -190,9 +169,7 @@ if ($_POST) {
             Cochez ici si vous voulez l'afficher sur la page contact
           </label>
         </div>
-
         <button type="submit" name="valider" class="btn btn-primary">Valider</button>
-
       </form>
     </div>
   </div>

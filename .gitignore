@@ -3,3 +3,4 @@ config/db_home.php
 img/
 admin/MEmploi/images/
 admin/MEmploi/questionnaire/images/
+admin/MEmploi/config/db_home.php

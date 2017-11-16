@@ -1,4 +1,4 @@
-<?php include('server.php') ?>
+<?php include('MEmploi/include/server.php'); ?>
 <!DOCTYPE html>
 
 <html lang="fr">

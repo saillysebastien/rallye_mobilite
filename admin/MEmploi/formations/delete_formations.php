@@ -1,12 +1,10 @@
 <?php
 
-require('../../../config/connect.php');
 include('../include/header.php');
 
 $errors = [];
 $informations = [];
 $valid = true;
-
 $id = null;
 $image = null;
 $title = '';
@@ -24,7 +22,6 @@ if ($valid) {
   $infos= $result->fetch_assoc();
   $image = $infos['image'];
   $title = $infos['title'];
-
   try {
     $delete = unlink ("../images/$image");
     if ($delete) {
@@ -41,18 +38,13 @@ if ($valid) {
 }
 ?>
 <div class="container-fluid text-center">
-
   <?php
   if (isset($informations['delete'])) {
     echo $informations['delete'];
   }
-
   if (isset($errors['id'])) {
     echo $errors['id'];
   }
   ?>
 </div>
-
-<?php
-include('../include/footer.php');
-?>
+<?php include('../include/footer.php');?>

@@ -1,23 +1,10 @@
 <?php
-require('../../../config/db_home.php');
 include('../include/header.php');
-
-try {
-  $db = new mysqli(
-    $db_host,
-    $db_user,
-    $db_password,
-    $db_base
-  );
-}
-catch (Exception $e) {
-  die('Erreur : ' . $e->getMessage());
-}
 
 $done = false;
 $text = '';
 $title = '';
-$informations =[];
+$informations = [];
 
 if (isset($_POST['upload'])) {
   $image = $_FILES['image'];
@@ -26,10 +13,8 @@ if (isset($_POST['upload'])) {
   $imageSize = $_FILES['image']['size'];
   $imageError = $_FILES['image']['error'];
   $imageType = $_FILES['image']['type'];
-
   $imageExt = explode('.', $imageName);
   $imageActualExt = strtolower(end($imageExt));
-
   $allowed = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
 
   if (in_array($imageActualExt, $allowed)) {
@@ -45,14 +30,12 @@ if (isset($_POST['upload'])) {
           }
           $sql = "INSERT INTO home (title, image, text, done) VALUES ('$title', '$imageName', '$text', '$done')";
           $valid = mysqli_query($db, $sql);
-
           if ($valid) {
             $informations['success'] = "
             <div class='alert alert-success center'>Vos informations ont bien été inscrit dans la base de donnée et l\'image uploadé dans le dossier</div>\n
             <br />
             <a class='btn btn-success' href='home.php'>Retour à la liste</a>";
           }
-
         } else {
           echo "Une erreur est survenue!";
         }
@@ -73,7 +56,4 @@ if (isset($_POST['upload'])) {
     echo $informations['success'];
   } ?>
 </div>
-
-<?php
-include('../include/footer.php');
-?>
+<?php include('../include/footer.php');?>

@@ -1,12 +1,10 @@
 <?php
-
 include('../include/header.php');
 require('../../../config/connect.php');
 
 $informations = [];
 $error = [];
 $valid = true;
-
 $title = '';
 $adresse = '';
 $president = '';

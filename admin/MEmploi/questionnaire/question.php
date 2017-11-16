@@ -1,14 +1,10 @@
 <?php
-
 include('../include/header.php');
 require('../../../config/connect.php');
-
 $three = '';
 $four = '';
 $five = '';
-
 ?>
-
 <div class="container-fluid text-center">
   <h1>Listes des questions pour l'application</h1>
   <div class="btn-group">

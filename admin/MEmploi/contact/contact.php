@@ -1,9 +1,6 @@
 <?php
-
 include('../include/header.php');
-require('../../../config/connect.php');
 ?>
-
 <div class='container text-center'>
   <div class='row justify-content-center'>
     <h1>Liste des CONTACTS</h1>
@@ -23,17 +20,14 @@ require('../../../config/connect.php');
         </tr>
       </thead>
       <tbody>
-
         <?php
         $sql = $db->query("SELECT * FROM contact ORDER BY id");
-
         while($row = $sql->fetch_assoc()){
           if ($row['done'] === "1") {
             $row['done'] =  "Actif";
           } else {
             $row['done'] = "Inactif";
           }
-
           printf("
           <tr>
           <td class = 'col-1'> %d </td>
@@ -62,11 +56,9 @@ require('../../../config/connect.php');
         );
       }
       ?>
-
     </tbody>
   </div>
 </div>
-
 <?php
 include('../include/footer.php');
 ?>

@@ -1,7 +1,5 @@
 <?php
-
 include('../include/header.php');
-require('../../../config/connect.php');
 
 $id = null;
 $valid = true;
@@ -16,14 +14,12 @@ if (isset($_GET['id']) && !empty(trim($_GET['id'])) && $_GET['id'] != 0) {
   $valid = false;
   $errors['id'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez spécifier une entreprise à supprimer</div>";
 }
-
 if ($valid) {
   $sql = sprintf("SELECT * FROM entreprises WHERE id=%s", $_GET["id"]);
   $result = $db->query($sql);
   $infos = $result->fetch_assoc();
   $image = $infos['image'];
   $title = $infos['title'];
-
   try {
     $delete = unlink ("../images/$image");
     if ($delete) {
@@ -38,18 +34,15 @@ if ($valid) {
 }
 ?>
 <div class="container-fluid text-center">
-
   <?php
   if (isset($informations['delete'])) {
     echo $informations['delete'];
-  }
 
   if (isset($errors['id'])) {
     echo $errors['id'];
   }
   ?>
 </div>
-
 <?php
 include('../include/footer.php');
 ?>

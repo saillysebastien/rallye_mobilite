@@ -1,7 +1,10 @@
 <?php
 
+if (empty($_SESSION['username'])) {
+  session_start();
+}
 // Connexion à la base de données
-require('../config/connect.php');
+include('../config/connect.php');
 
 $username = '';
 $errors = [];
@@ -35,7 +38,7 @@ if (isset($_POST['register'])) {
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     mysqli_query($db, $sql);
     $informations['success'] = "<div class='alert alert-success'>Vous êtes bien enregistré il ne vous reste plus qu'à vous connecter<div>";
-    header('location: login.php');
+    header('location: ../../login.php');
   }
 }
 
@@ -73,6 +76,6 @@ if (isset($_POST['login'])) {
 if (isset($_GET['logout'])) {
   session_destroy();
   unset($_SESSION['username']);
-  header('Location: login.php');
+  header('Location: ../../login.php');
 }
 ?>
