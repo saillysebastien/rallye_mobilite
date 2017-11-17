@@ -1,6 +1,5 @@
 <?php include('MEmploi/include/server.php'); ?>
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -10,7 +9,6 @@
   <link rel ="stylesheet" href="../../../assets/vendor/bootstrap4/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-
 <body>
   <div class="container text-center">
     <div class="header">
@@ -38,5 +36,5 @@
       </div>
     </form>
   </div>
-
 </body>
+<?php include("include/footer.php"); ?>

@@ -4,10 +4,7 @@ if (empty($_SESSION['username'])) {
   header('location: login.php');
 }
 ?>
-
-
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -17,7 +14,6 @@ if (empty($_SESSION['username'])) {
   <link rel ="stylesheet" href="../../../assets/vendor/bootstrap4/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-
 <body>
   <div class="container text-center">
     <div class="header">
@@ -49,5 +45,5 @@ if (empty($_SESSION['username'])) {
       </p>
     </form>
   </div>
-
 </body>
+<?php include("include/footer.php"); ?>

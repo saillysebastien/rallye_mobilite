@@ -1,6 +1,5 @@
 <?php
 include('../include/header.php');
-require('../../../config/connect.php');
 $three = '';
 $four = '';
 $five = '';

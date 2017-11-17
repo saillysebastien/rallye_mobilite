@@ -1,12 +1,4 @@
-<?php
-
-include('../include/header.php');
-require('../../../config/connect.php');
-
-$errors = [];
-$informations = [];
-
-?>
+<?php include('../include/header.php');?>
 
 <div class="container-fluid text-center">
   <div class="row justify-content-center">
@@ -114,7 +106,7 @@ $informations = [];
     );
   }
   ?>
-  </div>
+</div>
 </div>
 
 <div id="formations" style="display:none;" class="animated slideInLeft"><br />
@@ -159,7 +151,7 @@ $informations = [];
     );
   }
   ?>
-  </div>
+</div>
 </div>
 
 <div id="application" style="display:none;" class="animated slideInLeft"><br />
@@ -204,7 +196,7 @@ $informations = [];
     );
   }
   ?>
-  </div>
+</div>
 </div>
 
 <div id="anyplace" style="display:none;" class="animated slideInLeft"><br />
@@ -248,19 +240,12 @@ $informations = [];
     );
   }
   ?>
-  </div>
 </div>
-
-
 </div>
-
-<?php
-include('../include/footer.php');
-?>
-
+</div>
+<?php include('../include/footer.php');?>
 
 <script>
-
 $("#filter_home").click(function() {
   $("#enterprises").css("display", "none");
   $("#formations").css("display", "none");
@@ -300,5 +285,4 @@ $("#filter_anyplace").click(function() {
   $("#formations").css("display", "none");
   $("#anyplace").show();
 });
-
 </script>

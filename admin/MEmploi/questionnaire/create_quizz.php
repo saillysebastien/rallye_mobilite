@@ -1,8 +1,8 @@
 <?php
 include('../include/header.php');
 
-$informations = [];
-$error = "";
+$infos = [];
+$errors = "";
 $valid = true;
 $title = "";
 $question = "";

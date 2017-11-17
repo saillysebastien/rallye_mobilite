@@ -1,8 +1,8 @@
 <?php
 include('../include/header.php');
 
-$informations = [];
-$error = "";
+$infos = [];
+$errors = [];
 $valid = true;
 $title = "";
 $one = "";
@@ -28,31 +28,31 @@ if (isset($_POST['valider'])) {
     $title = strtolower($_POST['title']);
   } else {
     $valid = false;
-    $error['title'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer le nom du rébus</div>";
+    array_push($errors, "Vous devez indiquer le nom du rébus !");
   }
   if(!empty($one)) {
     $one = $_POST['one'];
   } else {
     $valid = false;
-    $error['one'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer au moins 2 éléments dans un rébus !!!</div>";
+    array_push($errors, "Vous devez indiquer au moins 2 indices dans le rébus !");
   }
   if(!empty($two)) {
     $two = $_POST['two'];
   } else {
     $valid = false;
-    $error['two'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer au moins 2 éléments dans un rébus !!!</div>";
+    array_push($errors, "Vous devez indiquer au moins 2 indices dans le rébus !");
   }
   if(!empty($my_all)) {
     $my_all = $_POST['my_all'];
   } else {
     $valid = false;
-    $error['my_all'] = "<div class='alert alert-danger text-center' role='alert'>Vous devez indiquer ce qu'est mon tout !!!</div>";
+    array_push($errors, "Vous devez indiquer ce Qu'est le tout !");
   }
   if(!empty($response)) {
     $response = strtolower($_POST['response']);
   } else {
     $valid = false;
-    $error['response'] = "<div class='alert alert-danger text-center' role='alert'>Le rébus doit être composé d'une réponse !!!</div>";
+    array_push($errors, "Vous devez indiquer la réponse du rébus !");
   }
   if(!empty($three)) {
     $three = $_POST['three'];
@@ -78,33 +78,17 @@ if (isset($_POST['valider'])) {
     $sql = "INSERT INTO rebus (name, one, two, three, four, five, indice, my_all, response) VALUES ('$title', '$one', '$two', '$three', '$four', '$five', '$index', '$my_all', '$response')";
     $valid_sql = mysqli_query($db, $sql);
     if ($valid_sql) {
-      $informations['success'] = "<div class='alert alert-info text-center' role='alert'>Le rébus $title est créé et les informations ont bien été inscrites dans la base de données.</div>";
+      array_push($infos, "Le rébus $title est créé et les informations ont été inscrites dans la base de données.");
     }
   } else {
-    $error['valid'] = "<div class='alert alert-warning text-center' role='alert'>Une erreur est survenue lors du remplissage du formulaire !!!<div>";
+    array_push($errors, "Une erreur est survenue lors du remplissage du formulaire !");
   }
 }
 ?>
 <div class="container text-center">
   <?php
-  if (isset($informations['success'])) {
-    echo $informations['success'];
-  }
-  if (isset($error['title'])) {
-    echo $error['title'];
-  }
-  if (isset($error['one'])) {
-    echo $error['one'];
-  }
-  if (isset($error['two'])) {
-    echo $error['two'];
-  }
-  if (isset($error['my_all'])) {
-    echo $error['my_all'];
-  }
-  if (isset($error['response'])) {
-    echo $error['response'];
-  }
+  include("../infos.php");
+  include("../errors.php");
   ?>
   <h1 class="text-center"> Création d'un rébus </h1>
   <form action="#" method="post" enctype="multipart/form-data">

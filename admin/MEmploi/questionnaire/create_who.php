@@ -1,8 +1,8 @@
 <?php
 include('../include/header.php');
 
-$informations = [];
-$error = [];
+$infos = [];
+$errors = [];
 $valid = true;
 $title = '';
 $image = '';
@@ -35,19 +35,19 @@ if (isset($_POST['valider'])) {
             $title = strtolower($_POST['title']);
           } else {
             $valid = false;
-            $error['title'] = "<div class='alert alert-danger' role='alert'>Vous devez indiquer un titre pour ce Qui est-ce? !!!</div>";
+            array_push($errors, "Vous devez indiquer un titre !");
           }
           if(!empty($question)) {
             $question = $_POST['question'];
           } else {
             $valid = false;
-            $error['question'] = "<div class='alert alert-danger' role='alert'>Vous devez indiquer la question !!!</div>";
+            array_push($errors, "Vous devez indiquer la question !");
           }
           if(!empty($response)) {
             $response = strtolower($_POST['response']);
           } else {
             $valid = false;
-            $error['response'] = "<div class='alert alert-danger' role='alert'>Vous devez indiquer la réponse !!!</div>";
+            array_push($errors, "Vous devez indiquer la réponse !");
           }
           if(!empty($index)) {
             $index = $_POST['index'];
@@ -59,52 +59,27 @@ if (isset($_POST['valider'])) {
             $valid_sql = mysqli_query($db, $sql);
 
             if ($valid_sql) {
-              $informations['success'] = "<div class='alert alert-black' role='alert'>Le questionnaire $title a été créé, les informations ont bien été inscrites dans la base de données et l'image uploadée dans le dossier 'images'.</div>";
+              array_push($infos, "Le questionnaire $title a été créé, les informations inscrites dans la base de donéées et l'image uploadée dans le dossier.");
             }
           }
         } else {
-          $error['upload'] = "<div class='alert alert-warning' role='alert'>Une erreur est survenue !!!<div>";
+          array_push($errors, "Une erreur est survenue !");
         }
       } else {
-        $error['size'] = "<div class='alert alert-warning' role='alert'>La taille de l'image est trop volumineuse !!!<div>";
+        array_push($errors, "La taille de l'image est trop volumineuse !");
       }
     } else {
-      $error['download'] = "<div class='alert alert-warning' role='alert'>Une erreur est survenue lors du téléchargement !!!<div>";
+      array_push($errors, "Une erreur est survenue lors du téléchargement !");
     }
   } else {
-    $error['format'] = "<div class='alert alert-warning' role='alert'>Votre fichier n'est pas au format image souhaité !!!<div>";
+    array_push($errors, "Votre fichier n'est pas au format image souhaité !");
   }
 }
 ?>
 <div class="container-fluid text-center">
   <?php
-  if (isset($informations['success'])) {
-    echo $informations['success'];
-  }
-  if (isset($error['valid'])) {
-    echo $error['valid'];
-  }
-  if (isset($error['upload'])) {
-    echo $error['upload'];
-  }
-  if (isset($error['size'])) {
-    echo $error['size'];
-  }
-  if (isset($error['download'])) {
-    echo $error['download'];
-  }
-  if (isset($error['format'])) {
-    echo $error['format'];
-  }
-  if (isset($error['title'])) {
-    echo $error['title'];
-  }
-  if (isset($error['question'])) {
-    echo $error['question'];
-  }
-  if (isset($error['response'])) {
-    echo $error['response'];
-  }
+  include("../infos.php");
+  include("../errors.php");
    ?>
    <h1>Creation d'un quizz Qui est-ce?</h1>
    <form action="#" method="post" enctype="multipart/form-data">

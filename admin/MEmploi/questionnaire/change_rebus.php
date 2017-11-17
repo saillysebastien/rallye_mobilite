@@ -1,8 +1,8 @@
 <?php
 include('../include/header.php');
 
-$informations = [];
-$errors = "";
+$infos = [];
+$errors = [];
 $valid = true;
 $title = "";
 $one = "";
@@ -18,52 +18,52 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
   $sql = sprintf("SELECT * FROM rebus WHERE id =%s", $_GET['id']);
-  $result = $db->query($sql);
-  $infos = $result->fetch_assoc();
+  $query = $db->query($sql);
+  $result = $query->fetch_assoc();
 
-  $title = $infos['name'];
-  $one = $infos['one'];
-  $two = $infos['two'];
-  $three = $infos['three'];
-  $four = $infos['four'];
-  $five = $infos['five'];
-  $index = $infos['indice'];
-  $response = $infos['response'];
-  $my_all = $infos['my_all'];
+  $title = $result['name'];
+  $one = $result['one'];
+  $two = $result['two'];
+  $three = $result['three'];
+  $four = $result['four'];
+  $five = $result['five'];
+  $index = $result['indice'];
+  $response = $result['response'];
+  $my_all = $result['my_all'];
 } else {
   $valid = false;
-  $errors['id'] = "<div class='alert alert-danger' role='alert'>L'identifiant du rébus à modifier doit être spécifié !!!";
+  array_push($errors, "L'identifiant (id) du rébus doit être spécifié !");
 }
 if (isset($_POST['valider'])) {
   if (isset($_POST['title']) && !empty(trim($_POST['title']))) {
     $title = $_POST['title'];
   } else {
     $valid = false;
-    $errors['title'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner un nom au rébus !!!</div>";
+    array_push($errors, "Vous devez donner un nom au rébus !");
   }
   if (isset($_POST['one']) && !empty(trim($_POST['one']))) {
     $one = $_POST['one'];
   } else {
     $valid = false;
-    $errors['one'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner au moins 2 indices !!!</div>";
+    array_push($errors, "Vous devez donner au moins 2 indices !");
   }
   if (isset($_POST['two']) && !empty(trim($_POST['two']))) {
     $two = $_POST['two'];
   } else {
     $valid = false;
-    $errors['two'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner au moins 2 indices !!!</div>";
+    array_push($errors, "Vous devez donner au moins 2 indices !");
   }
   if (isset($_POST['my_all']) && !empty(trim($_POST['my_all']))) {
     $my_all = $_POST['my_all'];
   } else {
     $valid = false;
-    $errors['my_all'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner ce qu'est le tout pour le rébus !!!</div>";
+    array_push($errors, "Vous devez donner ce qu'est le tout pour le rébus !");
   }
   if (isset($_POST['response']) && !empty(trim($_POST['response']))) {
     $response = $_POST['response'];
   } else {
     $valid = false;
-    $errors['response'] = "<div class='alert alert-danger text-center role='alert''>Vous devez donner au moins indiquer une réponse !!!</div>";
+    array_push($errors, "Vous devez donner la réponse du rébus !");
   }
   if (isset($_POST['three']) && !empty(trim($_POST['three']))) {
     $three = $_POST['three'];
@@ -95,34 +95,15 @@ if (isset($_POST['valider'])) {
       exit();
     }
     if ($valid_sql) {
-      $informations['success'] = "<div class='alert alert-dark text-center' role='alert'>Rébus $title modifié";
+      array_push($infos, "Rébus $title modifié");
     }
   }
 }
 ?>
 <div class="container text-center">
 <?php
-if (isset($informations['success'])) {
-  echo $informations['success'];
-}
-if (isset($errors['id'])) {
-  echo $errors['id'];
-}
-if (isset($errors['title'])) {
-  echo $errors['title'];
-}
-if (isset($errors['one'])) {
-  echo $errors['one'];
-}
-if (isset($errors['two'])) {
-  echo $errors['two'];
-}
-if (isset($errors['my_all'])) {
-  echo $errors['my_all'];
-}
-if (isset($errors['response'])) {
-  echo $errors['response'];
-}
+include('../infos.php');
+include('../errors.php');
  ?>
 <h1 class="text-center"> Modification du rébus <?= $title ?> </h1>
 <form action="#" method="post" enctype="multipart/form-data">
