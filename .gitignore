@@ -1,6 +1,7 @@
 vendor/
 config/db_home.php
 img/
-admin/MEmploi/images/
-admin/MEmploi/questionnaire/images/
-admin/MEmploi/config/db_home.php
+admin/www/images/
+admin/www/questionnaire/images/
+admin/www/config/db_home.php
+admin/apllication/config/db_home.php

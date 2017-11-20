@@ -65,7 +65,7 @@ if (isset($_POST['login'])) {
 
     if (password_verify($password, $row['password'])) {
       $_SESSION["username"] = $username;
-      header('location: www/home/home.php');
+      header('location: www/questionnaire/question.php');
     } else {
       array_push($errors, "Nom d'utilisateur ou de passe incorrect");
     }

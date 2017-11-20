@@ -36,11 +36,11 @@
                   <?php include('home/caroussel.php'); ?>
                   <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                    <span class="sr-only">Préc</span>
                   </a>
                   <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                    <span class="sr-only">Suivant</span>
                   </a>
                 </div><!--!caroussel-inner-->
               </div><!--!caroussel-->

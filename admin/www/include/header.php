@@ -20,7 +20,7 @@ if (empty($_SESSION['username'])) {
 <body>
   <div class="container-fluid">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Accueil</a>
+      <a class="navbar-brand" href="#">Gestion Site web</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -52,17 +52,6 @@ if (empty($_SESSION['username'])) {
               <a class="dropdown-item" href="../formations/formations.php">Liste des formations</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../formations/create_formations.php">Création d'une formation</a>
-            </div>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../questionnaire/question.php" role="button" aria-haspopup="true" aria-expanded="false">Page Application</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="../questionnaire/question.php">Liste des questionnaires</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="../questionnaire/create_rebus.php">Créer un rébus</a>
-              <a class="dropdown-item" href="../questionnaire/create_quizz.php">Créer un quizz</a>
-              <a class="dropdown-item" href="../questionnaire/create_who.php">Créer un quizz Qui est-ce?</a>
             </div>
           </li>
 
