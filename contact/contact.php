@@ -10,8 +10,8 @@ while($row = $sql->fetch_assoc()) {
         <h4 class="card-header bg-dark text-white">
         <div class="float-right small">
         <a class="btn btn-raised btn-danger" href="mailto:%s" title="Envoyer un mail" data-placement="top" title="Tooltip on top"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-        <a class="btn btn-raised btn-danger" href="tel:%s" target="_blank" title="%s"><i class="fa fa-phone" aria-hidden="true"></i></a>
-        <a class="btn btn-raised btn-danger" href="https://www.google.fr/maps/place/%s" title="map" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+        <a class="btn btn-raised btn-danger" href="tel:%s" target="_blank" title="Téléphoner"><i class="fa fa-phone" aria-hidden="true"></i></a>
+        <a class="btn btn-raised btn-danger" href="https://www.google.fr/maps/place/%s" title="Google maps" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
         </div>
         </h4>
         <div class="card-body">
@@ -45,7 +45,6 @@ while($row = $sql->fetch_assoc()) {
         </div>
         </div>'
         , $row["mail"]
-        , $row["phone"]
         , $row["phone"]
         , $row["adresse"]
         , $row["title"]

@@ -1,4 +1,4 @@
-<?php include('MEmploi/include/server.php'); ?>
+<?php include('www/include/server.php'); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -37,4 +37,4 @@
     </form>
   </div>
 </body>
-<?php include("include/footer.php"); ?>
+<?php include("www/include/footer.php"); ?>

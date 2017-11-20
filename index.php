@@ -37,7 +37,7 @@ include('include/header.php');
                 </ol>
                 <div class="carousel-inner" role="listbox">
                   <?php
-                  include('accueil/caroussel.php');
+                  include('home/caroussel.php');
                   ?>
                   <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

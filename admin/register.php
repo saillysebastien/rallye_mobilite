@@ -1,5 +1,5 @@
 <?php
-include('MEmploi/include/server.php');
+include('www/include/server.php');
 if (empty($_SESSION['username'])) {
   header('location: login.php');
 }
