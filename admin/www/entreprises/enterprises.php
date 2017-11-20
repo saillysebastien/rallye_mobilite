@@ -10,7 +10,6 @@ include('../include/header.php');
           <td class = 'col-1'> Id </td>
           <td class = 'col-1'> Domaine d'activité </td>
           <td class = 'col-1'> Logo </td>
-          <!-- <td class = 'col-1'> Nom </td> -->
           <td class = 'col-1'> Adresse </td>
           <td class = 'col-1'> Secteur d'activité </td>
           <td class = 'col-1'> Contact </td>
@@ -47,7 +46,6 @@ include('../include/header.php');
           , $row['id']
           , $row['domain_activity']
           , $row['image']
-          // , $row['title']
           , $row['number_street']
           , $row['street']
           , $row['postal_code']

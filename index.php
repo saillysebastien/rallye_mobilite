@@ -1,7 +1,4 @@
-<?php
-include('include/header.php');
-
-?>
+<?php include('include/header.php'); ?>
 
 <div class="container-fluid">
   <div class="row">
@@ -36,9 +33,7 @@ include('include/header.php');
                   <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                  <?php
-                  include('home/caroussel.php');
-                  ?>
+                  <?php include('home/caroussel.php'); ?>
                   <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
@@ -218,49 +213,36 @@ include('include/header.php');
                             </div>
                             <div id="batîment" class="animated slideInDown" style="display: none;">
                               <div class="row">
-                                <?php
-                                include('entreprises/batîment.php');
-                                ?>
+                                <?php include('entreprises/batîment.php');?>
                               </div>
                             </div>
 
                             <div id="commerce" class="animated slideInLeft" style="display: none;">
                               <div class="row">
-                                <?php
-                                include('entreprises/commerce.php');
-                                ?>
+                                <?php include('entreprises/commerce.php');?>
                               </div>
                             </div>
 
                             <div id="industrie" class="animated slideInRight" style="display: none;">
                               <div class="row">
-                                <?php
-                                include('entreprises/industrie.php');
-                                ?>
+                                <?php include('entreprises/industrie.php');?>
                               </div>
                             </div>
 
                             <div id="logistique" class="animated slideInUp" style="display: none;">
                               <div class="row">
-                                <?php
-                                include('entreprises/logistique.php');
-                                ?>
+                                <?php include('entreprises/logistique.php');?>
                               </div>
                             </div>
 
                             <div id="restauration" class="animated zoomIn" style="display: none;">
                               <div class="row">
-                                <?php
-                                include('entreprises/restauration.php');
-                                ?>
+                                <?php include('entreprises/restauration.php');?>
                               </div>
                             </div>
 
                             <div id="travaux_publics" class="animated zoomIn" style="display: none;">
-                              <div class="row">
-                                <?php
-                                include('entreprises/travaux_publics.php');
-                                ?>
+                              <div class="row"> <?php include('entreprises/travaux_publics.php');?>
                               </div>
                             </div>
 
@@ -294,7 +276,6 @@ include('include/header.php');
                       <div class="panel-thumb">
                         <div class="animated rotateInUpLeft">
                           <div class="row">
-
                             <?php include('formations/formations.php'); ?>
                           </div>
                         </div>
@@ -351,13 +332,10 @@ include('include/header.php');
               </div><!--!panel-body-->
             </div><!--!collapse-->
           </div><!--!panel-default-->
-
         </div>
 
       </div><!--!col-->
     </div><!--!row-->
   </div><!--!container-fluid-->
 
-  <?php
-  include('include/footer.php');
-  ?>
+  <?php include('include/footer.php');?>

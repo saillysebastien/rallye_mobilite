@@ -1,5 +1,4 @@
 <?php
-
 require('db_home.php');
 
 try {

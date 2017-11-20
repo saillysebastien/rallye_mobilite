@@ -126,78 +126,70 @@ if ($_POST) {
   include('../infos.php');
   include('../errros.php');
   ?>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center text-center">
     <div class="col-12">
       <h1>Modification d'une fiche FORMATION</h1>
       <form method="post" enctype="multipart/form-data">
 
-        <div class="row">
-          <div class="form-group col-6">
-            <label class="col-4" for="id">Identifiant de la formation</label>
-            <input type="numeric" class="col-6" name="id" value="<?= htmlentities($id) ?>" required />
-          </div>
-          <div class="form-group col-6">
-            <label class="col-4" for="title">Nom de la formation</label>
-            <input class="col-6" type="text" name="title" value="<?= htmlentities($title) ?>" required />
-          </div>
+        <div class="form-group">
+          <label class="col-2" for="id">Identifiant de la formation</label>
+          <input type="numeric" class="col-10" name="id" value="<?= htmlentities($id) ?>" required />
         </div>
 
-        <div class="row">
-          <div class="form-group col-6">
-            <label class="col-4" for="number_street">Numéro de l'adresse</label>
-            <input class="col-6" type="numeric" name="number_street" value="<?= htmlentities($number_street) ?>" />
-          </div>
-          <div class="form-group col-6">
-            <label class="col-4" for="street">Adresse de la formation</label>
-            <input class="col-6" type="text" name="street" value="<?= htmlentities($street) ?>" placeholder="exemple: avenue Jean Jaurès"required />
-          </div>
+        <div class="form-group">
+          <label class="col-2" for="title">Nom de la formation</label>
+          <input class="col-10" type="text" name="title" value="<?= htmlentities($title) ?>" required />
         </div>
 
-        <div class="row">
-          <div class="form-group col-6">
-            <label class="col-4" for="postal_code">Code postal de la ville</label>
-            <input class="col-6" type="numeric" name="postal_code" value="<?= htmlentities($postal_code) ?>" required />
-          </div>
-          <div class="form-group col-6">
-            <label class="col-4" for="city">Ville de la formation</label>
-            <input class="col-6" type="text" name="city" value="<?= htmlentities($city) ?>" required />
-          </div>
+        <div class="form-group">
+          <label class="col-2" for="number_street">Numéro de l'adresse</label>
+          <input class="col-10" type="numeric" name="number_street" value="<?= htmlentities($number_street) ?>" />
         </div>
 
-        <div class="row">
-          <div class="form-group col-6">
-            <label class="col-4" for="contact">Contact</label>
-            <input class="col-6" type="text" name="contact" value="<?= htmlentities($contact) ?>" placeholder="exemple: Mr Dupont Claude" />
-          </div>
-          <div class="form-group col-6">
-            <label class="col-4" for="phone">Numéro de téléphone</label>
-            <input class="col-6" type="numeric" name="phone" maxlength="10" value="<?= htmlentities($phone) ?>" placeholder="exemple: 0321281510" />
-          </div>
+        <div class="form-group">
+          <label class="col-2" for="street">Adresse de la formation</label>
+          <input class="col-10" type="text" name="street" value="<?= htmlentities($street) ?>" placeholder="exemple: avenue Jean Jaurès"required />
         </div>
 
-        <div class="row">
-          <div class="form-group col-6">
-            <label class="col-4" for="mail">Adresse mail</label>
-            <input class="col-6" type="mail" name="mail" value="<?= htmlentities($mail) ?>" />
+          <div class="form-group">
+            <label class="col-2" for="postal_code">Code postal de la ville</label>
+            <input class="col-10" type="numeric" name="postal_code" value="<?= htmlentities($postal_code) ?>" required />
           </div>
-          <div class="form-group col-6">
-            <label class="col-4" for="web">Site web</label>
-            <input class="col-6" type="text" name="web" value="<?= htmlentities($web) ?>" placeholder="exemple: " />
+          <div class="form-group">
+            <label class="col-2" for="city">Ville de la formation</label>
+            <input class="col-10" type="text" name="city" value="<?= htmlentities($city) ?>" required />
           </div>
-        </div>
 
-        <div class="row">
-          <div class="form-group col-6">
-            <label class="col-4" for="text">Nom de l'image</label>
-            <input class="col-6" type="text" name="image2" id="text" value="<?= htmlentities($image) ?>"  />
+          <div class="form-group">
+            <label class="col-2" for="contact">Contact</label>
+            <input class="col-10" type="text" name="contact" value="<?= htmlentities($contact) ?>" placeholder="exemple: Mr Dupont Claude" />
           </div>
-          <div class="form-check col-6">
+
+          <div class="form-group">
+            <label class="col-2" for="phone">Numéro de téléphone</label>
+            <input class="col-10" type="numeric" name="phone" maxlength="10" value="<?= htmlentities($phone) ?>" placeholder="exemple: 0321281510" />
+          </div>
+
+          <div class="form-group">
+            <label class="col-2" for="mail">Adresse mail</label>
+            <input class="col-10" type="mail" name="mail" value="<?= htmlentities($mail) ?>" />
+          </div>
+
+          <div class="form-group">
+            <label class="col-2" for="web">Site web</label>
+            <input class="col-10" type="text" name="web" value="<?= htmlentities($web) ?>" placeholder="exemple: www.afpa.fr" />
+          </div>
+
+          <div class="form-group">
+            <label class="col-2" for="text">Nom de l'image</label>
+            <input class="col-10" type="text" name="image2" id="text" value="<?= htmlentities($image) ?>"  />
+          </div>
+          <div class="form-check">
             <label class="form-check-label col-12">
               <input type="checkbox" class="form-check-input col-3" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />
               Cochez ici si vous voulez que cette formation soit affichée !
             </label>
           </div>
-        </div>
         <button type="submit" name="update" class="btn btn-primary">Valider</button>
       </form>
     </div>
