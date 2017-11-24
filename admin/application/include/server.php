@@ -4,7 +4,7 @@ if (empty($_SESSION['username'])) {
   session_start();
 }
 // Connexion à la base de données
-include('../config/connect.php');
+require('../config/connect.php');
 
 $username = '';
 $errors = [];

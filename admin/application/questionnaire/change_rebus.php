@@ -87,23 +87,22 @@ if (isset($_POST['valider'])) {
   }
   if ($valid) {
     try {
-      $sql = sprintf("UPDATE rebus SET name='$title', one='$one', two='$two', three='$three', four='$four', five='$five', indice='$index', response='$response' WHERE id='%s'", $_GET['id']);
+      $sql = sprintf("UPDATE rebus SET name='$title', one='$one', two='$two', three='$three', four='$four', five='$five', indice='$index', response='$response', my_all='$my_all' WHERE id='%s'", $_GET['id']);
       $valid_sql = mysqli_query($db, $sql);
+
+      array_push($infos, "Rébus $title modifié");
 
     } catch (Exception $e) {
       header('Location: error500.html', true, 302);
       exit();
-    }
-    if ($valid_sql) {
-      array_push($infos, "Rébus $title modifié");
     }
   }
 }
 ?>
 <div class="container text-center">
 <?php
-include('../infos.php');
-include('../errors.php');
+include('../include/infos.php');
+include('../include/errors.php');
  ?>
 <h1 class="text-center"> Modification du rébus <?= $title ?> </h1>
 <form action="#" method="post" enctype="multipart/form-data">

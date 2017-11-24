@@ -221,9 +221,7 @@ $five = '';
 </div>
 </div>
 
-<?php
-include('../include/footer.php');
-?>
+<?php include('../include/footer.php');?>
 
 <script>
 $("#filter_puzzle").click(function() {
@@ -243,5 +241,4 @@ $("#filter_quizz").click(function() {
   $("#puzzle").css("display", "none");
   $("#quizz").show();
 });
-
 </script>
