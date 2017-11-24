@@ -20,7 +20,7 @@ $qrcode = "";
 ?>
 
 <div class="container text-center">
-  <h1>Quel questionnaire voulez vous intégrer pour l'étape 1 ?</h1>
+  <h1>Quel questionnaire voulez vous intégrer à l'étape 5 ?</h1>
   <div class="btn-group">
     <button id="filter_puzzle" class="btn btn-info">Un rébus ?</button>
     <button id="filter_who" class="btn btn-dark">Un quizz Qui est-ce?</button>
