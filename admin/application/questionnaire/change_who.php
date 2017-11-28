@@ -79,29 +79,29 @@ include("../errors.php");
   <legend>Modification du quizz Qui est-ce ? <?= $title ?></legend>
   <form action="#" method="post" enctype="multipart/form-data">
 
-    <div class="form-group">
-      <label class="col-2" for="title">Nom du quizz</label>
-      <input class="col-10" type="text" name="title" value="<?= htmlentities($title) ?>" required />
+    <div class="form-group text-center">
+      <label class="col-12" for="title">Nom du quizz</label>
+      <input class="col-8 text-center" type="text" name="title" value="<?= htmlentities($title) ?>" required />
     </div>
 
-    <div class="form-group">
-      <label class="col-2" for="image">Nom de l'image du quizz</label>
-      <input class="col-10" type="text" name="image" value="<?= htmlentities($image) ?>" required />
+    <div class="form-group text-center">
+      <label class="col-12" for="image">Nom de l'image du quizz</label>
+      <input class="col-8 text-center" type="text" name="image" value="<?= htmlentities($image) ?>" required />
     </div>
 
-    <div class="form-group">
-      <label class="col-2" for="question">Question</label>
-      <input class="col-10" type="text" name="question" value="<?= htmlentities($question) ?>" required />
+    <div class="form-group text-center">
+      <label class="col-12" for="question">Question</label>
+      <input class="col-8 text-center" type="text" name="question" value="<?= htmlentities($question) ?>" required />
     </div>
 
-    <div class="form-group">
-      <label class="col-2" for="index">Indice</label>
-      <input class="col-10" type="text" name="index" value="<?= htmlentities($index) ?>" />
+    <div class="form-group text-center">
+      <label class="col-12" for="index">Indice</label>
+      <input class="col-8 text-center" type="text" name="index" value="<?= htmlentities($index) ?>" />
     </div>
 
-    <div class="form-group">
-      <label class="col-2" for="response">Réponse</label>
-      <input class="col-10" type="text" name="response" value="<?= htmlentities($response) ?>" required />
+    <div class="form-group text-center">
+      <label class="col-12" for="response">Réponse</label>
+      <input class="col-8 text-center" type="text" name="response" value="<?= htmlentities($response) ?>" required />
     </div>
     <button type="submit" name="valider" class="btn btn-primary">Valider</button>
   </form>

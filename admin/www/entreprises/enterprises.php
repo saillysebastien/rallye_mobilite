@@ -2,8 +2,8 @@
 include('../include/header.php');
 ?>
 <div class='container-fluid text-center'>
-  <div class='row justify-content-center'>
-    <h1>Liste des ENTREPRISES par domaine d'activité</h1>
+  <div class='row justify-content-center' id="table_enterprise">
+    <legend>Liste des ENTREPRISES par domaine d'activité</legend>
     <table class = 'table table-bordered table-striped'>
       <thead>
         <tr>

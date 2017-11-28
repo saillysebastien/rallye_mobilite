@@ -1,7 +1,7 @@
 <?php include('../include/header.php');?>
 
 <div class = 'container-fluid text-center'>
-  <h1>Liste des photos qui s'affichent en page d'accueil</h1>
+  <legend>Liste des photos qui s'affichent en page d'accueil</legend>
   <p> L'image qui apparait en premier dans le défilement des photos doit impérativement posséder l'Id 1, il est impératif de modifier celui-ci avant de mettre une autre photo à la place.
     <table class = 'table table-bordered table-striped'>
       <thead>

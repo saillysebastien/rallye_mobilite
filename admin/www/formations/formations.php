@@ -7,7 +7,7 @@ $sql = $db->query("SELECT * FROM formations ORDER BY title");
 printf("
 <div class='container-fluid  text-center'>
 <div class='row justify-content-center'>
-<h1>Liste des organismes de formations</h1>
+<legend>Liste des organismes de formations</legend>
 <table class = 'table table-bordered table-striped'>
 <thead>
 <tr>

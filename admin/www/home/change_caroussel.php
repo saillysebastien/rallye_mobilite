@@ -4,7 +4,7 @@ include('../include/header.php');
 $id = null;
 $valid = true;
 $errors = [];
-$informations = [];
+$infos= [];
 $image = null;
 $text = "";
 $title = "";
@@ -62,7 +62,7 @@ if ($_POST) {
   include("../infos.php");
   include("../errors.php");
   ?>
-  <h1>Création pour la rubrique accueil (photos et commentaires)</h1><br />
+  <legend>Création pour la rubrique accueil (photos et commentaires)</legend><br />
   <form  method="post" enctype="multipart/form-data" class="home">
     <div class="form-group">
       <label class="col-2" for="id_caroussel">Identifiant de la photo</label>

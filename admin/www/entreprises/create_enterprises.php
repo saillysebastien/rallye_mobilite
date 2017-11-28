@@ -128,77 +128,79 @@ if (isset($_POST['upload'])) {
   <?php
   include('../infos.php');
   include('../errors.php');
-   ?>
-<h1>Creation d'une fiche entreprise</h1>
-<form action="create_enterprises.php" method="post" enctype="multipart/form-data">
+  ?>
+  <legend>Creation d'une fiche entreprise</legend>
+  <div class="row justify-content-center">
+    <form action="create_enterprises.php" method="post" enctype="multipart/form-data">
 
-<div class="form-group">
-<label class="col-2" for="title">Nom de l'entreprise</label>
-<input class="col-10" type="text" name="title" value="<?= htmlentities($title) ?>" required />
-</div>
+      <div class="form-group text-center">
+        <label class="col-12" for="title">Nom de l'entreprise</label>
+        <input class="col-8" type="text" name="title" value="<?= htmlentities($title) ?>" required />
+      </div>
 
-<div class="form-group">
-  <label class="col-2" for="number_street">Numéro de l'adresse</label>
-  <input class="col-10" type="numeric" name="number_street" value="<?= htmlentities($number_street) ?>" />
-</div>
+      <div class="form-group text-center">
+        <label class="col-12" for="number_street">Numéro de l'adresse</label>
+        <input class="col-8" type="numeric" name="number_street" value="<?= htmlentities($number_street) ?>" />
+      </div>
 
-<div class="form-group">
-  <label class="col-2" for="street">Adresse de l'entreprise</label>
-  <input class="col-10" type="text" name="street" value="<?= htmlentities($street) ?>" placeholder="exemple: avenue Jean Jaurès"required />
-</div>
+      <div class="form-group text-center">
+        <label class="col-12" for="street">Adresse de l'entreprise</label>
+        <input class="col-8" type="text" name="street" value="<?= htmlentities($street) ?>" placeholder="exemple: avenue Jean Jaurès"required />
+      </div>
 
-<div class="form-group">
-  <label class="col-2" for="postal_code">Code postal de la ville</label>
-  <input class="col-10" type="numeric" name="postal_code" value="<?= htmlentities($postal_code) ?>" required />
-</div>
+      <div class="form-group text-center">
+        <label class="col-12" for="postal_code">Code postal de la ville</label>
+        <input class="col-8" type="numeric" name="postal_code" value="<?= htmlentities($postal_code) ?>" required />
+      </div>
 
-<div class="form-group">
-  <label class="col-2" for="city">Ville de l'entreprise</label>
-  <input class="col-10" type="text" name="city" value="<?= htmlentities($city) ?>" required />
-</div>
+      <div class="form-group text-center">
+        <label class="col-12" for="city">Ville de l'entreprise</label>
+        <input class="col-8" type="text" name="city" value="<?= htmlentities($city) ?>" required />
+      </div>
 
-  <div class="form-group">
-    <label class="col-2" for="activity">Secteur(s) d'activité(s)</label>
-    <input class="col-10" type="text" name="activity" value="<?= htmlentities($activity) ?>" placeholder="exemple: Métallurgie "required />
+      <div class="form-group text-center">
+        <label class="col-12" for="activity">Secteur(s) d'activité(s)</label>
+        <input class="col-8" type="text" name="activity" value="<?= htmlentities($activity) ?>" placeholder="exemple: Métallurgie "required />
+      </div>
+
+      <div class="form-group text-center">
+        <label class="col-12" for="domain_activity">Domaine d'activité</label>
+        <input class="col-8" type="text" name="domain_activity" value="<?= htmlentities($domain_activity) ?>" placeholder="exemple: Industrie" required />
+      </div>
+
+      <div class="form-group text-center">
+        <label class="col-12" for="contact">Contact</label>
+        <input class="col-8" type="text" name="contact" value="<?= htmlentities($contact) ?>" placeholder="exemple: Mr Dupont Claude" />
+      </div>
+
+      <div class="form-group text-center">
+        <label class="col-12" for="phone">Numéro de téléphone</label>
+        <input class="col-8" type="text" name="phone" value="<?= htmlentities($phone) ?>" placeholder="Ne pas mettre d'espace 0321587526" />
+      </div>
+
+      <div class="form-group text-center">
+        <label class="col-12" for="mail">Adresse mail</label>
+        <input class="col-8" type="mail" name="mail" value="<?= htmlentities($mail) ?>" />
+      </div>
+
+      <div class="form-group text-center">
+        <label class="col-12" for="web">Site web</label>
+        <input class="col-8" type="text" name="web" value="<?= htmlentities($web) ?>" placeholder="exemple: www.afpa.fr" />
+      </div>
+
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />
+          Cochez ici si vous voulez l'afficher sur la page entreprise
+        </label>
+      </div>
+
+      <div class="form-inline text-center">
+        <label class="col-12" for="image">Logo à télécharger pour l'entreprise</label>
+        <input type="file" name="image" class="form-control-file" id='image' required />
+      </div><br />
+      <button type="submit" name="upload" class="btn btn-primary">Valider</button>
+    </form>
   </div>
-
-  <div class="form-group">
-    <label class="col-2" for="domain_activity">Domaine d'activité</label>
-    <input class="col-10" type="text" name="domain_activity" value="<?= htmlentities($domain_activity) ?>" placeholder="exemple: Industrie" required />
-  </div>
-
-  <div class="form-group">
-    <label class="col-2" for="contact">Contact</label>
-    <input class="col-10" type="text" name="contact" value="<?= htmlentities($contact) ?>" placeholder="exemple: Mr Dupont Claude" />
-  </div>
-
-  <div class="form-group">
-    <label class="col-2" for="phone">Numéro de téléphone</label>
-    <input class="col-10" type="text" name="phone" value="<?= htmlentities($phone) ?>" placeholder="Ne pas mettre d'espace exemple: 0321587526" />
-  </div>
-
-  <div class="form-group">
-    <label class="col-2" for="mail">Adresse mail</label>
-    <input class="col-10" type="mail" name="mail" value="<?= htmlentities($mail) ?>" />
-  </div>
-
-  <div class="form-group">
-    <label class="col-2" for="web">Site web</label>
-    <input class="col-10" type="text" name="web" value="<?= htmlentities($web) ?>" placeholder="exemple: www.afpa.fr" />
-  </div>
-
-<div class="form-check">
-  <label class="form-check-label col-12">
-    <input type="checkbox" class="form-check-input col-3" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />
-    Cochez ici si vous voulez l'afficher sur la page entreprise
-  </label>
-</div>
-
-<div class="form-inline">
-  <label for="image">Logo à télécharger pour l'entreprise</label>
-  <input type="file" name="image" class="form-control-file" id='image' required />
-</div><br />
-<button type="submit" name="upload" class="btn btn-primary">Valider</button>
-</form>
 </div>
 <?php include('../include/footer.php');?>

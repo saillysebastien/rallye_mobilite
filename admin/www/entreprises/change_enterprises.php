@@ -3,6 +3,7 @@ include('../include/header.php');
 
 $infos =[];
 $errors = [];
+
 $title = '';
 $image = '';
 $number_street = null;
@@ -130,83 +131,82 @@ if ($_POST) {
   include("../infos.php");
   include("../errors.php");
   ?>
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <h1>Modification d'une fiche ENTREPRISE</h1>
+  <div class="col-12">
+    <legend>Modification d'une fiche ENTREPRISE</legend>
+    <div class="row justify-content-center">
       <form method="post" enctype="multipart/form-data">
-          <div class="form-group">
-            <label class="col-2" for="id">Identifiant de l'entreprise</label>
-            <input type="numeric" class="col-10" name="id" value="<?= htmlentities($id) ?>" required />
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="title">Nom de l'entreprise</label>
-            <input class="col-10" type="text" name="title" value="<?= htmlentities($title) ?>" required />
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="number_street">Numéro de l'adresse</label>
-            <input class="col-10" type="numeric" name="number_street" value="<?= htmlentities($number_street) ?>" />
-          </div>
-
-          <div class="form-group6">
-            <label class="col-2" for="street">Adresse de l'entreprise</label>
-            <input class="col-10" type="text" name="street" value="<?= htmlentities($street) ?>" placeholder="exemple: avenue Jean Jaurès"required />
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="postal_code">Code postal de la ville</label>
-            <input class="col-10" type="numeric" name="postal_code" value="<?= htmlentities($postal_code) ?>" required />
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="city">Ville de l'entreprise</label>
-            <input class="col-10" type="text" name="city" value="<?= htmlentities($city) ?>" required />
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="activity">Secteur(s) d'activité(s)</label>
-            <input class="col-10" type="text" name="activity" value="<?= htmlentities($activity) ?>" placeholder="exemple: Métallurgie "required />
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="domain_activity">Domaine d'activité</label>
-            <input class="col-10" type="text" name="domain_activity" value="<?= htmlentities($domain_activity) ?>" placeholder="exemple: Industrie" required />
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="contact">Contact</label>
-            <input class="col-10" type="text" name="contact" value="<?= htmlentities($contact) ?>" placeholder="exemple: Mr Dupont Claude" />
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="phone">Numéro de téléphone</label>
-            <input class="col-10" type="text" name="phone" value="<?= htmlentities($phone) ?>" placeholder="exemple: +33 3 21 28 15 10" />
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="mail">Adresse mail</label>
-            <input class="col-10" type="mail" name="mail" value="<?= htmlentities($mail) ?>" />
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="web">Site web</label>
-            <input class="col-10" type="text" name="web" value="<?= htmlentities($web) ?>" placeholder="exemple: www.afpa.fr " />
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="text">Nom de l'image</label>
-            <input class="col-10" type="text" name="image2" id="text" value="<?= htmlentities($image) ?>"  />
-          </div>
-
-          <div class="form-check">
-            <label class="form-check-label col-12">
-              <input type="checkbox" class="form-check-input col-3" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />
-              Cochez ici si vous voulez que cette entreprise soit affiché!
-            </label>
-          </div>
+        <div class="form-group  text-center">
+          <label class="col-12" for="id">Identifiant de l'entreprise</label>
+          <input type="numeric" class="col-8 text-center" name="id" value="<?= htmlentities($id) ?>" required />
         </div>
-        <br /><button type="submit" name="update" class="btn btn-primary">Valider</button>
+
+        <div class="form-group text-center">
+          <label class="col-12" for="title">Nom de l'entreprise</label>
+          <input class="col-8 text-center" type="text" name="title" value="<?= htmlentities($title) ?>" required />
+        </div>
+
+        <div class="form-group text-center">
+          <label class="col-12" for="number_street">Numéro de l'adresse</label>
+          <input class="col-8 text-center" type="numeric" name="number_street" value="<?= htmlentities($number_street) ?>" />
+        </div>
+
+        <div class="form-group text-center">
+          <label class="col-12" for="street">Adresse de l'entreprise</label>
+          <input class="col-8 text-center" type="text" name="street" value="<?= htmlentities($street) ?>" placeholder="exemple: avenue Jean Jaurès"required />
+        </div>
+
+        <div class="form-group text-center">
+          <label class="col-12" for="postal_code">Code postal de la ville</label>
+          <input class="col-8 text-center" type="numeric" name="postal_code" value="<?= htmlentities($postal_code) ?>" required />
+        </div>
+
+        <div class="form-group text-center">
+          <label class="col-12" for="city">Ville de l'entreprise</label>
+          <input class="col-8 text-center" type="text" name="city" value="<?= htmlentities($city) ?>" required />
+        </div>
+
+        <div class="form-group text-center">
+          <label class="col-12" for="activity">Secteur(s) d'activité(s)</label>
+          <input class="col-8 text-center" type="text" name="activity" value="<?= htmlentities($activity) ?>" placeholder="exemple: Métallurgie "required />
+        </div>
+
+        <div class="form-group text-center">
+          <label class="col-12" for="domain_activity">Domaine d'activité</label>
+          <input class="col-8 text-center" type="text" name="domain_activity" value="<?= htmlentities($domain_activity) ?>" placeholder="exemple: Industrie" required />
+        </div>
+
+        <div class="form-group text-center">
+          <label class="col-12" for="contact">Contact</label>
+          <input class="col-8 text-center" type="text" name="contact" value="<?= htmlentities($contact) ?>" placeholder="exemple: Mr Dupont Claude" />
+        </div>
+
+        <div class="form-group text-center">
+          <label class="col-12" for="phone">Numéro de téléphone</label>
+          <input class="col-8 text-center" type="text" name="phone" value="<?= htmlentities($phone) ?>" placeholder="exemple: 0321281510" />
+        </div>
+
+        <div class="form-group text-center">
+          <label class="col-12" for="mail">Adresse mail</label>
+          <input class="col-8 text-center" type="mail" name="mail" value="<?= htmlentities($mail) ?>" />
+        </div>
+
+        <div class="form-group text-center">
+          <label class="col-12" for="web">Site web</label>
+          <input class="col-8 text-center" type="text" name="web" value="<?= htmlentities($web) ?>" placeholder="exemple: www.afpa.fr " />
+        </div>
+
+        <div class="form-group">
+          <label class="col-12" for="text">Nom de l'image</label>
+          <input class="col-8 text-center" type="text" name="image2" id="text" value="<?= htmlentities($image) ?>"  />
+        </div>
+
+        <div class="form-check">
+          <label class="form-check-label col-12">
+            <input type="checkbox" class="form-check-input col-3" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />
+            Cochez ici si vous voulez que cette entreprise soit affiché!
+          </label>
+        </div>
+        <br /><button type="submit" name="update" class="btn btn-primary">Valider</button><br />
       </form>
     </div>
   </div>

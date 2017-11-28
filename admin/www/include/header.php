@@ -13,13 +13,13 @@ if (empty($_SESSION['username'])) {
   <title>Rallye Mobilité</title>
 
   <link rel ="stylesheet" href="../../../assets/vendor/bootstrap4/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
   <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Gestion Site</a>
+      <a class="navbar-brand" href="#">Gestion Site web</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -28,7 +28,7 @@ if (empty($_SESSION['username'])) {
 
         <ul class="nav nav-pills">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../home/home.php" role="button" aria-haspopup="true" aria-expanded="false" title="Modifier rubrique Accueil">Accueil</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../home/home.php" role="button" aria-haspopup="true" aria-expanded="false" title="Gérer la rubrique Accueil">Accueil</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="../home/home.php">Liste des photos</a>
               <div class="dropdown-divider"></div>
@@ -37,7 +37,7 @@ if (empty($_SESSION['username'])) {
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../entreprises/enterprises.php" role="button" aria-haspopup="true" aria-expanded="false">Page Entreprise</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../entreprises/enterprises.php" role="button" aria-haspopup="true" aria-expanded="false" title="Gérer la rubrique Entreprise">Entreprise</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="../entreprises/enterprises.php">Liste des entreprises</a>
               <div class="dropdown-divider"></div>
@@ -46,7 +46,7 @@ if (empty($_SESSION['username'])) {
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../formations/formations.php" role="button" aria-haspopup="true" aria-expanded="false">Page Formation</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../formations/formations.php" role="button" aria-haspopup="true" aria-expanded="false" title="Gérer la rubrique formation">Formation</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="../formations/formations.php">Liste des formations</a>
               <div class="dropdown-divider"></div>
@@ -55,7 +55,7 @@ if (empty($_SESSION['username'])) {
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../contact/contact.php" role="button" aria-haspopup="true" aria-expanded="false">Page Contact</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../contact/contact.php" role="button" aria-haspopup="true" aria-expanded="false" title="Gérer la rubrique Contact">Contact</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="../contact/contact.php">Liste des contacts</a>
               <div class="dropdown-divider"></div>
@@ -64,7 +64,7 @@ if (empty($_SESSION['username'])) {
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../upload/images.php" role="button" aria-haspopup="true" aria-expanded="false">Autres</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../upload/images.php" role="button" aria-haspopup="true" aria-expanded="false" title="Gérer les autres images importées">Images</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="../upload/images.php">Liste des images</a>
               <div class="dropdown-divider"></div>
@@ -78,7 +78,7 @@ if (empty($_SESSION['username'])) {
         <ul class="nav">
           <li class="nav-item">
             <a href="../../index.php" class="btn btn-outline-info" title="Choix entre site web et application">Accueil</a>
-            <a href="login.php?logout='1'" class="btn btn-outline-danger" title="Déconnexion">Se déconnecter</a>
+            <a href="../../login.php?logout='1'" class="btn btn-outline-danger" title="Déconnexion">Se déconnecter</a>
           </li>
         </ul>
       </div>

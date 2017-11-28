@@ -3,6 +3,7 @@ include('../include/header.php');
 
 $errors = [];
 $infos = [];
+
 $valid = true;
 $id = null;
 $title = '';
@@ -16,8 +17,8 @@ if (isset($_GET['id']) && !empty(trim($_GET['id'])) && $_GET['id'] != 0) {
 if ($valid) {
   $sql = sprintf("SELECT * FROM quizz WHERE id=%s", $_GET["id"]);
   $result = $db->query($sql);
-  $infos = $result->fetch_assoc();
-  $title = $infos['title'];
+  $query = $result->fetch_assoc();
+  $title = $query['title'];
   try {
     if ($result) {
       $request = sprintf("DELETE FROM quizz WHERE id ='%s'", $id);

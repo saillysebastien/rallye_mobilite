@@ -1,10 +1,11 @@
 <?php
 include('../include/header.php');
 
-$id = null;
-$valid = true;
 $errors = [];
 $infos = [];
+
+$valid = true;
+$id = null;
 $image = null;
 $title = '';
 

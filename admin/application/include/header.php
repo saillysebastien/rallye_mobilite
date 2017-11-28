@@ -118,7 +118,7 @@ if (empty($_SESSION['username'])) {
         <ul class="nav">
           <li class="nav-item">
             <a href="../../index.php" class="btn btn-outline-info" title="Choix entre site web et application">Accueil</a>
-            <a href="login.php?logout='1'" class="btn btn-outline-danger" title="Déconnexion">Se déconnecter</a>
+            <a href="../../login.php?logout='1'" class="btn btn-outline-danger" title="Déconnexion">Se déconnecter</a>
           </li>
         </ul>
       </div>

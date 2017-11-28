@@ -2,7 +2,7 @@
 
 <div class="container-fluid text-center">
   <div class="row justify-content-center">
-    <h1>Listes des images par lieu d'affichage</h1>
+    <legend>Listes des images par lieu d'affichage</legend>
     <div class="btn-group">
       <button id="filter_home" class="btn btn-info">Page "Accueil"</button>
       <button id="filter_enterprises" class="btn btn-dark">Page "Entreprises"</button>
@@ -14,7 +14,7 @@
 
   <div id="home" style="display:none;" class="animated slideInLeft"><br />
     <div>
-      <h1>ATTENTION</h1>
+      <legend>ATTENTION</legend>
       Ne pas supprimer l'id numéro 1 sous peine de voir disparaitre le caroussel de photos.<br />
       Si vous modifiez l'id numéro 1 pour qu'il apparaisse plus loin ou plus tard n'oubliez pas d'en mettre un autre sur cet identifiant.<br />
     </div>
@@ -61,7 +61,7 @@
 
 <div id="enterprises" style="display:none;" class="animated slideInLeft"><br />
   <div>
-    <h1>Images des entreprises</h1>
+    <legend>Images des entreprises</legend>
   </div>
   <div class="row justify-content-center">
     <?php
@@ -111,7 +111,7 @@
 
 <div id="formations" style="display:none;" class="animated slideInLeft"><br />
   <div>
-    <h1>Images des formations</h1>
+    <legend>Images des formations</legend>
   </div>
   <div class="row justify-content-center">
     <?php
@@ -156,7 +156,7 @@
 
 <div id="application" style="display:none;" class="animated slideInLeft"><br />
   <div>
-    <h1>Images dans l'application</h1>
+    <legend>Images dans l'application</legend>
   </div>
   <div class="row justify-content-center">
     <?php
@@ -201,7 +201,7 @@
 
 <div id="anyplace" style="display:none;" class="animated slideInLeft"><br />
   <div>
-    <h1>Images dans aucune rubrique</h1>
+    <legend>Images dans aucune rubrique</legend>
   </div>
   <div class="row justify-content-center">
     <?php

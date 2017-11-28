@@ -45,16 +45,18 @@ if (isset($_POST['upload'])) {
 ?>
 <div class="container-fluid text-center">
   <?php
-include("../infos.php");
-include("../errors.php");
+  include("../infos.php");
+  include("../errors.php");
   ?>
-  <h1>Téléchargement d'une nouvelle image </h1>
-  <form  action="create_upload.php" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-      <label class="col-2" for="image">Image à télécharger</label>
-      <input type="file" name="image" class="form-control-file col-6" id='image' required />
-    </div><br />
-    <button type="submit" name="upload" id="upload" class="btn btn-primary">Valider</button>
-  </form>
+  <legend>Téléchargement d'une nouvelle image </legend>
+  <div class="row justify-content-center">
+    <form  action="create_upload.php" method="post" enctype="multipart/form-data">
+      <div class="form-group text-center">
+        <label class="col-12" for="image">Image à télécharger</label>
+        <input type="file" name="image" class="form-control-file" required />
+      </div>
+      <button type="submit" name="upload" id="upload" class="btn btn-primary">Valider</button>
+    </form>
+  </div>
 </div>
 <?php include('../include/footer.php');?>

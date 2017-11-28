@@ -81,30 +81,30 @@ if (isset($_POST['valider'])) {
   include("../infos.php");
   include("../errors.php");
    ?>
-   <h1>Creation d'un quizz Qui est-ce?</h1>
-   <form action="#" method="post" enctype="multipart/form-data">
+   <legend>Creation d'un quizz Qui est-ce?</legend>
+   <form class="col-8" action="#" method="post" enctype="multipart/form-data">
 
-   <div class="form-group">
-   <label class="col-2" for="title">Nom du quizz</label>
-   <input class="col-4" type="text" name="title" value="<?= htmlentities($title) ?>" required />
+   <div class="form-group text-center">
+   <label class="col-12" for="title">Nom du quizz</label>
+   <input class="col-8" type="text" name="title" value="<?= htmlentities($title) ?>" required />
    </div>
 
-   <div class="form-group">
-   <label class="col-2" for="question">Question</label>
-   <input class="col-4" type="text" name="question" value="<?= htmlentities($question) ?>" required />
+   <div class="form-group text-center">
+   <label class="col-12" for="question">Question</label>
+   <input class="col-8" type="text" name="question" value="<?= htmlentities($question) ?>" required />
    </div>
 
-   <div class="form-group">
-   <label class="col-2" for="index">Indice</label>
-   <input class="col-4" type="text" name="index" value="<?= htmlentities($index) ?>" />
+   <div class="form-group text-center">
+   <label class="col-12" for="index">Indice</label>
+   <input class="col-8" type="text" name="index" value="<?= htmlentities($index) ?>" />
    </div>
 
-   <div class="form-group">
-   <label class="col-2" for="response">Réponse</label>
-   <input class="col-4" type="text" name="response" value="<?= htmlentities($response) ?>" required />
+   <div class="form-group text-center">
+   <label class="col-12" for="response">Réponse</label>
+   <input class="col-8" type="text" name="response" value="<?= htmlentities($response) ?>" required />
    </div>
 
-   <div class="form-group">
+   <div class="form-group text-center">
      <label for="image">Logo à télécharger pour le quizz Qui est-ce?</label>
      <input type="file" name="image" class="form-control-file" id='image' required />
    </div>

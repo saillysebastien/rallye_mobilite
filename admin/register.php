@@ -1,5 +1,5 @@
 <?php
-include('www/include/server.php');
+include('server.php');
 if (empty($_SESSION['username'])) {
   header('location: login.php');
 }
@@ -46,4 +46,4 @@ if (empty($_SESSION['username'])) {
     </form>
   </div>
 </body>
-<?php include("include/footer.php"); ?>
+<?php include("www/include/footer.php"); ?>

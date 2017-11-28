@@ -5,7 +5,7 @@ $four = '';
 $five = '';
 ?>
 <div class="container-fluid text-center">
-  <h1>Listes des questions pour l'application</h1>
+  <legend>Listes des questions pour l'application</legend>
   <div class="btn-group">
     <button id="filter_puzzle" class="btn btn-info">Liste des rébus</button>
     <button id="filter_who" class="btn btn-dark">Liste des Qui est-ce?</button>

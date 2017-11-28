@@ -3,6 +3,7 @@ include('../include/header.php');
 
 $errors = [];
 $infos = [];
+
 $valid = true;
 $id = null;
 $image = null;
@@ -15,10 +16,10 @@ if (isset($_GET['id']) && !empty(trim($_GET['id'])) && $_GET['id'] != 0) {
   array_push($errors, "Vous devez spécifier un quizz Qui est-ce ? à supprimer !");
 if ($valid) {
   $sql = sprintf("SELECT * FROM who WHERE id=%s", $_GET["id"]);
-  $result = $db->query($sql);
-  $infos = $result->fetch_assoc();
-  $image = $infos['image'];
-  $title = $infos['title'];
+  $query = $db->query($sql);
+  $result = $query->fetch_assoc();
+  $image = $result'image'];
+  $title = $result['title'];
   try {
     $delete = unlink ("images/$image");
     if ($delete) {

@@ -116,64 +116,66 @@ if (isset($_POST['upload'])) {
   include('../infos.php');
   include('../errors.php');
   ?>
-  <h1>Creation d'une fiche formation</h1>
-  <form  action="#" method="post" enctype="multipart/form-data">
+  <legend>Creation d'une fiche formation</legend>
+  <div class="row justify-content-center">
+    <form  action="#" method="post" enctype="multipart/form-data">
 
-    <div class="form-group">
-      <label class="col-2" for="title">Nom de l'organisme</label>
-      <input class="col-10" type="text" name="title" value="<?= htmlentities($title) ?>" required />
-    </div>
-
-    <div class="form-group">
-      <label class="col-2" for="number_street">Numéro de l'adresse</label>
-      <input class="col-10" type="numeric" name="number_street" value="<?= htmlentities($number_street) ?>" />
-    </div>
-
-    <div class="form-group">
-      <label class="col-2" for="street">Adresse de l'organisme</label>
-      <input class="col-10" type="text" name="street" value="<?= htmlentities($street) ?>" placeholder="Exemple: avenue Jean Jaurès"required />
-    </div>
-
-    <div class="form-group">
-      <label class="col-2" for="postal_code">Code postal de la ville</label>
-      <input class="col-10" type="numeric" name="postal_code" value="<?= htmlentities($postal_code) ?>" required />
-    </div>
-
-    <div class="form-group">
-      <label class="col-2" for="city">Ville de l'organisme</label>
-      <input class="col-10" type="text" name="city" value="<?= htmlentities($city) ?>" required />
-    </div>
-
-      <div class="form-group">
-        <label class="col-2" for="contact">Contact</label>
-        <input class="col-10" type="text" name="contact" value="<?= htmlentities($contact) ?>" placeholder="Exemple: Mr Dupont Claude" />
-      </div>
-      <div class="form-group">
-        <label class="col-2" for="phone">Numéro de téléphone</label>
-        <input class="col-10" type="text" name="phone" value="<?= htmlentities($phone) ?>" placeholder="Pas d'espace Exemple: 0321587526" />
+      <div class="form-group text-center">
+        <label class="col-12" for="title">Nom de l'organisme</label>
+        <input class="col-8" type="text" name="title" value="<?= htmlentities($title) ?>" required />
       </div>
 
-      <div class="form-group">
-        <label class="col-2" for="mail">Adresse mail</label>
-        <input class="col-10" type="mail" name="mail" value="<?= htmlentities($mail) ?>" />
-      </div>
-      <div class="form-group">
-        <label class="col-2" for="web">Site web</label>
-        <input class="col-10" type="text" name="web" value="<?= htmlentities($web) ?>" placeholder="Exemple: www.afpa.fr" />
+      <div class="form-group text-center">
+        <label class="col-12" for="number_street">Numéro de l'adresse</label>
+        <input class="col-8" type="numeric" name="number_street" value="<?= htmlentities($number_street) ?>" />
       </div>
 
-    <div class="form-check">
-      <label class="form-check-label col-10">
-        <input type="checkbox" class="form-check-input col-2" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />
-        Cochez ici si vous voulez l'afficher sur la page formation
-      </label>
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="street">Adresse de l'organisme</label>
+        <input class="col-8" type="text" name="street" value="<?= htmlentities($street) ?>" placeholder="Exemple: avenue Jean Jaurès"required />
+      </div>
 
-    <div class="form-inline">
-      <label class="col-3" for="image">Logo à télécharger pour la formation</label>
-      <input type="file" name="image" class="form-control-file col-8" id='image' required />
-    </div>
-    <button type="submit" name="upload" class="btn btn-primary">Valider</button>
-  </form>
+      <div class="form-group text-center">
+        <label class="col-12" for="postal_code">Code postal de la ville</label>
+        <input class="col-8" type="numeric" name="postal_code" value="<?= htmlentities($postal_code) ?>" required />
+      </div>
+
+      <div class="form-group text-center">
+        <label class="col-12" for="city">Ville de l'organisme</label>
+        <input class="col-8" type="text" name="city" value="<?= htmlentities($city) ?>" required />
+      </div>
+
+      <div class="form-group text-center">
+        <label class="col-12" for="contact">Contact</label>
+        <input class="col-8" type="text" name="contact" value="<?= htmlentities($contact) ?>" placeholder="Exemple: Mr Dupont Claude" />
+      </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="phone">Numéro de téléphone</label>
+        <input class="col-8" type="text" name="phone" value="<?= htmlentities($phone) ?>" placeholder="Pas d'espace Exemple: 0321587526" />
+      </div>
+
+      <div class="form-group text-center">
+        <label class="col-12" for="mail">Adresse mail</label>
+        <input class="col-8" type="mail" name="mail" value="<?= htmlentities($mail) ?>" />
+      </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="web">Site web</label>
+        <input class="col-8" type="text" name="web" value="<?= htmlentities($web) ?>" placeholder="Exemple: www.afpa.fr" />
+      </div>
+
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />
+          Cochez ici si vous voulez l'afficher sur la page formation
+        </label>
+      </div>
+
+      <div class="form-inline text-center">
+        <label class="col-12" for="image">Logo à télécharger pour la formation</label>
+        <input type="file" name="image" class="form-control-file" id='image' required />
+      </div><br />
+      <button type="submit" name="upload" class="btn btn-primary">Valider</button>
+    </form>
+  </div>
 </div>
 <?php include('../include/footer.php');?>

@@ -88,51 +88,52 @@ if (isset($_POST['valider'])) {
   include("../errors.php")
   ?>
   <legend>Création d'une fiche contact</legend>
+  <div class="row justify-content-center">
+    <form action="#" method="post" enctype="multipart/form-data">
 
-  <form action="#" method="post" enctype="multipart/form-data">
+      <div class="form-group text-center">
+        <label class="col-12" for="title">Organisme</label>
+        <input class="col-8" type="text" name="title" value="<?= htmlentities($title) ?>" required />
+      </div>
 
-    <div class="form-group">
-      <label class="col-2" for="title">Organisme</label>
-      <input class="col-4" type="text" name="title" value="<?= htmlentities($title) ?>" required />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="adresse">Adresse</label>
+        <input class="col-8" type="text" name="adresse" value="<?= htmlentities($adresse) ?>" />
+      </div>
 
-    <div class="form-group">
-      <label class="col-2" for="adresse">Adresse</label>
-      <input class="col-4" type="text" name="adresse" value="<?= htmlentities($adresse) ?>" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="president">Président</label>
+        <input class="col-8" type="text" name="president" value="<?= htmlentities($president) ?>" />
+      </div>
 
-    <div class="form-group">
-      <label class="col-2" for="president">Président</label>
-      <input class="col-4" type="text" name="president" value="<?= htmlentities($president) ?>" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="director">Directeur</label>
+        <input class="col-8" type="text" name="director" value="<?= htmlentities($director) ?>" />
+      </div>
 
-    <div class="form-group">
-      <label class="col-2" for="director">Directeur</label>
-      <input class="col-4" type="text" name="director" value="<?= htmlentities($director) ?>" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="vice_director">Directeur adjoint</label>
+        <input class="col-8" type="text" name="vice_director" value="<?= htmlentities($vice_director) ?>" />
+      </div>
 
-    <div class="form-group">
-      <label class="col-2" for="vice_director">Directeur adjoint</label>
-      <input class="col-4" type="text" name="vice_director" value="<?= htmlentities($vice_director) ?>" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="phone">Numéro de téléphone</label>
+        <input class="col-8" type="text" name="phone" value="<?= htmlentities($phone) ?>" placeholder="Ne pas mettre d'espace 0321587526" />
+      </div>
 
-    <div class="form-group">
-      <label class="col-2" for="phone">Numéro de téléphone</label>
-      <input class="col-4" type="text" name="phone" value="<?= htmlentities($phone) ?>" placeholder="Ne pas mettre d'espace exemple: 0321587526" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="mail">Adresse mail</label>
+        <input class="col-8" type="text" name="mail" value="<?= htmlentities($mail) ?>"  />
+      </div>
 
-    <div class="form-group">
-      <label class="col-2" for="mail">Adresse mail</label>
-      <input class="col-4" type="text" name="mail" value="<?= htmlentities($mail) ?>"  />
-    </div>
-
-    <div class="form-check">
-      <label class="form-check-label col-12">
-        <input type="checkbox" class="form-check-input col-3" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />
-        Cochez ici si vous voulez l'afficher sur la page contact
-      </label>
-    </div>
-    <button type="submit" name="valider" class="btn btn-primary">Valider</button>
-  </form>
+      <div class="form-check">
+        <label class="form-check-label col-12">
+          <input type="checkbox" class="form-check-input col-3" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />
+          Cochez ici si vous voulez l'afficher sur la page contact
+        </label>
+      </div>
+      <button type="submit" name="valider" class="btn btn-primary">Valider</button>
+    </form>
+  </div>
 </div>
 <?php include('../include/footer.php');?>

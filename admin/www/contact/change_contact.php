@@ -100,50 +100,50 @@ if ($_POST) {
   include('../infos.php');
   include('../errors.php');
   ?>
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <legend>Modification d'une fiche CONTACT</legend>
+  <div class="col-12">
+    <legend>Modification d'une fiche CONTACT</legend>
+    <div class="row justify-content-center">
       <form action="#" method="post" enctype="multipart/form-data">
 
-        <div class="form-group">
-          <label class="col-2" for="id">Id</label>
-          <input class="col-4" type="numeric" name="id" value="<?= htmlentities($id) ?>" />
+        <div class="form-group text-center">
+          <label class="col-12" for="id">Id</label>
+          <input class="col-5 text-center" type="numeric" name="id" value="<?= htmlentities($id) ?>" />
         </div>
 
-        <div class="form-group">
-          <label class="col-2" for="title">Organisme</label>
-          <input class="col-4" type="text" name="title" value="<?= htmlentities($title) ?>" />
+        <div class="form-group text-center">
+          <label class="col-12" for="title">Organisme</label>
+          <input class="col-12 text-center" type="text" name="title" value="<?= htmlentities($title) ?>" />
         </div>
 
 
-        <div class="form-group">
-          <label class="col-2" for="adresse">Adresse</label>
-          <input class="col-4" type="text" name="adresse" value="<?= htmlentities($adresse) ?>" />
+        <div class="form-group text-center">
+          <label class="col-12" for="adresse">Adresse</label>
+          <input class="col-12 text-center" type="text" name="adresse" value="<?= htmlentities($adresse) ?>" />
         </div>
 
-        <div class="form-group">
-          <label class="col-2" for="president">Président</label>
-          <input class="col-4" type="text" name="president" value="<?= htmlentities($president) ?>" />
+        <div class="form-group text-center">
+          <label class="col-12" for="president">Président</label>
+          <input class="col-12 text-center" type="text" name="president" value="<?= htmlentities($president) ?>" />
         </div>
 
-        <div class="form-group">
-          <label class="col-2" for="director">Directeur</label>
-          <input class="col-4" type="text" name="director" value="<?= htmlentities($director) ?>" />
+        <div class="form-group text-center">
+          <label class="col-12" for="director">Directeur</label>
+          <input class="col-12 text-center" type="text" name="director" value="<?= htmlentities($director) ?>" />
         </div>
 
-        <div class="form-group">
-          <label class="col-2" for="vice_director">Directeur adjoint</label>
-          <input class="col-4" type="text" name="vice_director" value="<?= htmlentities($vice_director) ?>" />
+        <div class="form-group text-center">
+          <label class="col-12" for="vice_director">Directeur adjoint</label>
+          <input class="col-12 text-center" type="text" name="vice_director" value="<?= htmlentities($vice_director) ?>" />
         </div>
 
-        <div class="form-group">
-          <label class="col-2" for="phone">Numéro de téléphone</label>
-          <input class="col-4" type="text" name="phone" value="<?= htmlentities($phone) ?>" placeholder="Ne pas mettre d'espace exemple: 0321587526" />
+        <div class="form-group text-center">
+          <label class="col-12" for="phone">Numéro de téléphone</label>
+          <input class="col-12 text-center" type="text" name="phone" value="<?= htmlentities($phone) ?>" placeholder="Ne pas mettre d'espace exemple: 0321587526" />
         </div>
 
-        <div class="form-group">
-          <label class="col-2" for="mail">Adresse mail</label>
-          <input class="col-4" type="text" name="mail" value="<?= htmlentities($mail) ?>"  />
+        <div class="form-group text-center">
+          <label class="col-12" for="mail">Adresse mail</label>
+          <input class="col-12 text-center" type="text" name="mail" value="<?= htmlentities($mail) ?>"  />
         </div>
 
         <div class="form-check">

@@ -31,14 +31,18 @@ if (empty($_SESSION['username'])) {
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container-fluid">
       <div class="row justify-content-center">
           <h4>A partir de cette vous pouvez avoir accés aux modifications suivantes :<br /><br />
             - Du site web en lui même.<br/><br />
-            - De la configuration de l'application pour la prochaine semaine de l'événement.</h4>
-        <div class="col-8" id="access_change">
+            - De la configuration de l'application pour la prochaine semaine de l'événement.</h4><br />
+            - Créer un utilisateur.
+        <div class="col-8 text-center" id="access_change">
           <a class="btn btn-info" href="www/home/home.php" type="button">Accéder aux modifications du site web</a>
-          <a class="btn btn-info" href="application/questionnaire/question.php" type="button">Accéder à la configuration de l'application</a>
+          <a class="btn btn-info" href="application/questionnaire/question.php" type="button">Accéder à la configuration de l'application</a><br/><br />
+        </div>
+        <div class="col-8 text-center">
+          <a class="btn btn-dark" href="register.php" type="button">Création d'un utilisateur</a>
         </div>
       </div>
     </div>

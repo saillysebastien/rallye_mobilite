@@ -1,10 +1,11 @@
 <?php
 include('../include/header.php');
 
-$id = null;
-$valid = true;
 $errors = [];
-$informations = [];
+$infos = [];
+
+$valid = true;
+$id = null;
 $image = null;
 $title = '';
 
@@ -16,10 +17,10 @@ if (isset($_GET['id']) && !empty(trim($_GET['id'])) && $_GET['id'] != 0) {
 }
 if ($valid) {
   $sql = sprintf("SELECT * FROM entreprises WHERE id=%s", $_GET["id"]);
-  $result = $db->query($sql);
-  $infos = $result->fetch_assoc();
-  $image = $infos['image'];
-  $title = $infos['title'];
+  $query = $db->query($sql);
+  $result = $query->fetch_assoc();
+  $image = $result['image'];
+  $title = $result['title'];
   try {
     $delete = unlink ("../images/$image");
     if ($delete) {

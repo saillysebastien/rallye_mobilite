@@ -104,52 +104,52 @@ if (isset($_POST['valider'])) {
 include('../include/infos.php');
 include('../include/errors.php');
  ?>
-<h1 class="text-center"> Modification du rébus <?= $title ?> </h1>
+<legend class="text-center"> Modification du rébus <?= $title ?> </legend>
 <form action="#" method="post" enctype="multipart/form-data">
 
-  <div class="form-group">
-    <label class="col-2" for="title"> Nom du rébus</label>
-    <input class="col-8" type="text" placeholder="obligatoire" name="title" value="<?= htmlentities($title) ?>" required />
+  <div class="for-group text-center">
+    <label class="col-12" for="title"> Nom du rébus</label>
+    <input class="col-8 text-center" type="text" placeholder="obligatoire" name="title" value="<?= htmlentities($title) ?>" required />
   </div>
 
-  <div class="form-group">
-    <label class="col-2" for="one"> Question 1 </label>
-    <input class="col-8" type="text" placeholder="obligatoire" name="one" value="<?= htmlentities($one) ?>" required />
+  <div class="for-group text-center">
+    <label class="col-12" for="one"> Question 1 </label>
+    <input class="col-8 text-center" type="text" placeholder="obligatoire" name="one" value="<?= htmlentities($one) ?>" required />
   </div>
 
-  <div class="form-group">
-    <label class="col-2" for="two"> Question 2 </label>
-    <input class="col-8" type="text" placeholder="obligatoire" name="two" value="<?= htmlentities($two) ?>" required />
+  <div class="for-group text-center">
+    <label class="col-12" for="two"> Question 2 </label>
+    <input class="col-8 text-center" type="text" placeholder="obligatoire" name="two" value="<?= htmlentities($two) ?>" required />
   </div>
 
-  <div class="form-group">
-    <label class="col-2" for="three"> Question 3 </label>
-    <input class="col-8" type="text" name="three" value="<?= htmlentities($three) ?>" />
+  <div class="for-group text-center">
+    <label class="col-12" for="three"> Question 3 </label>
+    <input class="col-8 text-center" type="text" name="three" value="<?= htmlentities($three) ?>" />
   </div>
 
-  <div class="form-group">
-    <label class="col-2" for="four"> Question 4 </label>
-    <input class="col-8" type="text" name="four" value="<?= htmlentities($four) ?>" />
+  <div class="for-group text-center">
+    <label class="col-12" for="four"> Question 4 </label>
+    <input class="col-8 text-center" type="text" name="four" value="<?= htmlentities($four) ?>" />
   </div>
 
-  <div class="form-group">
-    <label class="col-2" for="five"> Question 5 </label>
-    <input class="col-8" type="text" name="five" value="<?= htmlentities($five) ?>" />
+  <div class="for-group text-center">
+    <label class="col-12" for="five"> Question 5 </label>
+    <input class="col-8 text-center" type="text" name="five" value="<?= htmlentities($five) ?>" />
   </div>
 
-  <div class="form-group">
-    <label class="col-2" for="index"> Indice </label>
-    <input class="col-8" type="text" name="index" value="<?= htmlentities($index) ?>" />
+  <div class="for-group text-center">
+    <label class="col-12" for="index"> Indice </label>
+    <input class="col-8 text-center" type="text" name="index" value="<?= htmlentities($index) ?>" />
   </div>
 
-  <div class="form-group">
-    <label class="col-2" for="my_all"> Mon tout est ...</label>
-    <input class="col-8" type="text" placeholder="obligatoire" name="my_all" value="<?= htmlentities($my_all) ?>" />
+  <div class="for-group text-center">
+    <label class="col-12" for="my_all"> Mon tout est ...</label>
+    <input class="col-8 text-center" type="text" placeholder="obligatoire" name="my_all" value="<?= htmlentities($my_all) ?>" />
   </div>
 
-  <div class="form-group">
-    <label class="col-2" for="response">Réponse</label>
-    <input class="col-8" type="text" placeholder="obligatoire" name="response" value="<?= htmlentities($response) ?>" required />
+  <div class="for-group text-center">
+    <label class="col-12" for="response">Réponse</label>
+    <input class="col-8 text-center" type="text" placeholder="obligatoire" name="response" value="<?= htmlentities($response) ?>" required />
   </div>
   <button type="submit" name="valider" class="btn btn-primary">Valider</button>
 </div>

@@ -3,7 +3,7 @@ include('../include/header.php');
 ?>
 <div class='container text-center'>
   <div class='row justify-content-center'>
-    <h1>Liste des CONTACTS</h1>
+    <legend>Liste des CONTACTS</legend>
     <table class = 'table table-bordered table-striped'>
       <thead>
         <tr class="col-12">
