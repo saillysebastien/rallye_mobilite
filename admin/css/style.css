@@ -2,10 +2,9 @@
   margin: 0px;
   padding: 0px;
 }
-
 body {
   font-size: 120%;
-  background: #F8F8FF;
+  background-color: rgb(214, 221, 255);
 }
 
 /*login.php et register.php*/
@@ -19,7 +18,6 @@ body {
   border-radius: 10px 10px 0px 0px;
   padding: 20px;
 }
-
 form {
   width: 30%;
   margin: 0px auto;
@@ -28,16 +26,13 @@ form {
   background: white;
   border-radius: 0px 0px 10px 10px;
 }
-
 .form-group {
   margin: 10px 0px 10px 0px;
 }
-
 .form-group label {
   display: block;
   margin: 3px;
 }
-
 .form-group input {
   height: 30px
   width: 93%;
@@ -46,12 +41,19 @@ form {
   border-radius: 5px;
   border: 1px solid gray;
 }
-
 .btn {
   border-radius: 5px;
 }
-
-.error {
+.errors {
   border-radius: 5px;
   border: 1px solid #a94442;
+}
+#access_change {
+  margin-top: 100px;
+}
+h4 {
+  margin-top: 130px;
+}
+div#end_head_app.collapse.navbar-collapse.justify-content-end {
+  max-width: 250px;
 }

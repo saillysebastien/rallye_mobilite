@@ -1,5 +1,5 @@
 <?php
-include('server.php');
+include('../../server.php');
 if (empty($_SESSION['username'])) {
   header('location: ../../login.php');
 }
@@ -13,14 +13,13 @@ if (empty($_SESSION['username'])) {
   <title>Rallye Mobilité</title>
 
   <link rel ="stylesheet" href="../../../assets/vendor/bootstrap4/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../../assets/css/responsive.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
 </head>
 <body>
-  <div class="container-fluid">
+
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Gestion Site web</a>
+      <a class="navbar-brand" href="#">Gestion Site</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,7 +28,7 @@ if (empty($_SESSION['username'])) {
 
         <ul class="nav nav-pills">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../home/home.php" role="button" aria-haspopup="true" aria-expanded="false">Page d'accueil</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../home/home.php" role="button" aria-haspopup="true" aria-expanded="false" title="Modifier rubrique Accueil">Accueil</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="../home/home.php">Liste des photos</a>
               <div class="dropdown-divider"></div>
@@ -65,14 +64,22 @@ if (empty($_SESSION['username'])) {
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../upload/images.php" role="button" aria-haspopup="true" aria-expanded="false">Page Images</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../upload/images.php" role="button" aria-haspopup="true" aria-expanded="false">Autres</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="../upload/images.php">Liste des images</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../upload/create_upload.php">Création d'une image</a>
             </div>
           </li>
+        </ul>
+      </div>
 
+      <div id="end_head_app"class="collapse navbar-collapse justify-content-end">
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="../../index.php" class="btn btn-outline-info" title="Choix entre site web et application">Accueil</a>
+            <a href="login.php?logout='1'" class="btn btn-outline-danger" title="Déconnexion">Se déconnecter</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -81,4 +88,3 @@ if (empty($_SESSION['username'])) {
     <div class="separate" style="margin-top: 70px;">
 
     </div>
-  </div>

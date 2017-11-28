@@ -4,7 +4,7 @@ if (empty($_SESSION['username'])) {
   session_start();
 }
 // Connexion à la base de données
-include('../config/connect.php');
+require('../config/connect.php');
 
 $username = '';
 $errors = [];
@@ -38,7 +38,7 @@ if (isset($_POST['register'])) {
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     mysqli_query($db, $sql);
     $informations['success'] = "<div class='alert alert-success'>Vous êtes bien enregistré il ne vous reste plus qu'à vous connecter<div>";
-    header('location: ../../login.php');
+    header('location: login.php');
   }
 }
 
@@ -65,7 +65,7 @@ if (isset($_POST['login'])) {
 
     if (password_verify($password, $row['password'])) {
       $_SESSION["username"] = $username;
-      header('location: www/home/home.php');
+      header('location: index.php');
     } else {
       array_push($errors, "Nom d'utilisateur ou de passe incorrect");
     }
@@ -76,6 +76,6 @@ if (isset($_POST['login'])) {
 if (isset($_GET['logout'])) {
   session_destroy();
   unset($_SESSION['username']);
-  header('Location: ../../login.php');
+  header('Location: login.php');
 }
 ?>

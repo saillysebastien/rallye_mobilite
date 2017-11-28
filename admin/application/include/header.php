@@ -1,8 +1,8 @@
 <?php
-include('server.php');
-// if (empty($_SESSION['username'])) {
-//   header('location: ../../login.php');
-// }
+include('../../server.php');
+if (empty($_SESSION['username'])) {
+  header('location: ../../login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -13,22 +13,17 @@ include('server.php');
   <title>Rallye Mobilité</title>
 
   <link rel ="stylesheet" href="../../../assets/vendor/bootstrap4/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../../assets/css/responsive.css" />
-  <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
+  <link rel="stylesheet" href="../../css/style.css" />
 </head>
 <body>
-  <div class="container-fluid">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Gestion Application</a>
+      <div class="navbar-brand">Gestion Application</div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse  justify-content-center" id="navbarNavDropdown">
-
+      <div class="collapse navbar-collapse justify-content-center">
         <ul class="nav nav-pills">
-
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../questionnaire/question.php" role="button" aria-haspopup="true" aria-expanded="false">Liste des questionnaires</a>
             <div class="dropdown-menu">
@@ -116,13 +111,17 @@ include('server.php');
               <a class="dropdown-item text-center" href="../groupe3/end.php">Fin du rallye</a>
             </div>
           </li>
+        </ul>
+      </div>
 
+      <div id="end_head_app"class="collapse navbar-collapse justify-content-end">
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="../../index.php" class="btn btn-outline-info" title="Choix entre site web et application">Accueil</a>
+            <a href="login.php?logout='1'" class="btn btn-outline-danger" title="Déconnexion">Se déconnecter</a>
+          </li>
         </ul>
       </div>
     </nav>
-
-
     <div class="separate" style="margin-top: 70px;">
-
     </div>
-  </div>
