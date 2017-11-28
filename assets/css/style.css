@@ -240,3 +240,20 @@ margin-bottom: 0px;
   border-bottom: 2px #3485ef solid;
   padding: 2px;
 }
+
+/*application*/
+label.col-4 {
+  padding: 0px 5px;
+  margin: auto;
+}
+
+form {
+  padding-top: 10px;
+}
+#submit_app {
+  margin-left: 38%;
+  margin-top: 10px;
+}
+.col-12 {
+  padding-left: 5px;
+}

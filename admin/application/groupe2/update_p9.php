@@ -53,7 +53,7 @@ if (isset($_POST['upload_who'])) {
 }
 
 if (isset($_POST['upload_quizz'])) {
-  $sql = sprintf("SELECT * FROM who WHERE id=%s", $_GET['id']);
+  $sql = sprintf("SELECT * FROM quizz WHERE id=%s", $_GET['id']);
   $query = $db->query($sql);
   $result = $query->fetch_assoc();
 

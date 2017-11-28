@@ -36,11 +36,11 @@ a.btn.btn-raised.btn-danger {
 .alert.alert-danger {
   background-color: #dc3545;
 }
-.col-4 {
+.col-4.society {
   padding: 7px 0 7px 2px;
   color: #fff;
 }
-.col-8 {
+.col-8.society {
   padding: 7px 0 7px 0;
   color: #fff;
 }

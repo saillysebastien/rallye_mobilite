@@ -17,24 +17,24 @@ while($row = $sql->fetch_assoc()) {
         <div class="card-body">
         <div class="row justify-content-center">
         <div class="alert alert-primary row">
-        <div class="col-4">Organisme :</div>
-        <div class="col-8">%s</div>
+        <div class="col-4 society">Organisme :</div>
+        <div class="col-8 society">%s</div>
         </div>
         <div class="alert alert-danger row">
-        <div class="col-4">Adresse :</div>
-        <div class="col-8">%s %s</div>
+        <div class="col-4 society">Adresse :</div>
+        <div class="col-8 society">%s %s</div>
         </div>
         <div class="alert alert-primary row">
-        <div class="col-4">Ville :</div>
-        <div class="col-8">%s %s</div>
+        <div class="col-4 society">Ville :</div>
+        <div class="col-8 society">%s %s</div>
         </div>
         <div class="alert alert-danger row">
-        <div class="col-4">Contact :</div>
-        <div class="col-8">%s</div>
+        <div class="col-4 society">Contact :</div>
+        <div class="col-8 society">%s</div>
         </div>
         <div class="alert alert-primary row">
-        <div class="col-4">Téléphone :</div>
-        <div class="col-8"><a href="tel:%s">%s</a></div>
+        <div class="col-4 society">Téléphone :</div>
+        <div class="col-8 society"><a href="tel:%s">%s</a></div>
         </div>
         </div>
         </div>
