@@ -1,4 +1,7 @@
-<?php include('include/header.php'); ?>
+<?php
+include('include/header.php');
+require('config/connect.php');
+?>
 
 <div class="container-fluid">
   <div class="row">
@@ -33,7 +36,7 @@
                   <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                  <?php include('home/caroussel.php'); ?>
+                  <?php include('web/caroussel.php'); ?>
                   <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Préc</span>
@@ -213,36 +216,37 @@
                             </div>
                             <div id="batîment" class="animated slideInDown" style="display: none;">
                               <div class="row">
-                                <?php include('entreprises/batîment.php');?>
+                                <?php include('web/batîment.php');?>
                               </div>
                             </div>
 
                             <div id="commerce" class="animated slideInLeft" style="display: none;">
                               <div class="row">
-                                <?php include('entreprises/commerce.php');?>
+                                <?php include('web/commerce.php');?>
                               </div>
                             </div>
 
                             <div id="industrie" class="animated slideInRight" style="display: none;">
                               <div class="row">
-                                <?php include('entreprises/industrie.php');?>
+                                <?php include('web/industrie.php');?>
                               </div>
                             </div>
 
                             <div id="logistique" class="animated slideInUp" style="display: none;">
                               <div class="row">
-                                <?php include('entreprises/logistique.php');?>
+                                <?php include('web/logistique.php');?>
                               </div>
                             </div>
 
                             <div id="restauration" class="animated zoomIn" style="display: none;">
                               <div class="row">
-                                <?php include('entreprises/restauration.php');?>
+                                <?php include('web/restauration.php');?>
                               </div>
                             </div>
 
                             <div id="travaux_publics" class="animated zoomIn" style="display: none;">
-                              <div class="row"> <?php include('entreprises/travaux_publics.php');?>
+                              <div class="row">
+                                <?php include('web/travaux_publics.php');?>
                               </div>
                             </div>
 
@@ -276,7 +280,7 @@
                       <div class="panel-thumb">
                         <div class="animated rotateInUpLeft">
                           <div class="row">
-                            <?php include('formations/formations.php'); ?>
+                            <?php include('web/formations.php'); ?>
                           </div>
                         </div>
                       </div>
@@ -322,7 +326,7 @@
                       <div class="panel-thumb">
                         <div class="animated rotateInUpRight">
                           <div class="row">
-                            <?php include('contact/contact.php'); ?>
+                            <?php include('web/contact.php'); ?>
                           </div>
                         </div>
                       </div>

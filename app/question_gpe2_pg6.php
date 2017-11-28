@@ -1,9 +1,11 @@
 <?php
-include("include/header.php");
+include("../include/header_app.php");
+require('../config/connect.php');
 
 $indice = "";
 $errors = [];
 $infos = [];
+$access = false;
 
 $name = "";
 $question = "";
@@ -19,7 +21,7 @@ $response_app ="";
 $image = "";
 $qrcode = "";
 
-$sql = sprintf("SELECT * FROM appli WHERE id=11");
+$sql = sprintf("SELECT * FROM appli WHERE id=16");
 $query = $db->query($sql);
 $result = $query->fetch_assoc();
 
@@ -56,7 +58,8 @@ if (isset($_POST["submit"])) {
       ?>
     </div>
     <?php
-    if (empty($question)) {
+    if (empty($question) && !empty($my_all)) {
+      $access = true;
       if (!empty($one)) {
         printf('
         <div class="col-12 text-left">Mon premier est '. $one .' ...</div>
@@ -100,6 +103,7 @@ if (isset($_POST["submit"])) {
     if (empty($one)) {
       if (empty($image)) {
         if (!empty($question)) {
+          $access = true;
           printf('
           <div class="col-12"> Question : '. $question .'</div>
           ');
@@ -115,9 +119,10 @@ if (isset($_POST["submit"])) {
     }
 
     if (empty($one)) {
-      if (!empty($image)) {
+      if (!empty($image && !empty($question))) {
+        $access = true;
         printf('
-        <div class="col-12"><img class="img img-fluid" src="admin/application/questionnaire/images/'.$image.'" /></div>
+        <div class="col-12"><img class="img img-fluid" src="../admin/application/questionnaire/images/'.$image.'" /></div>
         <div class="col-12"> Question : '. $question .'</div>
         ');
         if (isset($indice)) {
@@ -129,11 +134,21 @@ if (isset($_POST["submit"])) {
         ');
       }
     }
+
+    if ($access) {
+      printf('
+      <input class="col-8" type="text" name="response_app" />
+      <button id="submit_app" type="submit" class="btn btn-info" name="submit">Valider</button>
+      ');
+    } else {
+      printf('
+      <div class="alert alert-danger text-center" type="alert" id="error_page"><div id="error_page_margin"><br />La page que vous avez demandé n\'est pas disponible ou n\'a pas été configuré pour ce rallye. <br /><br /><a href="../index.php" type="button" class="btn btn-info">Retour au site</a><br /><br /></div></div>
+      ');
+    }
     ?>
-    <input class="col-8" type="text" name="response_app" />
-    <button id="submit_app" type="submit" class="btn btn-info" name="submit">Valider</button>
+
   </form>
 </div>
 </div>
 
-<?php include("include/footer.php");
+<?php include("../include/footer_app.php");
