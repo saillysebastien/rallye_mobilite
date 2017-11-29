@@ -1,10 +1,11 @@
 <?php
 include('../include/header.php');
 
-$id = null;
-$valid = true;
 $errors = [];
 $infos= [];
+
+$id = null;
+$valid = true;
 $image = null;
 $text = "";
 $title = "";
@@ -58,11 +59,11 @@ if ($_POST) {
 }
 ?>
 <div class="container create_home text-center">
+  <legend>Création pour la rubrique accueil (photos et commentaires)</legend><br />
   <?php
   include("../infos.php");
   include("../errors.php");
   ?>
-  <legend>Création pour la rubrique accueil (photos et commentaires)</legend><br />
   <form  method="post" enctype="multipart/form-data" class="home">
     <div class="form-group">
       <label class="col-2" for="id_caroussel">Identifiant de la photo</label>

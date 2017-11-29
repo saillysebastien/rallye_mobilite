@@ -3,6 +3,7 @@ include('../include/header.php');
 
 $infos = [];
 $errors = [];
+
 $valid = true;
 $title = '';
 $adresse = '';
@@ -96,12 +97,12 @@ if ($_POST) {
 }
 ?>
 <div class="container-fluid text-center">
-  <?php
-  include('../infos.php');
-  include('../errors.php');
-  ?>
   <div class="col-12">
     <legend>Modification d'une fiche CONTACT</legend>
+    <?php
+    include('../infos.php');
+    include('../errors.php');
+    ?>
     <div class="row justify-content-center">
       <form action="#" method="post" enctype="multipart/form-data">
 

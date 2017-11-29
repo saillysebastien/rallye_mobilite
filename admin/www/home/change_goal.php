@@ -50,12 +50,12 @@ if ($_POST) {
 }
 ?>
 <div class="container-fluid text-center">
-  <?php
-  include("../infos.php");
-  include("../errors.php");
-  ?>
     <div class="col-12">
       <legend>Modification d'un OBJECTIF pour la page d'accueil</legend>
+      <?php
+      include("../infos.php");
+      include("../errors.php");
+      ?>
       <div class="row justify-content-center">
       <form method="post" enctype="multipart/form-data">
           <div class="form-group text-center">
@@ -71,7 +71,7 @@ if ($_POST) {
           <div class="form-check">
             <label class="form-check-label col-12">
               <input type="checkbox" class="form-check-input col-3" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />
-              Cochez ici si vous voulez que cette entreprise soit affiché!
+              Cochez ici si vous voulez que cet objectif soit affiché!
             </label>
           </div>
         </div>

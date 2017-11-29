@@ -19,7 +19,9 @@ if (empty($_SESSION['username'])) {
 <body>
 
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Gestion Site web</a>
+      <a class="navbar-brand" href="#">Gestion Site web par <?php if (!empty($_SESSION['username'])) {
+        echo $_SESSION['username'];
+      } ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,8 +33,10 @@ if (empty($_SESSION['username'])) {
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../home/home.php" role="button" aria-haspopup="true" aria-expanded="false" title="Gérer la rubrique Accueil">Accueil</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="../home/home.php">Liste des photos</a>
-              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../home/create_caroussel.php">Création d'une photo</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../home/goal.php">Liste des objectifs</a>
+              <a class="dropdown-item" href="../home/create_goal.php">Création d'un objectif</a>
             </div>
           </li>
 

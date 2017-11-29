@@ -3,6 +3,7 @@ include('../include/header.php');
 
 $infos =[];
 $errors = [];
+
 $valid = true;
 $title = '';
 $image = '';
@@ -122,12 +123,12 @@ if ($_POST) {
 }
 ?>
 <div class="container-fluid">
-  <?php
-  include('../infos.php');
-  include('../errros.php');
-  ?>
   <div class="col-12">
     <legend>Modification d'une fiche FORMATION</legend>
+    <?php
+    include('../infos.php');
+    include('../errros.php');
+    ?>
     <div class="row justify-content-center text-center">
       <form method="post" enctype="multipart/form-data">
 

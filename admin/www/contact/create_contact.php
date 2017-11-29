@@ -4,6 +4,7 @@ require('../../../config/connect.php');
 
 $infos = [];
 $errors = [];
+
 $valid = true;
 $title = '';
 $adresse = '';
@@ -75,7 +76,7 @@ if (isset($_POST['valider'])) {
     $valid_sql = mysqli_query($db, $sql);
 
     if ($valid_sql) {
-      array_push($informations, "Le contact $title a été créé et inscrit dans la base de données.");
+      array_push($infos, "Le contact $title a été créé et inscrit dans la base de données.");
     }
   } else {
     array_push($errors, "Une erreur est survenue lors du remplissage du formulaire.");
@@ -83,11 +84,11 @@ if (isset($_POST['valider'])) {
 }
 ?>
 <div class="container-fluid text-center">
+  <legend>Création d'une fiche contact</legend>
   <?php
   include("../infos.php");
   include("../errors.php")
   ?>
-  <legend>Création d'une fiche contact</legend>
   <div class="row justify-content-center">
     <form action="#" method="post" enctype="multipart/form-data">
 

@@ -44,11 +44,11 @@ if (isset($_POST['upload'])) {
 }
 ?>
 <div class="container-fluid text-center">
+  <legend>Téléchargement d'une nouvelle image </legend>
   <?php
   include("../infos.php");
   include("../errors.php");
   ?>
-  <legend>Téléchargement d'une nouvelle image </legend>
   <div class="row justify-content-center">
     <form  action="create_upload.php" method="post" enctype="multipart/form-data">
       <div class="form-group text-center">

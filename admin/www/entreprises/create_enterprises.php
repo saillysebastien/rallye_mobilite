@@ -3,6 +3,7 @@ include('../include/header.php');
 
 $infos = [];
 $errors = [];
+
 $valid = true;
 $title = '';
 $number_street = null;
@@ -125,11 +126,11 @@ if (isset($_POST['upload'])) {
 }
 ?>
 <div class="container-fluid text-center">
+  <legend>Creation d'une fiche entreprise</legend>
   <?php
   include('../infos.php');
   include('../errors.php');
   ?>
-  <legend>Creation d'une fiche entreprise</legend>
   <div class="row justify-content-center">
     <form action="create_enterprises.php" method="post" enctype="multipart/form-data">
 

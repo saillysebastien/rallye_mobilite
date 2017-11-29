@@ -4,6 +4,7 @@ require('../config/connect.php');
 
 $infos = [];
 $errors = [];
+
 $valid = true;
 $title = "";
 $one = "";
@@ -69,11 +70,11 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <div class="container text-center">
+  <legend class="text-center"> Création d'un rébus </legend>
   <?php
   include("../include/infos.php");
   include("../include/errors.php");
   ?>
-  <legend class="text-center"> Création d'un rébus </legend>
   <form class="col-8" action="create_rebus.php" method="post" enctype="multipart/form-data">
 
     <div class="form-group text-center">

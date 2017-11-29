@@ -6,7 +6,7 @@ require('config/connect.php');
 <div class="container-fluid">
   <div class="row">
     <div class="col">
-      <h1 class="centered">Rallye Mobilité</h1>
+      <h1 class="text-center">Rallye Mobilité</h1>
     </div><!--!col-->
   </div><!--!row-->
 
@@ -49,7 +49,7 @@ require('config/connect.php');
               </div><!--!caroussel-->
 
               <div class="container">
-                <h4 class="centered">Notre objectif</h4>
+                <h4 class="text-center">Notre objectif</h4>
                 <div class="pagetitle-separator-border">
                   <div class="pagetitle-separator-box">
                   </div>
@@ -67,7 +67,7 @@ require('config/connect.php');
 
                 <!-- card -->
                 <div class="container">
-                  <h4 class="centered">Explications</h4>
+                  <h4 class="text-center">Explications</h4>
                   <div class="pagetitle-separator-border">
                     <div class="pagetitle-separator-box"></div>
                   </div>
@@ -154,13 +154,13 @@ require('config/connect.php');
             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
               <div class="panel-body">
                 <div class="container">
-                  <div class="row">
+                  <div class="row text-center">
                     <div class="col-12 text_mobility">
-                      Vous avez repéré une entreprise ou une formation qui vous intéresse et vous ne savez pas comment y aller?<br/>
-                      Pas de souci !! Nous vous avons indiqué les divers sites de transports pour vous y rendre.
+                      <h6>Vous avez repéré une entreprise ou une formation qui vous intéresse et vous ne savez pas comment y aller?</h6>
+                      <h6>Pas de souci !! Nous vous avons indiqué les divers sites de transports pour vous y rendre.</h6>
                     </div>
                     <div class="col-12 image_mobility">
-                      <a href="https://www.voyages-sncf.com/" target="_blank"><img src="img/sncf2.jpg" alt="image de la SNCF" class="img_mobility  first_image"></a>
+                      <a href="https://www.voyages-sncf.com/" target="_blank"><img src="img/sncf2.jpg" alt="image de la SNCF" class="img_mobility first_image"></a>
                     </div>
                     <div class="col-12 image_mobility">
                       <a href="http://www.tadao.fr/affichage.php?id=268" target="_blank"><img src="img/tadao5.jpeg" alt="image de tadao" class="img_mobility"></a>
@@ -186,7 +186,7 @@ require('config/connect.php');
               <h4 class="panel-title">
                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   Entreprises
-                  <p class="title">Les entreprises par secteur d'acivité qui recrutent</p>
+                  <p class="title">Les entreprises qui recrutent</p>
                 </a>
               </h4>
             </div>
@@ -194,7 +194,7 @@ require('config/connect.php');
             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
               <div class="panel-body">
                 <div class="container-fluid">
-                  <div class="row">
+                  <div class="row justify-content-center">
                     <div id="user" class="col-md-12" >
                       <div class="panel panel-primary panel-table">
                         <div class="panel-heading">
@@ -209,50 +209,48 @@ require('config/connect.php');
                             </div>
                           </div>
                         </div>
-                        <div class="row justify-content-center">
+                        <div class="row">
                           <div class="panel-thumb">
                             <div id="no_selected" class="animated slideInUp">
-                              Sélectionner un secteur d'activité pour voir apparaître ses fiches Entreprises.
+                              <h6 class="text_enterprises">Sélectionner un secteur d'activité pour voir apparaître ses fiches Entreprises.</h6>
                             </div>
                             <div id="batîment" class="animated slideInDown" style="display: none;">
-                              <div class="row">
+                              <div class="row justify-content-center">
                                 <?php include('web/batîment.php');?>
                               </div>
                             </div>
 
                             <div id="commerce" class="animated slideInLeft" style="display: none;">
-                              <div class="row">
+                              <div class="row justify-content-center">
                                 <?php include('web/commerce.php');?>
                               </div>
                             </div>
 
                             <div id="industrie" class="animated slideInRight" style="display: none;">
-                              <div class="row">
+                              <div class="row justify-content-center">
                                 <?php include('web/industrie.php');?>
                               </div>
                             </div>
 
                             <div id="logistique" class="animated slideInUp" style="display: none;">
-                              <div class="row">
+                              <div class="row justify-content-center">
                                 <?php include('web/logistique.php');?>
                               </div>
                             </div>
 
                             <div id="restauration" class="animated zoomIn" style="display: none;">
-                              <div class="row">
+                              <div class="row justify-content-center">
                                 <?php include('web/restauration.php');?>
                               </div>
                             </div>
 
                             <div id="travaux_publics" class="animated zoomIn" style="display: none;">
-                              <div class="row">
+                              <div class="row justify-content-center">
                                 <?php include('web/travaux_publics.php');?>
                               </div>
                             </div>
-
                           </div>
                         </div><!--!row-->
-
                       </div>
                     </div>
                   </div>
@@ -279,7 +277,7 @@ require('config/connect.php');
                     <div id="user2" class="col-md-12" >
                       <div class="panel-thumb">
                         <div class="animated rotateInUpLeft">
-                          <div class="row">
+                          <div class="row justify-content-center">
                             <?php include('web/formations.php'); ?>
                           </div>
                         </div>
@@ -325,7 +323,7 @@ require('config/connect.php');
                     <div id="user2" class="col-md-12" >
                       <div class="panel-thumb">
                         <div class="animated rotateInUpRight">
-                          <div class="row">
+                          <div class="row justify-content-center">
                             <?php include('web/contact.php'); ?>
                           </div>
                         </div>

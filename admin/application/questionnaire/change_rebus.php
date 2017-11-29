@@ -3,6 +3,7 @@ include('../include/header.php');
 
 $infos = [];
 $errors = [];
+
 $valid = true;
 $title = "";
 $one = "";
@@ -100,11 +101,11 @@ if (isset($_POST['valider'])) {
 }
 ?>
 <div class="container text-center">
+<legend class="text-center"> Modification du rébus <?= $title ?> </legend>
 <?php
 include('../include/infos.php');
 include('../include/errors.php');
- ?>
-<legend class="text-center"> Modification du rébus <?= $title ?> </legend>
+?>
 <form action="#" method="post" enctype="multipart/form-data">
 
   <div class="for-group text-center">

@@ -14,7 +14,7 @@
     <div class="header">
       <h2>Se connecter</h2>
     </div>
-    <form action="login.php" method="post">
+    <form action="login.php" method="post" id="form_login">
       <?php if (isset($informations['success'])) {
         echo $informations['success'];
       }

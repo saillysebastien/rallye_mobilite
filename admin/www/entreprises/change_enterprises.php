@@ -127,12 +127,12 @@ if ($_POST) {
 }
 ?>
 <div class="container-fluid text-center">
-  <?php
-  include("../infos.php");
-  include("../errors.php");
-  ?>
   <div class="col-12">
     <legend>Modification d'une fiche ENTREPRISE</legend>
+    <?php
+    include("../infos.php");
+    include("../errors.php");
+    ?>
     <div class="row justify-content-center">
       <form method="post" enctype="multipart/form-data">
         <div class="form-group  text-center">

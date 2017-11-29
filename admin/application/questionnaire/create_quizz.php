@@ -3,6 +3,7 @@ include('../include/header.php');
 
 $infos = [];
 $errors = [];
+
 $valid = true;
 $title = "";
 $question = "";
@@ -42,7 +43,7 @@ if (isset($_POST['valider'])) {
     $valid_sql = mysqli_query($db, $sql);
 
     if ($valid_sql) {
-      $informations['success'] = "<div class='alert alert-info text-center' role='alert'>Le quizz $title a été créé et les informations ont bien été inscrites dans la base de données.</div>";
+      $infos['success'] = "<div class='alert alert-info text-center' role='alert'>Le quizz $title a été créé et les informations ont bien été inscrites dans la base de données.</div>";
     }
   } else {
     $error['valid'] = "<div class='alert alert-warning text-center' role='alert'>Une erreur est survenue lors du remplissage du formulaire !!!<div>";
@@ -50,21 +51,11 @@ if (isset($_POST['valider'])) {
 }
 ?>
 <div class="container text-center">
+  <legend class="text-center"> Création d'un QUIZZ </legend>
   <?php
-  if (isset($informations['success'])) {
-    echo $informations['success'];
-  }
-  if (isset($error['title'])) {
-    echo $error['title'];
-  }
-  if (isset($error['question'])) {
-    echo $error['question'];
-  }
-  if (isset($error['response'])) {
-    echo $error['response'];
-  }
-?>
-  <legend class="text-center"> Création d'un quizz </legend>
+  include("../errors.php");
+  include("../infos.php");
+  ?>
   <form class="col-8" action="#" method="post" enctype="multipart/form-data">
 
     <div class="form-group text-center">
@@ -89,4 +80,4 @@ if (isset($_POST['valider'])) {
     <button type="submit" name="valider" class="btn btn-primary"> Valider </button>
   </div>
 </div>
-  <?php include('../include/footer.php');?>
+<?php include('../include/footer.php');?>

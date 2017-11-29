@@ -3,6 +3,7 @@ include('../include/header.php');
 
 $infos = [];
 $errors = [];
+
 $valid = true;
 $title = '';
 $image = '';
@@ -77,11 +78,11 @@ if (isset($_POST['valider'])) {
 }
 ?>
 <div class="container-fluid text-center">
-  <?php
-  include("../infos.php");
-  include("../errors.php");
-   ?>
    <legend>Creation d'un quizz Qui est-ce?</legend>
+   <?php
+   include("../infos.php");
+   include("../errors.php");
+   ?>
    <form class="col-8" action="#" method="post" enctype="multipart/form-data">
 
    <div class="form-group text-center">
