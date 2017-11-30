@@ -44,8 +44,9 @@ if (empty($_SESSION['username'])) {
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../entreprises/enterprises.php" role="button" aria-haspopup="true" aria-expanded="false" title="Gérer la rubrique Entreprise">Entreprise</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="../entreprises/enterprises.php">Liste des entreprises</a>
-              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../entreprises/create_enterprises.php">Création d'une entreprise</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../entreprises/button_enterprise.php" title="Montrer ou cacher certains domaines d'activités">Gestion des boutons</a>
             </div>
           </li>
 

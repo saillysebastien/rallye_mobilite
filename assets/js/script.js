@@ -1,17 +1,17 @@
 // entreprises
-$("#filter_batîment").click(function() {
+$("#filter_bâtiment").click(function() {
   $("#no_selected").css("display", "none");
   $("#commerce").css("display", "none");
   $("#industrie").css("display", "none");
   $("#logistique").css("display", "none");
   $("#restauration").css("display", "none");
   $("#travaux_publics").css("display", "none");
-  $("#batîment").show();
+  $("#bâtiment").show();
 })
 
 $("#filter_commerce").click(function() {
   $("#no_selected").css("display", "none");
-  $("#batîment").css("display", "none");
+  $("#bâtiment").css("display", "none");
   $("#industrie").css("display", "none");
   $("#logistique").css("display", "none");
   $("#restauration").css("display", "none");
@@ -21,7 +21,7 @@ $("#filter_commerce").click(function() {
 
 $("#filter_industrie").click(function() {
   $("#no_selected").css("display", "none");
-  $("#batîment").css("display", "none");
+  $("#bâtiment").css("display", "none");
   $("#commerce").css("display", "none");
   $("#logistique").css("display", "none");
   $("#restauration").css("display", "none");
@@ -31,7 +31,7 @@ $("#filter_industrie").click(function() {
 
 $("#filter_logistique").click(function() {
   $("#no_selected").css("display", "none");
-  $("#batîment").css("display", "none");
+  $("#bâtiment").css("display", "none");
   $("#commerce").css("display", "none");
   $("#industrie").css("display", "none");
   $("#restauration").css("display", "none");
@@ -41,7 +41,7 @@ $("#filter_logistique").click(function() {
 
 $("#filter_restauration").click(function() {
   $("#no_selected").css("display", "none");
-  $("#batîment").css("display", "none");
+  $("#bâtiment").css("display", "none");
   $("#commerce").css("display", "none");
   $("#industrie").css("display", "none");
   $("#logistique").css("display", "none");
@@ -51,7 +51,7 @@ $("#filter_restauration").click(function() {
 
 $("#filter_travaux_publics").click(function() {
   $("#no_selected").css("display", "none");
-  $("#batîment").css("display", "none");
+  $("#bâtiment").css("display", "none");
   $("#commerce").css("display", "none");
   $("#industrie").css("display", "none");
   $("#logistique").css("display", "none");

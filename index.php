@@ -57,10 +57,14 @@ require('config/connect.php');
 
                 <div class="row justify-content-center" >
                   <div class="col-12 col-sm-12 col-md-10 col-lg-8">
-                    <p>Vous souhaitez decouvrir les entreprises du territoire ?
-                      <br />Vos conseillers vont vous y aider ! Préparez vous à jouer et à découvrir des métiers.
-                      <br /> Cette application a été imaginé par la Mission Locale de Lens-Liévin et la Maison de l'emploi de Lens-Liévin-Hénin-Carvin.
-                      <br /> Elle a été conçue et réalisée avec l'appui technique des étudiants de Pop School Lens, par Mr Sailly Sébastien avec l'aide de Mr Rudy Malcherczyk et Mme Karine Molinaro.</p>
+                    <?php
+                    $sql = $db->query("SELECT * FROM goal WHERE done = 1 ORDER BY id");
+                    while($row = $sql->fetch_assoc()) {
+                      printf('
+                      <div class="col-12">%s</div>'
+                    , $row['text']);
+                    }
+                     ?>
                     </div>
                   </div>
                 </div>
@@ -200,12 +204,18 @@ require('config/connect.php');
                         <div class="panel-heading">
                           <div class="row">
                             <div class="col col-xs-8 well text-center" style="padding:1px;">
-                              <button id="filter_batîment" title = "Batîment" class = "btn btn-outline-primary animated slideInDown">Batîment</button>
-                              <button id="filter_commerce" title = "Commerce" class = "btn btn-outline-primary animated slideInDown">Commerce</button>
-                              <button id="filter_industrie" title = "Industrie" class = "btn btn-outline-primary animated slideInDown">Industrie</button>
-                              <button id="filter_logistique" title = "Logistique" class = "btn btn-outline-primary animated slideInDown">Logistique</button>
-                              <button id="filter_restauration" title = "Restauration" class = "btn btn-outline-primary animated slideInDown">Restauration</button>
-                              <button id="filter_travaux_publics" title = "Travaux publics" class = "btn btn-outline-primary animated slideInDown">Travaux publics</button>
+                              <?php
+                              $sql = $db->query("SELECT * FROM button_enterprise WHERE done = 1 ORDER BY name ASC");
+                              $result = $sql->fetch_assoc();
+                                while($row = $sql->fetch_assoc()) {
+                                  printf('
+                                  <button id="filter_%s" title="%s" class="btn btn-outline-primary animated slideInDown">%s</button>'
+                                , $row['name']
+                                , ucfirst($row['name'])
+                                , ucfirst($row['name'])
+                                );
+                              }
+                              ?>
                             </div>
                           </div>
                         </div>

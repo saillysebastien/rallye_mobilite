@@ -40,11 +40,11 @@ if (empty($_SESSION['username'])) {
             - De la configuration de l'application pour la prochaine semaine de l'événement.</h4><br />
             - Créer un utilisateur.
         <div class="col-8 text-center" id="access_change">
-          <a class="btn btn-info" href="www/home/home.php" type="button">Accéder aux modifications du site web</a>
-          <a class="btn btn-info" href="application/questionnaire/question.php" type="button">Accéder à la configuration de l'application</a><br/><br />
+          <a class="btn btn-dark" href="www/home/home.php" type="button">Accéder aux modifications du site web</a>
+          <a class="btn btn-dark" href="application/questionnaire/question.php" type="button">Accéder à la configuration de l'application</a><br/><br />
         </div>
         <div class="col-8 text-center">
-          <a class="btn btn-dark" href="register.php" type="button">Création d'un utilisateur</a>
+          <a class="btn btn-outline-info" href="register.php" type="button">Création d'un utilisateur</a>
         </div>
       </div>
     </div>

@@ -24,11 +24,14 @@ a.btn.btn-raised.btn-danger {
   width: 98%;
   margin-left: 1%;
 }
-.alert.alert-danger, .alert.alert-primary {
+.alert.alert-warning, .alert.alert-primary {
   height: auto;
   width: 100%;
   margin-bottom: 6px;
   padding: 0;
+}
+.alert.alert-warning, .btn.btn-warning {
+  background-color: rgb(236, 102, 52);
 }
 .alert.alert-primary {
   background-color: #3485ef;
