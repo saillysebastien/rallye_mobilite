@@ -70,57 +70,59 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <div class="container text-center">
-  <legend class="text-center"> Création d'un rébus </legend>
-  <?php
-  include("../include/infos.php");
-  include("../include/errors.php");
-  ?>
-  <form class="col-8" action="create_rebus.php" method="post" enctype="multipart/form-data">
+  <div class="row justify-content-center">
+    <legend class="text-center"> Création d'un rébus </legend>
+    <?php
+    include("../include/infos.php");
+    include("../include/errors.php");
+    ?>
+    <form class="col-8" action="create_rebus.php" method="post" enctype="multipart/form-data">
 
-    <div class="form-group text-center">
-      <label class="col-12" for="title"> Nom du rébus</label>
-      <input class="col-8" type="text" placeholder="obligatoire" name="title" value="<?= htmlentities($title) ?>" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="title"> Nom du rébus</label>
+        <input class="col-8" type="text" placeholder="obligatoire" name="title" value="<?= htmlentities($title) ?>" />
+      </div>
 
-    <div class="form-group text-center">
-      <label class="col-12" for="one"> Question 1 </label>
-      <input class="col-8" type="text" placeholder="obligatoire" name="one" value="<?= htmlentities($one) ?>" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="one"> Question 1 </label>
+        <input class="col-8" type="text" placeholder="obligatoire" name="one" value="<?= htmlentities($one) ?>" />
+      </div>
 
-    <div class="form-group text-center">
-      <label class="col-12" for="two"> Question 2 </label>
-      <input class="col-8" type="text" placeholder="obligatoire" name="two" value="<?= htmlentities($two) ?>" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="two"> Question 2 </label>
+        <input class="col-8" type="text" placeholder="obligatoire" name="two" value="<?= htmlentities($two) ?>" />
+      </div>
 
-    <div class="form-group text-center">
-      <label class="col-12" for="three"> Question 3 </label>
-      <input class="col-8" type="text" name="three" value="<?= htmlentities($three) ?>" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="three"> Question 3 </label>
+        <input class="col-8" type="text" name="three" value="<?= htmlentities($three) ?>" />
+      </div>
 
-    <div class="form-group text-center">
-      <label class="col-12" for="four"> Question 4 </label>
-      <input class="col-8" type="text" name="four" value="<?= htmlentities($four) ?>" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="four"> Question 4 </label>
+        <input class="col-8" type="text" name="four" value="<?= htmlentities($four) ?>" />
+      </div>
 
-    <div class="form-group text-center">
-      <label class="col-12" for="five"> Question 5 </label>
-      <input class="col-8" type="text" name="five" value="<?= htmlentities($five) ?>" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="five"> Question 5 </label>
+        <input class="col-8" type="text" name="five" value="<?= htmlentities($five) ?>" />
+      </div>
 
-    <div class="form-group text-center">
-      <label class="col-12" for="index"> Indice </label>
-      <input class="col-8" type="text" name="index" value="<?= htmlentities($index) ?>" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="index"> Indice </label>
+        <input class="col-8" type="text" name="index" value="<?= htmlentities($index) ?>" />
+      </div>
 
-    <div class="form-group text-center">
-      <label class="col-12" for="my_all"> Mon tout est ...</label>
-      <input class="col-8" type="text" placeholder="obligatoire" name="my_all" value="<?= htmlentities($my_all) ?>" />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="my_all"> Mon tout est ...</label>
+        <input class="col-8" type="text" placeholder="obligatoire" name="my_all" value="<?= htmlentities($my_all) ?>" />
+      </div>
 
-    <div class="form-group text-center">
-      <label class="col-12" for="response">Réponse</label>
-      <input class="col-8" type="text" placeholder="obligatoire" name="response" value="<?= htmlentities($response) ?>" />
+      <div class="form-group text-center">
+        <label class="col-12" for="response">Réponse</label>
+        <input class="col-8" type="text" placeholder="obligatoire" name="response" value="<?= htmlentities($response) ?>" />
+      </div>
+      <button type="submit" name="submit" class="btn btn-primary">Valider</button>
     </div>
-    <button type="submit" name="submit" class="btn btn-primary">Valider</button>
   </div>
   <?php include('../include/footer.php');?>

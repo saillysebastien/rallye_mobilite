@@ -63,6 +63,15 @@ if (empty($_SESSION['username'])) {
           </li>
 
           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../mobility/mobility.php" role="button" aria-haspopup="true" aria-expanded="false" title="Gérer la rubrique Mobilité">Mobilité</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="../mobility/mobility.php">Liste des moyens de transport</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../mobility/create_mobility.php">Création d'un moyen de transport</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../contact/contact.php" role="button" aria-haspopup="true" aria-expanded="false" title="Gérer la rubrique Contact">Contact</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="../contact/contact.php">Liste des contacts</a>

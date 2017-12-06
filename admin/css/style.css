@@ -49,7 +49,7 @@ body {
   border: 1px solid #a94442;
 }
 #access_change {
-  margin-top: 100px;
+  margin-top: 70px;
 }
 h4 {
   margin-top: auto;
@@ -62,4 +62,8 @@ div#end_head_app.collapse.navbar-collapse.justify-content-end {
 }
 #image {
   margin-left: 25%;
+}
+
+.separate {
+  margin-top: 80px;
 }

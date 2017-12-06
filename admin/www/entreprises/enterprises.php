@@ -62,8 +62,7 @@ include('../include/header.php');
       }
       ?>
     </tbody>
-  </div>
+  </table>
 </div>
-<?php
-include('../include/footer.php');
-?>
+</div>
+<?php include('../include/footer.php'); ?>

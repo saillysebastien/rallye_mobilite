@@ -137,23 +137,41 @@ require('config/connect.php');
               <div class="container">
                 <div class="row text-center">
                   <div class="col-12 text_mobility">
-                    <h6>Vous avez repéré une entreprise ou une formation qui vous intéresse et vous ne savez pas comment y aller?</h6>
+                    <h6>Vous avez repéré une entreprise ou une formation qui vous intéresse et vous ne savez pas comment y aller ?</h6>
                     <h6>Pas de souci !! Nous vous avons indiqué les divers sites de transports pour vous y rendre.</h6>
                   </div>
-                  <div class="col-12 image_mobility">
-                    <a href="https://www.voyages-sncf.com/" target="_blank"><img src="img/sncf2.jpg" alt="image de la SNCF" class="img_mobility first_image"></a>
-                  </div>
-                  <div class="col-12 image_mobility">
-                    <a href="http://www.tadao.fr/affichage.php?id=268" target="_blank"><img src="img/tadao5.jpeg" alt="image de tadao" class="img_mobility"></a>
-                  </div>
-
-                  <div class="col-12 image_mobility">
-                    <a href="https://www.google.fr/search?q=taxi+lens&tbas=0&sa=X&ved=0ahUKEwjO6ainp4bXAhVkB8AKHSNTAIsQtgQIGg&biw=360&bih=536" target="_blank"><img src="img/taxi2.jpeg" alt="image de taxi" class="img_mobility"></a>
-                  </div>
-
-                  <div class="col-12 image_mobility">
-                    <a href="https://www.idvroom.com/recherche-trajet?utm_source=Voyagesncf&utm_medium=pageweb&utm_campaign=partenariatvsc&forcecookies=ok" target="_blank"><img src="img/idvroom.png" alt="image de idvroom" class="img_mobility  last_image"></a>
-                  </div>
+                  <?php
+                  $sql = $db->query("SELECT * FROM mobility WHERE id = 1");
+                  while($row = $sql->fetch_assoc()) {
+                    printf('
+                    <div class="col-12 image_mobility">
+                      <a href="http://%s" target="_blank"><img src="img/%s" alt="image de %s" class="img_mobility first_image"></a>
+                    </div>'
+                  , $row['web']
+                  , $row['image']
+                  , $row['title']);
+                  }
+                  $sql3 = $db->query("SELECT * FROM mobility WHERE id != 1 AND id != 2 ORDER BY title");
+                  while($row = $sql3->fetch_assoc()) {
+                    printf('
+                    <div class="col-12 image_mobility">
+                      <a href="http://%s" target="_blank"><img src="img/%s" alt="image de %s" class="img_mobility"></a>
+                    </div>'
+                  , $row['web']
+                  , $row['image']
+                  , $row['title']);
+                  }
+                  $sql2 = $db->query("SELECT * FROM mobility WHERE id = 2");
+                  while($row = $sql2->fetch_assoc()) {
+                    printf('
+                    <div class="col-12 image_mobility">
+                      <a href="http://%s" target="_blank"><img src="img/%s" alt="image de %s" class="img_mobility last_image"></a>
+                    </div>'
+                  , $row['web']
+                  , $row['image']
+                  , $row['title']);
+                  }
+                   ?>
 
                 </div>
               </div>

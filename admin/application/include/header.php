@@ -27,7 +27,7 @@ if (empty($_SESSION['username'])) {
       <div class="collapse navbar-collapse justify-content-center">
         <ul class="nav nav-pills">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../questionnaire/question.php" role="button" aria-haspopup="true" aria-expanded="false">Liste des questionnaires</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../questionnaire/question.php" role="button" aria-haspopup="true" aria-expanded="false">Questionnaires</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="../questionnaire/question.php">Liste</a>
               <div class="dropdown-divider"></div>

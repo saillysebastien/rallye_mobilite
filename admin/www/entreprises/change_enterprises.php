@@ -38,7 +38,7 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $web = $result['web'];
 } else {
   $valid = false;
-  array_push($errors, "Vous devez spécifier une image à supprimer !");
+  array_push($errors, "Vous devez spécifier une entreprise à modifier !");
 }
 if ($_POST) {
   $valid = true;

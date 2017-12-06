@@ -51,33 +51,35 @@ if (isset($_POST['valider'])) {
 }
 ?>
 <div class="container text-center">
-  <legend class="text-center"> Création d'un QUIZZ </legend>
-  <?php
-  include("../errors.php");
-  include("../infos.php");
-  ?>
-  <form class="col-8" action="#" method="post" enctype="multipart/form-data">
+  <div class="row justify-content-center">
+    <legend class="text-center"> Création d'un QUIZZ </legend>
+    <?php
+    include("../errors.php");
+    include("../infos.php");
+    ?>
+    <form class="col-8" action="#" method="post" enctype="multipart/form-data">
 
-    <div class="form-group text-center">
-      <label class="col-12" for="title"> Nom du quizz </label>
-      <input class="col-8" type="text" placeholder="obligatoire" name="title" value="<?= htmlentities($title) ?>" required />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="title"> Nom du quizz </label>
+        <input class="col-8" type="text" placeholder="obligatoire" name="title" value="<?= htmlentities($title) ?>" required />
+      </div>
 
-    <div class="form-group text-center">
-      <label class="col-12" for="question"> Question </label>
-      <input class="col-8" type="text" placeholder="obligatoire" name="question" value="<?= htmlentities($question) ?>" required />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="question"> Question </label>
+        <input class="col-8" type="text" placeholder="obligatoire" name="question" value="<?= htmlentities($question) ?>" required />
+      </div>
 
-    <div class="form-group text-center">
-      <label class="col-12" for="response"> Réponse </label>
-      <input class="col-8" type="text" placeholder="obligatoire" name="response" value="<?= htmlentities($response) ?>" required />
-    </div>
+      <div class="form-group text-center">
+        <label class="col-12" for="response"> Réponse </label>
+        <input class="col-8" type="text" placeholder="obligatoire" name="response" value="<?= htmlentities($response) ?>" required />
+      </div>
 
-    <div class="form-group text-center">
-      <label class="col-12" for="index"> Indice </label>
-      <input class="col-8" type="text" name="index" value="<?= htmlentities($index) ?>" />
+      <div class="form-group text-center">
+        <label class="col-12" for="index"> Indice </label>
+        <input class="col-8" type="text" name="index" value="<?= htmlentities($index) ?>" />
+      </div>
+      <button type="submit" name="valider" class="btn btn-primary"> Valider </button>
     </div>
-    <button type="submit" name="valider" class="btn btn-primary"> Valider </button>
   </div>
 </div>
 <?php include('../include/footer.php');?>
