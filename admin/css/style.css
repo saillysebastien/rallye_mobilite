@@ -52,7 +52,7 @@ body {
   margin-top: 100px;
 }
 h4 {
-  margin-top: 130px;
+  margin-top: auto;
 }
 div#end_head_app.collapse.navbar-collapse.justify-content-end {
   max-width: 250px;

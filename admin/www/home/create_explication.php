@@ -6,9 +6,9 @@ $errors = [];
 
 $valid = true;
 $title = '';
-$text1 = null;
+$text1 = '';
 $text2 = '';
-$text3 = null;
+$text3 = '';
 $text4 = '';
 $text5 = '';
 $done = false;
@@ -81,7 +81,7 @@ if (isset($_POST['upload'])) {
 }
 ?>
 <div class="container-fluid text-center">
-  <legend>Creation d'une explication pour l'accueil</legend>
+  <legend>Création d'une explication pour l'accueil</legend>
   <?php
   include('../infos.php');
   include('../errors.php');
@@ -90,7 +90,7 @@ if (isset($_POST['upload'])) {
     <form method="post" enctype="multipart/form-data">
 
       <div class="form-group text-center">
-        <label class="col-12" for="title">Nom</label>
+        <label class="col-12" for="title">Titre</label>
         <input class="col-8" type="text" name="title" value="<?= htmlentities($title) ?>" required />
       </div>
 
@@ -116,7 +116,7 @@ if (isset($_POST['upload'])) {
 
       <div class="form-group text-center">
         <label class="col-12" for="text5">Texte 5</label>
-        <input class="col-8" type="text" name="text5" value="<?= htmlentities($text5) ?>" placeholder="Exemple: Mr Dupont Claude" />
+        <input class="col-8" type="text" name="text5" value="<?= htmlentities($text5) ?>" />
       </div>
 
       <div class="form-check">

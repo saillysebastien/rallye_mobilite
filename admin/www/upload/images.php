@@ -56,6 +56,41 @@
       );
     }
     ?>
+    <legend>Listes des images dans "explications"</legend>
+    <?php
+    $sql2 = $db->query("SELECT * FROM explication");
+    while($row = $sql2->fetch_assoc()) {
+      printf('
+      <div class="col-4 text-left">
+      <div class="card">
+      <h4 class="bg-dark text-white"><img src="../images/%s" class="img img-fluid" alt="logo %s">
+      <div class="float-right small">
+      <a class="btn btn-raised btn-success"  data-placement="top" title="Identifiant">Id: %d</a>
+      </div>
+      </h4>
+      <div class="card-body">
+      <div class="row justify-content-center">
+      <div class="alert alert-primary row col-12">
+      <div class="col-4">Titre :</div>
+      <div class="col-8">%s</div>
+      <div class ="btn-group">
+      <a class="btn btn-success" href="../home/change-explication.php?id=%s">Modifier</a>
+      <a class="btn btn-danger" onclick="return window.confirm(&quot;Voulez vraiment supprimer ce rébus ?&quot;);" href="../home/delete_explication.php?id=%s">Supprimer</a>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>'
+      , $row["image"]
+      , $row["image"]
+      , $row["id"]
+      , $row["title"]
+      , $row["id"]
+      , $row["id"]
+    );
+  }
+    ?>
   </div>
 </div>
 
@@ -165,7 +200,7 @@
       printf('
       <div class="col-4 text-left">
       <div class="card">
-      <h4 class="card-header bg-dark text-white text-center"><img src="../questionnaire/images/%s" class="img-thumbnail" alt="logo %s"/>
+      <h4 class="card-header bg-dark text-white text-center"><img src="../../application/questionnaire/images/%s" class="img-thumbnail" alt="logo %s"/>
       <div class="float-right small">
       </div>
       </h4>
@@ -180,8 +215,8 @@
       <div class="col-8">%s</div>
       </div>
       <div class ="btn-group">
-      <a class="btn btn-success" href="../questionnaire/change_who.php?id=%s">Modifier</a>
-      <a class="btn btn-danger" onclick="return window.confirm(&quot;Voulez vraiment supprimer ce rébus ?&quot;);" href="../questionnaire/delete_who.php?id=%s">Supprimer</a>
+      <a class="btn btn-success" href="../../application/questionnaire/change_who.php?id=%s">Modifier</a>
+      <a class="btn btn-danger" onclick="return window.confirm(&quot;Voulez vraiment supprimer ce rébus ?&quot;);" href="../../application/questionnaire/delete_who.php?id=%s">Supprimer</a>
       </div>
       </div>
       </div>
@@ -225,7 +260,7 @@
       <div class="col-8">%s</div>
       </div>
       <div class ="btn-group">
-      <a class="btn btn-danger" onclick="return window.confirm(&quot;Voulez vraiment supprimer ce rébus ?&quot;);" href="../upload/delete_upload.php?id=%s">Supprimer</a>
+      <a class="btn btn-danger" onclick="return window.confirm(&quot;Voulez vraiment supprimer cette image ?&quot;);" href="../upload/delete_upload.php?id=%s">Supprimer</a>
       </div>
       </div>
       </div>

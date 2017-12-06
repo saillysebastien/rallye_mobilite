@@ -37,6 +37,9 @@ if (empty($_SESSION['username'])) {
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../home/goal.php">Liste des objectifs</a>
               <a class="dropdown-item" href="../home/create_goal.php">Création d'un objectif</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../home/explication.php">Liste des explications</a>
+              <a class="dropdown-item" href="../home/create_explication.php">Création d'une explication</a>
             </div>
           </li>
 

@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="assets/vendor/bootstrap4/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
-  <link rel="stylesheet" href="assets/css/entreprise.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
 

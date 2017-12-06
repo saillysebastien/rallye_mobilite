@@ -127,7 +127,7 @@ if ($_POST) {
     <legend>Modification d'une fiche FORMATION</legend>
     <?php
     include('../infos.php');
-    include('../errros.php');
+    include('../errors.php');
     ?>
     <div class="row justify-content-center text-center">
       <form method="post" enctype="multipart/form-data">
@@ -185,6 +185,7 @@ if ($_POST) {
           <label class="col-12" for="text">Nom de l'image</label>
           <input class="col-8 text-center" type="text" name="image2" id="text" value="<?= htmlentities($image) ?>"  />
         </div>
+
         <div class="form-check">
           <label class="form-check-label col-12">
             <input type="checkbox" class="form-check-input col-3" name="done" value="1" <?php if ($done) { echo 'checked'; } ?> />

@@ -8,8 +8,8 @@ if ($sql = $db->query("SELECT * FROM home WHERE id = 1")) {
     <img class="img img-fluid" src="admin/www/images/%s"
     alt="Visite de %s">
     <a class="carousel-caption">
-    <h3 class="slide_color">Visite de %s</h3>
-    <p class="slide_color">Réalisé en %s</p>
+    <h3 class="slide_color">%s</h3>
+    <p class="slide_color">%s</p>
     </a>
     </div>'
     , $row["image"]
@@ -25,8 +25,8 @@ if ($sql = $db->query("SELECT * FROM home WHERE done = 1")) {
     <img class="img img-fluid" src="admin/www/images/%s"
     alt="visite de  %s">
     <a class="carousel-caption">
-    <h3 class="slide_color">Visite de %s</h3>
-    <p class="slide_color">Réalisé en %s</p>
+    <h3 class="slide_color">%s</h3>
+    <p class="slide_color">%s</p>
     </a>
     </div>'
     , $row["image"]
