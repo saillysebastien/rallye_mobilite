@@ -34,7 +34,7 @@
       <div class="form-group">
         <button type="submit" name="login" class="btn btn-primary">Valider</button>
       </div>
-    </form>
-  </div>
+    </form><!-- fin du formulaire -->
+  </div><!-- fin du container -->
 </body>
 <?php include("www/include/footer.php"); ?>

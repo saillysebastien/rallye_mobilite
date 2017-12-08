@@ -3,6 +3,7 @@ include("../include/header.php");
 
 $errors = [];
 $infos = [];
+
 $title = "";
 $name = "";
 $question = "";
@@ -91,8 +92,8 @@ $qrcode = "";
       , $row['title']);
     }
     ?>
-  </div>
-</div>
+  </div><!-- end row -->
+</div><!-- end container -->
 
 <?php include("../include/footer.php"); ?>
 

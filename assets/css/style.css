@@ -221,137 +221,166 @@ img.img-thumbnail {
   margin: 10px auto;
 }
 
-  /*mobilité*/
-  .img_mobility {
-    border: 2px #3485ef solid;
-    border-bottom: none;
-    height: 80px;
-    width: 100%;
-  }
-  .text_mobility {
-    margin-bottom: 15px;
-    margin-top: 15px;
-  }
-  .img_mobility.first_image {
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-  }
-  .col-12.image_mobility{
-    padding-right: 5px;
-  }
-  .img_mobility.last_image {
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin-bottom: 10px;
-    border-bottom: 2px #3485ef solid;
-    padding: 2px;
-  }
-  /*entreprises*/
-  .btn.btn-outline-primary.animated.slideInDown {
-    margin-bottom: 5px;
-  }
+/*mobilité*/
+.img_mobility {
+  border: 2px #3485ef solid;
+  border-bottom: none;
+  height: 80px;
+  width: 100%;
+}
+.text_mobility {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.img_mobility.first_image {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.col-12.image_mobility{
+  padding-right: 5px;
+}
+.img_mobility.last_image {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px #3485ef solid;
+  padding: 2px;
+}
+/*entreprises*/
+.btn.btn-outline-primary.animated.slideInDown {
+  margin-bottom: 5px;
+}
 
 
 
-  i.fa.fa-map-marker {
-    width: 10px;
-    height: 10px;
-  }
-  .img-thumbnail {
-    height: 50px;
-    width: 130px;
-  }
-  .card-body {
-    padding: 0;
-    background-color: #343a40;
-  }
-  h4.card-header.bg-dark.text-white {
-    padding: 12px;
-  }
-  a.btn.btn-raised.btn-danger {
-    height: 32px;
-    width: 32px;
-    padding: 5px;
-  }
-  .justify-content-center {
-    width: 98%;
-    margin-left: 1%;
-  }
-  .alert.alert-warning, .alert.alert-primary {
-    height: auto;
-    width: 100%;
-    margin-bottom: 6px;
-    padding: 0;
-  }
-  .alert.alert-warning, .btn.btn-warning {
-    background-color: rgb(236, 102, 52);
-  }
-  .alert.alert-primary {
-    background-color: #3485ef;
-  }
-  .alert.alert-danger {
-    background-color: #dc3545;
-  }
-  .col-4.society {
-    padding: 7px 0 7px 2px;
-    color: #fff;
-  }
-  .col-8.society {
-    padding: 7px 0 7px 0;
-    color: #fff;
-  }
-  a {
-    color: #fff;
-  }
-  div.col-12.col-md-6.col-lg-4.text-left {
-    margin-bottom: 5px;
-  }
-  div.formations.col-12.col-md-6.col-lg-4.text-left {
-    padding: 0;
-    margin-bottom: 8px;
-  }
-  .container-fluid {
-    padding: 0 10px;
-  }
-  /*Card Entreprises*/
-  #user2 {
-    padding: 0;
-  }
-  #user.panel-thumb, #user2.panel-thumb {
+i.fa.fa-map-marker {
+  width: 10px;
+  height: 10px;
+}
+.img-thumbnail {
+  height: 50px;
+  width: 130px;
+}
+.card-body {
+  padding: 0;
+  background-color: #343a40;
+}
+h4.card-header.bg-dark.text-white {
+  padding: 12px;
+}
+a.btn.btn-raised.btn-danger {
+  height: 32px;
+  width: 32px;
+  padding: 5px;
+}
+.justify-content-center {
+  width: 98%;
+  margin-left: 1%;
+}
+.alert.alert-warning, .alert.alert-primary {
+  height: auto;
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 0;
+}
+.alert.alert-warning, .btn.btn-warning {
+  background-color: rgb(236, 102, 52);
+}
+.alert.alert-primary {
+  background-color: #3485ef;
+}
+.alert.alert-danger {
+  background-color: #dc3545;
+}
+.col-4.society {
+  padding: 7px 0 7px 2px;
+  color: #fff;
+}
+.col-8.society {
+  padding: 7px 0 7px 0;
+  color: #fff;
+}
+a {
+  color: #fff;
+}
+div.col-12.col-md-6.col-lg-4.text-left {
+  margin-bottom: 5px;
+}
+div.formations.col-12.col-md-6.col-lg-4.text-left {
+  padding: 0;
+  margin-bottom: 8px;
+}
+.container-fluid {
+  padding: 0 10px;
+}
+/*Card Entreprises*/
+#user2 {
+  padding: 0;
+}
+#user.panel-thumb, #user2.panel-thumb {
   margin: 5px 0;
   text-align:center;
-  	}
-  #user .panel-thumb .avatar-card > img,
-  #user2 .panel-thumb .avatar-card > img,{
-  	max-width:200px;
-  	max-height:200px;
-  	}
-  .card {
-    margin-bottom: 5px;
-    border-radius: 10%;
-  }
+}
+#user .panel-thumb .avatar-card > img,
+#user2 .panel-thumb .avatar-card > img,{
+  max-width:200px;
+  max-height:200px;
+}
+.card {
+  margin-bottom: 5px;
+  border-radius: 10%;
+}
 
-  /*application*/
-  label.col-4 {
-    padding: 0px 5px;
-    margin: auto;
-  }
+/*application*/
+label.col-4 {
+  padding: 0px 5px;
+  margin: auto;
+}
 
-  form {
-    padding-top: 10px;
-  }
-  #submit_app {
-    margin-left: 38%;
-    margin-top: 10px;
-  }
-  .col-12 {
-    padding-left: 5px;
-  }
-  #error_page {
-    height: 500px;
-    width: 100%;
-  }
-  #error_page_margin {
-    margin-top: 50%;
-    font-size: 20px;
-  }
+form {
+  padding-top: 10px;
+}
+#submit_app {
+  margin-left: 38%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.col-12 {
+  padding-left: 5px;
+}
+#error_page {
+  height: 500px;
+  width: 100%;
+}
+#error_page_margin {
+  margin-top: 50%;
+  font-size: 20px;
+}
+#error_app {
+  margin-bottom: -13px;
+}
+.underline {
+  text-decoration: underline;
+  margin-right: 7px;
+}
+#question_who {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+#response_who {
+  margin-bottom: 20px;
+}
+#indice {
+  margin-bottom: -15px;
+}
+#img_who {
+  margin-top: 15px;
+  height: 200px;
+}
+#first_element {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.marg_my_all {
+  margin-bottom: 10px;
+}

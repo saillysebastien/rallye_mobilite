@@ -21,8 +21,13 @@ if (empty($_SESSION['username'])) {
     </div>
 
     <form action="register.php" method="post">
-      <!-- On affiche ici les erreurs possibles -->
-      <?php include('errors.php'); ?>
+      <!-- On affiche ici les différents messages -->
+      <?php
+      include('errors.php');
+      if (isset($informations['success'])) {
+        echo $informations['success'];
+      }
+       ?>
       <div class="form-group">
         <label for="username">Nom d'utilisateur</label>
         <input type="text" name="username" value="<?= htmlentities($username) ?>" />
@@ -43,7 +48,7 @@ if (empty($_SESSION['username'])) {
       <p>
         Déjà membre ?<a href="login.php"> Se connecter </a>
       </p>
-    </form>
-  </div>
+    </form><!-- fin du formulaire -->
+  </div><!-- fin du container -->
 </body>
 <?php include("www/include/footer.php"); ?>

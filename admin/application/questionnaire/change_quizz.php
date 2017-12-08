@@ -10,9 +10,11 @@ $question = "";
 $index = "";
 $response = "";
 
+//on recupére l'id envoye dans la barre de navigation
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
+  // Nous allos chercher les infos concernant le quizz
   $sql = sprintf("SELECT * FROM quizz WHERE id =%s", $_GET['id']);
   $query = $db->query($sql);
   $result = $query->fetch_assoc();
@@ -26,6 +28,7 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   array_push($errors, "L'identifiant du rébus doit être spécifié !");
 }
 if (isset($_POST['valider'])) {
+  //On effectue les différentes vérifications et que certains champs ne soit pas vide lors de l'envoi du formulaire
   if (isset($_POST['title']) && !empty(trim($_POST['title']))) {
     $title = $_POST['title'];
   } else {
@@ -49,6 +52,7 @@ if (isset($_POST['valider'])) {
   } else {
     $index = null;
   }
+  // si les validations sont conformes on fait notre requête sql
   if ($valid) {
     try {
       $sql = sprintf("UPDATE quizz SET title='$title', question='$question', indice='$index', response='$response' WHERE id='%s'", $_GET['id']);
@@ -91,5 +95,5 @@ if (isset($_POST['valider'])) {
       <input class="col-8 text-center" type="text" name="index" value="<?= htmlentities($index) ?>" />
     </div>
     <button type="submit" name="valider" class="btn btn-primary"> Valider </button>
-  </div>
+  </div><!-- fin du container -->
   <?php include('../include/footer.php');?>

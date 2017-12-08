@@ -37,12 +37,11 @@ if (isset($_POST['register'])) {
     $password = password_hash($password_1, PASSWORD_BCRYPT);
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     mysqli_query($db, $sql);
-    $informations['success'] = "<div class='alert alert-success'>Vous êtes bien enregistré il ne vous reste plus qu'à vous connecter<div>";
-    header('location: login.php');
+    $informations['success'] = "<div class='alert alert-success'>Utilisateur $username créé<div>";
   }
 }
 
-// pour le login
+// Si le bouton valider dans le login est cliqué
 if (isset($_POST['login'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $password = mysqli_real_escape_string($db, $_POST['password']);

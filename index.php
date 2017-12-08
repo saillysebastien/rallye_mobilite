@@ -60,9 +60,7 @@ require('config/connect.php');
                     <?php
                     $sql = $db->query("SELECT * FROM goal WHERE done = 1 ORDER BY id");
                     while($row = $sql->fetch_assoc()) {
-                      printf('
-                      <div class="col-12">%s</div>'
-                      , $row['text']);
+                      printf('<h6>%s</h6>', $row['text']);
                     }
                     ?>
                   </div>
@@ -305,7 +303,13 @@ require('config/connect.php');
 
         <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
           <div class="panel-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+            <?php
+            // On insère les explications pour l'application
+            $sql = $db->query("SELECT * FROM appli_explication  WHERE done = 1");
+            while($row = $sql->fetch_assoc()) {
+              printf('<h6>%s</h6>', $row['text']);
+            }
+             ?>
           </div><!--!panel-body-->
         </div><!--!collapse-->
       </div><!--!panel-default-->

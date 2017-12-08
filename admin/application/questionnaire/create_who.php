@@ -111,7 +111,7 @@ if (isset($_POST['valider'])) {
         <input type="file" name="image" class="form-control-file" id='image' required />
       </div>
       <button type="submit" name="valider" class="btn btn-primary">Valider</button>
-    </form>
-  </div>
-</div>
+    </form><!-- fin du formulaire -->
+  </div><!-- fin du row -->
+</div><!-- fin du container -->
 <?php include('../include/footer.php');?>

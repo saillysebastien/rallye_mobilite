@@ -11,13 +11,16 @@ $question = '';
 $index = null;
 $response = '';
 
+//Si un id est présent dans la barre de navigation on continue sinon on arrête
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
+  // On lance une requête pour récupérer les informations qu'ont affichera dans le formulaire
   $sql = sprintf("SELECT * FROM who WHERE id =%s", $_GET['id']);
   $query = $db->query($sql);
   $result = $query->fetch_assoc();
 
+  //On recupére les infos
   $title = $result['title'];
   $image = $result['image'];
   $question = $result['question'];
@@ -28,6 +31,7 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   array_push($errors, "L'identifiant (id) du quizz Qui est-ce ? doit être spécifié !");
 }
 if (isset($_POST['valider'])) {
+  // On vérifie que les champs obligatoires ne sont pas vite
   if (isset($_POST['title']) && !empty(trim($_POST['title']))) {
     $title = $_POST['title'];
   } else {
@@ -57,6 +61,7 @@ if (isset($_POST['valider'])) {
   } else {
     $index = null;
   }
+  //Si tout est bon on lance la requête
   if ($valid) {
     try {
       $sql = sprintf("UPDATE who SET title='$title', image='$image', question='$question', indice='$index', response='$response' WHERE id='%s'", $_GET['id']);
@@ -106,5 +111,5 @@ if (isset($_POST['valider'])) {
     </div>
     <button type="submit" name="valider" class="btn btn-primary">Valider</button>
   </form>
-</div>
+</div><!-- container -->
 <?php include('../include/footer.php');?>

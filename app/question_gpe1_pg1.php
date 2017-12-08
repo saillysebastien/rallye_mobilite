@@ -44,7 +44,9 @@ if (isset($_POST["submit"])) {
     array_push($infos, "Bravo ! vous avez trouvé la réponse au rébus qui était $response.");
   } else {
     array_push($errors, "La réponse que vous avez donné est inexacte !");
-    $indice = "<div class='alert alert-success col-12 text-left' type='alert'>Indice : " . $index . ".</div>";
+    if (!empty($index)) {
+      $indice = "<div class='alert alert-success col-12 text-center' id='indice' type='alert'><span class='underline'>Indice :</span>" . $index . ".</div>";
+    }
   }
 }
 ?>
@@ -60,42 +62,43 @@ if (isset($_POST["submit"])) {
     <?php
     if (empty($question) && !empty($my_all)) {
       $access = true;
+      printf('<h2 id="first_element">REBUS</h2>');
       if (!empty($one)) {
         printf('
-        <div class="col-12 text-left">Mon premier est '. $one .' ...</div>
+        <div class="col-12 text-left marg_my_all">Mon premier est '. $one .'.</div>
         ');
       }
       if (empty($three)) {
         printf('
-        <div class="col-12 text-left">Mon second est '. $two .' ...</div>
+        <div class="col-12 text-left marg_my_all">Mon second est '. $two .'.</div>
         ');
       } elseif (!empty($three) && empty($four)) {
         printf('
-        <div class="col-12 text-left">Mon deuxième est '. $two .' ...</div>
-        <div class="col-12 text-left">Mon dernier est '. $three .' ...</div>
+        <div class="col-12 text-left marg_my_all">Mon deuxième est '. $two .'.</div>
+        <div class="col-12 text-left marg_my_all">Mon dernier est '. $three .'.</div>
         ');
       }
       if(!empty($four) && empty($five)) {
         printf('
-        <div class="col-12 text-left">Mon troisième est '. $three .' ...</div>
-        <div class="col-12 text-left">Mon dernier est '. $four .' ...</div>
+        <div class="col-12 text-left marg_my_all">Mon troisième est '. $three .'</div>
+        <div class="col-12 text-left marg_my_all">Mon dernier est '. $four .'</div>
         ');
       }
       if(!empty($five)) {
         printf('
-        <div class="col-12 text-left">Mon quatrième est '. $four .'.</div>
-        <div class="col-12 text-left">Mon dernier est '. $five .'.</div>
+        <div class="col-12 text-left marg_my_all">Mon quatrième est '. $four .'.</div>
+        <div class="col-12 text-left marg_my_all">Mon dernier est '. $five .'.</div>
         ');
       }
       printf('
       <br />
-      <div class="col-12 text-left">Mon tout est '. $my_all .'.</div>
+      <div class="col-12 text-left marg_my_all">Mon tout est '. $my_all .'.</div>
       ');
       if (isset($indice)) {
         echo $indice;
       }
       printf('
-      <form class="form-inline" method="post" enctype="multipart/form-data" target="_parent">
+      <form class="form-inline col-12" method="post" enctype="multipart/form-data" target="_parent">
       <label class="col-4" for="response_app">Que suis je ?</label>
       ');
     }
@@ -104,15 +107,16 @@ if (isset($_POST["submit"])) {
       if (empty($image)) {
         if (!empty($question)) {
           $access = true;
-          printf('
-          <div class="col-12"> Question : '. $question .'</div>
-          ');
+          printf('<h2 id="first_element">QUIZZ</h2>');
           if (isset($indice)) {
             echo $indice;
           }
           printf('
-          <form class="form-inline" method="post" enctype="multipart/form-data" target="_parent">
-          <label class="col-4" for="response_app">Votre réponse :</label>
+          <div class="col-12"> Question : '. $question .'</div>
+          ');
+          printf('
+          <form class="form-inline col-12" method="post" enctype="multipart/form-data" target="_parent">
+          <label class="col-4" for="response_app"><span class="underline">Réponse :</span></label>
           ');
         }
       }
@@ -121,16 +125,14 @@ if (isset($_POST["submit"])) {
     if (empty($one)) {
       if (!empty($image && !empty($question))) {
         $access = true;
-        printf('
-        <div class="col-12"><img class="img img-fluid" src="../admin/application/questionnaire/images/'.$image.'" /></div>
-        <div class="col-12"> Question : '. $question .'</div>
-        ');
+        printf('<div class="col-12"><img class="img img-fluid" id="img_who" src="../admin/application/questionnaire/images/'.$image.'" /></div>');
         if (isset($indice)) {
           echo $indice;
         }
+        printf('<div class="col-12 text-center" id="question_who"><span class="underline">Question :</span>'. $question .'</div>');
         printf('
-        <form class="form-inline" method="post" enctype="multipart/form-data" target="_parent">
-        <label class="col-4" for="response_app">Votre réponse :</label>
+        <form class="form-inline col-12" method="post" enctype="multipart/form-data" target="_parent">
+        <label class="col-4" for="response_app" id="response_who"><span class="underline">Réponse :</span></label>
         ');
       }
     }
@@ -146,7 +148,6 @@ if (isset($_POST["submit"])) {
       ');
     }
     ?>
-
   </form>
 </div>
 </div>

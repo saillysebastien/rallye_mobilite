@@ -3,6 +3,7 @@ include("../include/header.php");
 
 $errors = [];
 $infos = [];
+
 $title = "";
 $name = "";
 $question = "";

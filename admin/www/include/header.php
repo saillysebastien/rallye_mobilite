@@ -19,7 +19,7 @@ if (empty($_SESSION['username'])) {
 <body>
 
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Gestion Site web par <?php if (!empty($_SESSION['username'])) {
+      <a class="navbar-brand" href="#">Connecté : <?php if (!empty($_SESSION['username'])) {
         echo $_SESSION['username'];
       } ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,6 +68,15 @@ if (empty($_SESSION['username'])) {
               <a class="dropdown-item" href="../mobility/mobility.php">Liste des moyens de transport</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../mobility/create_mobility.php">Création d'un moyen de transport</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../application/explication_appli.php" role="button" aria-haspopup="true" aria-expanded="false" title="Gérer la rubrique Mobilité">Application</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="../application/explication_appli.php">Liste des explications pour la rubrique application</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../application/create_explication_appli.php">Création d'une explication</a>
             </div>
           </li>
 
