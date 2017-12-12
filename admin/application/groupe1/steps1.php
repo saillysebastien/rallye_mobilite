@@ -16,8 +16,6 @@ $my_all = "";
 $index = "";
 $response = "";
 $image = "";
-$qrcode = "";
-
 ?>
 
 <div class="container text-center">

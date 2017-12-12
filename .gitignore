@@ -2,6 +2,7 @@ vendor/
 img/
 admin/www/images/
 admin/application/questionnaire/images/
+admin/application/images/
 config/db_home.php
 admin/www/config/db_home.php
 admin/application/config/db_home.php

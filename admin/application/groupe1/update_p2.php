@@ -1,9 +1,9 @@
 <?php
-
 include("../include/header.php");
 
 $errors = [];
 $infos = [];
+
 $title = "";
 $name = "";
 $question = "";
@@ -16,7 +16,9 @@ $my_all = "";
 $index = "";
 $response = "";
 $image = "";
-$qrcode = "";
+$start = "";
+$end = "";
+$valid = true;
 
 if (isset($_POST['upload_rebus'])) {
   $sql = sprintf("SELECT * FROM rebus WHERE id=%s", $_GET['id']);
@@ -33,7 +35,7 @@ if (isset($_POST['upload_rebus'])) {
   $response = $result['response'];
   $index = $result['indice'];
 
-  $update = sprintf("UPDATE appli SET title='gpe1pg2', name='$name', one='$one', two='$two', three='$three', four='$four', five='$five', indice='$index', response='$response', question ='$question', my_all='$my_all', image='$image', qrcode='$qrcode' WHERE id='2'");
+  $update = sprintf("UPDATE appli SET title='gpe1pg2', name='$name', one='$one', two='$two', three='$three', four='$four', five='$five', indice='$index', response='$response', question ='$question', my_all='$my_all', image='$image' WHERE id='2'");
   $update_db = mysqli_query($db, $update);
 }
 
@@ -48,7 +50,7 @@ if (isset($_POST['upload_who'])) {
   $index = $result['indice'];
   $response = $result['response'];
 
-  $update = sprintf("UPDATE appli SET title='gpe1pg2', name='$name', one='$one', two='$two', three='$three', four='$four', five='$five', indice='$index', response='$response', question ='$question', my_all='$my_all', image='$image', qrcode='$qrcode' WHERE id='2'");
+  $update = sprintf("UPDATE appli SET title='gpe1pg2', name='$name', one='$one', two='$two', three='$three', four='$four', five='$five', indice='$index', response='$response', question ='$question', my_all='$my_all', image='$image' WHERE id='2'");
   $update_db = mysqli_query($db, $update);
 }
 
@@ -62,15 +64,57 @@ if (isset($_POST['upload_quizz'])) {
   $index = $result['indice'];
   $response = $result['response'];
 
-  $update = sprintf("UPDATE appli SET title='gpe1pg2', name='$name', one='$one', two='$two', three='$three', four='$four', five='$five', indice='$index', response='$response', question ='$question', my_all='$my_all', image='$image', qrcode='$qrcode' WHERE id='2'");
+  $update = sprintf("UPDATE appli SET title='gpe1pg2', name='$name', one='$one', two='$two', three='$three', four='$four', five='$five', indice='$index', response='$response', question ='$question', my_all='$my_all', image='$image' WHERE id='2'");
   $update_db = mysqli_query($db, $update);
 }
-
-if ($update_db) {
-  printf('
-  <div class="container text-center">
-    <a class="btn btn-info" href="steps3.php">Passer à l\'étape 2</a>
-  </div>
-  ');
+if ($_GET["id"] == "2") {
+  array_push($infos, "Question pour l'étape 2 mis à jour, veuillez rentrer les adresses demandées pour Maps.");
 }
-include("../include/footer.php");
+if (isset($_POST['locate'])) {
+  $start = $_POST['start'];
+  $end = $_POST['end'];
+
+  if (isset($_POST['start']) && !empty(trim($_POST['start']))) {
+    $start = $_POST['start'];
+  } else {
+    $valid = false;
+    array_push($errors, "Vous devez donner l'adresse de départ pour Maps !");
+  }
+  if (isset($_POST['end']) && !empty(trim($_POST['end']))) {
+    $end = $_POST['end'];
+  } else {
+    $valid = false;
+    array_push($errors, "Vous devez donner l'adresse d'arrivée pour Maps !");
+  }
+  if ($valid) {
+    $update = sprintf("UPDATE locate SET name='gpe1pg2', start_traject='$start', end_traject='$end', qr_code='afpa-70x70.png' WHERE id='2'");
+    $update_locate = mysqli_query($db, $update);
+    $sql_qr = "SELECT * FROM locate WHERE id = '2'";
+    $query = $db->query($sql_qr);
+    while($result = $query->fetch_assoc()) {
+      array_push($infos, "<div>Qr code à imprimer si besoin</div>");
+      array_push($infos, '<img class="img img-fluid" src="../images/'.$result["qr_code"].'" alt="image du qr-code">');
+    }
+  }
+}
+?>
+<div class="container text-center">
+  <?php
+  include('../errors.php');
+  include('../infos.php');
+  ?>
+  <div class="row justify-content-center">
+  <form class="form-group col-8" target="_parent" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+  <label class="col-12" for="start"> Adresse de départ </label>
+  <input class="col-12 text-center" type="text" placeholder="Entrée ici l\'adresse où se trouve actuellement le groupe ex: 12 rue Bollaert 62300 Lens" name="start" value="<?= htmlentities($start) ?>" />
+  </div>
+  <div class="form-group">
+  <label class="col-12" for="end"> Adresse d\'arrivée </label>
+  <input class="col-12 text-center" type="text" placeholder="Entrée ici l\'adresse où va aller le groupe ex: 15 rue Jean Jaures 62800 Liévin" name="end" value="<?= htmlentities($end) ?>" />
+  </div>
+  <button type="submit" name="locate" class="btn btn-primary">Valider</button>
+  </form>
+  </div>
+  </div>
+<?php include("../include/footer.php");

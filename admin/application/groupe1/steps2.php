@@ -16,10 +16,7 @@ $my_all = "";
 $index = "";
 $response = "";
 $image = "";
-$qrcode = "";
-
 ?>
-
 <div class="container text-center">
   <h1>Quel questionnaire voulez vous intégrer à l'étape 2 ?</h1>
   <div class="btn-group">

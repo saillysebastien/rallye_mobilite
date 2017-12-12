@@ -3,6 +3,7 @@ include("../include/header.php");
 
 $errors = [];
 $infos = [];
+
 $title = "";
 $name = "";
 $question = "";
@@ -15,10 +16,7 @@ $my_all = "";
 $index = "";
 $response = "";
 $image = "";
-$qrcode = "";
-
 ?>
-
 <div class="container text-center">
   <h1>Quel questionnaire voulez vous intégrer pour l'étape 1 ?</h1>
   <div class="btn-group">
