@@ -1,16 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos = [];
-$errors = [];
-
-$valid = true;
-$title = '';
-$image = '';
-$question = '';
-$index = null;
-$response = '';
-
 if (isset($_POST['valider'])) {
   $image = $_FILES['image'];
   $imageName = $_FILES['image']['name'];
@@ -81,8 +71,8 @@ if (isset($_POST['valider'])) {
   <div class="row justify-content-center">
     <legend>Creation d'un quizz Qui est-ce?</legend>
     <?php
-    include("../infos.php");
-    include("../errors.php");
+    include("../../infos.php");
+    include("../../errors.php");
     ?>
     <form class="col-8" action="#" method="post" enctype="multipart/form-data">
 

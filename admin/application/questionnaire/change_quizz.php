@@ -1,16 +1,7 @@
 <?php
 include('../include/header.php');
 
-$infos = [];
-$errors = [];
-
-$valid = true;
-$title = "";
-$question = "";
-$index = "";
-$response = "";
-
-//on recupére l'id envoye dans la barre de navigation
+//on recupére l'id envoyé dans la barre de navigation
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
@@ -70,8 +61,8 @@ if (isset($_POST['valider'])) {
 <div class="container text-center">
   <legend class="text-center"> Modification du quizz <?= $title ?></legend>
   <?php
-  include("../infos.php");
-  include("../errors.php");
+  include("../../infos.php");
+  include("../../errors.php");
   ?>
   <form action="#" method="post" enctype="multipart/form-data">
 

@@ -1,23 +1,7 @@
 <?php
 include("../include/header.php");
 
-$errors = [];
-$infos = [];
-
-$title = "";
-$name = "";
-$question = "";
-$one = "";
-$two = "";
-$three = "";
-$four = "";
-$five = "";
-$my_all = "";
-$index = "";
-$response = "";
-$image = "";
 ?>
-
 <div class="container text-center">
   <h1>Quel questionnaire voulez vous intégrer à l'étape 1 ?</h1>
   <div class="btn-group">
@@ -92,22 +76,18 @@ $image = "";
     ?>
   </div><!-- end row -->
 </div><!-- end container -->
-
 <?php include("../include/footer.php"); ?>
-
 <script>
 $("#filter_puzzle").click(function() {
   $("#who").css("display", "none");
   $("#quizz").css("display", "none");
   $("#puzzle").show();
 });
-
 $("#filter_who").click(function() {
   $("#puzzle").css("display", "none");
   $("#quizz").css("display", "none");
   $("#who").show();
 });
-
 $("#filter_quizz").click(function() {
   $("#who").css("display", "none");
   $("#puzzle").css("display", "none");

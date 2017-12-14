@@ -1,16 +1,12 @@
 <?php
 include('../include/header.php');
 
-$errors = [];
-$infos = [];
-
 if (isset($_GET['id']) && !empty(trim($_GET['id'])) && $_GET['id'] == 1) {
   $valid = true;
 } else {
   $valid = false;
   array_push($errors, "Vous ne pouvez pas vider le groupe 1");
 }
-
 if ($valid) {
   $update_p1 = sprintf("UPDATE appli SET title='gpe1pg1', name='', one='', two='', three='', four='', five='', indice='', response='', question ='', my_all='', image='' WHERE id='1'");
   $update1 = mysqli_query($db, $update_p1);

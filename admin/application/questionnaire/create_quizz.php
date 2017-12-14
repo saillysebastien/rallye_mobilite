@@ -1,15 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos = [];
-$errors = [];
-
-$valid = true;
-$title = "";
-$question = "";
-$index = "";
-$response = "";
-
 if (isset($_POST['valider'])) {
   $title = $_POST['title'];
   $question = $_POST['question'];
@@ -54,8 +45,8 @@ if (isset($_POST['valider'])) {
   <div class="row justify-content-center">
     <legend class="text-center"> Création d'un QUIZZ </legend>
     <?php
-    include("../errors.php");
-    include("../infos.php");
+    include("../../errors.php");
+    include("../../infos.php");
     ?>
     <form class="col-8" action="#" method="post" enctype="multipart/form-data">
 

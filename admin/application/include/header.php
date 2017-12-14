@@ -3,6 +3,24 @@ include('../../server.php');
 if (empty($_SESSION['username'])) {
   header('location: ../../login.php');
 }
+$errors = [];
+$infos = [];
+
+$end = "";
+$five = "";
+$four = "";
+$index = "";
+$question = "";
+$my_all = "";
+$name = "";
+$one = "";
+$start = "";
+$response = "";
+$image = "";
+$valid = true;
+$title = "";
+$three = "";
+$two = "";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -128,5 +146,4 @@ if (empty($_SESSION['username'])) {
         </ul>
       </div>
     </nav>
-    <div class="separate" style="margin-top: 70px;">
-    </div>
+    <div class="separate" style="margin-top: 70px;"></div>

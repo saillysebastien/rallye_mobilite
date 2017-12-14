@@ -1,20 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos = [];
-$errors = [];
-
-$valid = true;
-$title = "";
-$one = "";
-$two = "";
-$three = "";
-$four = "";
-$five = "";
-$index = "";
-$response = "";
-$my_all = "";
-
 //Si on a un id dans la barriere de navigation, on continue sinon on arrête
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
@@ -108,8 +94,8 @@ if (isset($_POST['valider'])) {
 <div class="container text-center">
 <legend class="text-center"> Modification du rébus <?= $title ?> </legend>
 <?php
-include('../infos.php');
-include('../errors.php');
+include('../../infos.php');
+include('../../errors.php');
 ?>
 <form method="post" enctype="multipart/form-data">
 

@@ -36,7 +36,6 @@ $five = '';
         } else {
           $five = "";
         }
-
         printf('
         <br />
         <div class="col-4 text-left">
@@ -117,7 +116,6 @@ $five = '';
       if (empty($row['indice'])) {
         $row['indice'] = "Aucun indice.";
       }
-
       printf('
       <div class="col-4 text-left">
       <div class="card">
@@ -175,7 +173,6 @@ $five = '';
       if (empty($row['indice'])) {
         $row['indice'] = "Aucun indice.";
       }
-
       printf('
       <br />
       <div class="col-4 text-left">

@@ -2,20 +2,6 @@
 include('../include/header.php');
 require('../config/connect.php');
 
-$infos = [];
-$errors = [];
-
-$valid = true;
-$title = "";
-$one = "";
-$two = "";
-$three = "";
-$four = "";
-$five = "";
-$index = "";
-$response = "";
-$my_all = "";
-
 if (isset($_POST['submit'])) {
   $title = $_POST['title'];
   $one = $_POST['one'];
@@ -73,8 +59,8 @@ if (isset($_POST['submit'])) {
   <div class="row justify-content-center">
     <legend class="text-center"> Création d'un rébus </legend>
     <?php
-    include("../infos.php");
-    include("../errors.php");
+    include("../../infos.php");
+    include("../../errors.php");
     ?>
     <form class="col-8" action="create_rebus.php" method="post" enctype="multipart/form-data">
 

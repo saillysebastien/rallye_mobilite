@@ -1,22 +1,4 @@
-<?php
-include("../include/header.php");
-
-$errors = [];
-$infos = [];
-
-$title = "";
-$name = "";
-$question = "";
-$one = "";
-$two = "";
-$three = "";
-$four = "";
-$five = "";
-$my_all = "";
-$index = "";
-$response = "";
-$image = "";
-?>
+<?php include("../include/header.php");?>
 <div class="container text-center">
   <h1>Quel questionnaire voulez vous intégrer pour l'étape 1 ?</h1>
   <div class="btn-group">

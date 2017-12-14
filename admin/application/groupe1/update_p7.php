@@ -100,8 +100,8 @@ if (isset($_POST['locate'])) {
 ?>
 <div class="container text-center">
   <?php
-  include('../errors.php');
-  include('../infos.php');
+  include('../../errors.php');
+  include('../../infos.php');
   ?>
   <div class="row justify-content-center">
   <form class="form-group col-8" target="_parent" method="post" enctype="multipart/form-data">
