@@ -41,6 +41,8 @@ if (empty($_SESSION['username'])) {
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../questionnaire/question.php" role="button" aria-haspopup="true" aria-expanded="false">Appli Groupe 1</a>
             <div class="dropdown-menu">
+              <a class="dropdown-item text-center alert-outline-danger" href="../groupe1/steps1.php">Tout reinitialiser</a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item text-center" href="../groupe1/steps1.php">Etape 1</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item text-center" href="../groupe1/steps2.php">Etape 2</a>

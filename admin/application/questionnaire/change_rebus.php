@@ -108,8 +108,8 @@ if (isset($_POST['valider'])) {
 <div class="container text-center">
 <legend class="text-center"> Modification du rébus <?= $title ?> </legend>
 <?php
-include('../include/infos.php');
-include('../include/errors.php');
+include('../infos.php');
+include('../errors.php');
 ?>
 <form method="post" enctype="multipart/form-data">
 

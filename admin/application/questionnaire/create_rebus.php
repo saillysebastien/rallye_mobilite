@@ -73,8 +73,8 @@ if (isset($_POST['submit'])) {
   <div class="row justify-content-center">
     <legend class="text-center"> Création d'un rébus </legend>
     <?php
-    include("../include/infos.php");
-    include("../include/errors.php");
+    include("../infos.php");
+    include("../errors.php");
     ?>
     <form class="col-8" action="create_rebus.php" method="post" enctype="multipart/form-data">
 

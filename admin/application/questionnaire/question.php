@@ -220,9 +220,7 @@ $five = '';
 </div>
 </div>
 </div>
-
 <?php include('../include/footer.php');?>
-
 <script>
 $("#filter_puzzle").click(function() {
   $("#who").css("display", "none");

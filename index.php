@@ -6,7 +6,7 @@ require('config/connect.php');
 <div class="container-fluid">
   <div class="row">
     <div class="col">
-      <h1 class="text-center">Rallye Mobilité</h1>
+      <h1 class="text-center">Rallye pour l'emploi - Lens Hénin</h1>
     </div><!--!col-->
   </div><!--!row-->
 

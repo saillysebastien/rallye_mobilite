@@ -44,14 +44,14 @@ if (isset($_POST["submit"])) {
     array_push($infos, "Bravo ! vous avez trouvé la réponse au rébus qui était $response.");
     $query = $db->query("SELECT * FROM locate WHERE id=12");
     while($row = $query->fetch_assoc()) {
-      array_push($infos, '<div class="text-center">Il(s) ne vous reste(nt) plus qu\'à rejoindre le lieu de votre prochaine visite.</div><br />');
+      array_push($infos, '<div class="text-center">Rendez vous à cette entreprise pour une visite, on vous attends.</div><br />');
       array_push($infos, '<div class="text-center">');
       array_push($infos, '<a class="btn btn-outline-info" target="_blank" href="https://www.google.fr/maps/place/'.$row['end_traject'].'">Lieu</a></div>');
       array_push($infos, '<div class="text-center">');
       array_push($infos, '<a class="btn btn-outline-dark" target="_blank" href="https://www.google.fr/maps/dir/'.$row['start_traject'].'/'.$row['end_traject'].'">Itinéraire</a></div>');
     }
   } else {
-    array_push($errors, "La réponse que vous avez donné est inexacte !");
+    array_push($errors, "Réponse fausse ! Retentez votre chance.");
     $indice = "<div class='alert alert-success col-12 text-left' type='alert'>Indice : " . $index . ".</div>";
   }
 }
