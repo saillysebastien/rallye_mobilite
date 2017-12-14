@@ -218,7 +218,7 @@ require('config/connect.php');
                         </div>
                         <div id="batîment" class="animated slideInDown" style="display: none;">
                           <div class="row justify-content-center">
-                            <?php include('web/batîment.php');?>
+                            <?php include('web/batiment.php');?>
                           </div>
                         </div>
 

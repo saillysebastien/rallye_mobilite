@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Rallye Mobilité</title>
+  <title>Rallye pour l'emploi - Lens Hénin</title>
 
   <link rel="stylesheet" href="../assets/vendor/bootstrap4/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />

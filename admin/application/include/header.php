@@ -10,7 +10,7 @@ if (empty($_SESSION['username'])) {
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rallye Mobilité</title>
+  <title>Rallye emploi - Lens Hénin</title>
 
   <link rel ="stylesheet" href="../../../assets/vendor/bootstrap4/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../../css/style.css" />
@@ -40,34 +40,34 @@ if (empty($_SESSION['username'])) {
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../questionnaire/question.php" role="button" aria-haspopup="true" aria-expanded="false">Appli Groupe 1</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item text-center alert-outline-danger" href="../groupe1/steps1.php">Tout reinitialiser</a>
+            <div class="dropdown-menu text-center">
+              <a class="btn btn-outline-danger" href="../groupe1/reset_gpe1.php?id=1">Tout réinitialiser</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe1/steps1.php">Etape 1</a>
+              <a class="dropdown-item" href="../groupe1/steps1.php">Etape 1</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe1/steps2.php">Etape 2</a>
+              <a class="dropdown-item" href="../groupe1/steps2.php">Etape 2</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe1/steps3.php">Etape 3</a>
+              <a class="dropdown-item" href="../groupe1/steps3.php">Etape 3</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe1/steps4.php">Etape 4</a>
+              <a class="dropdown-item" href="../groupe1/steps4.php">Etape 4</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe1/steps5.php">Etape 5</a>
+              <a class="dropdown-item" href="../groupe1/steps5.php">Etape 5</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe1/steps6.php">Etape 6</a>
+              <a class="dropdown-item" href="../groupe1/steps6.php">Etape 6</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe1/steps7.php">Etape 7</a>
+              <a class="dropdown-item" href="../groupe1/steps7.php">Etape 7</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe1/steps8.php">Etape 8</a>
+              <a class="dropdown-item" href="../groupe1/steps8.php">Etape 8</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe1/steps9.php">Etape 9</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe1/end.php">Fin du rallye</a>
+              <a class="dropdown-item" href="../groupe1/steps9.php">Etape 9</a>
             </div>
           </li>
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../questionnaire/question.php" role="button" aria-haspopup="true" aria-expanded="false">Appli Groupe 2</a>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu text-center">
+              <a class="btn btn-outline-danger" href="../groupe2/reset_gpe2.php?id=1">Tout réinitialiser</a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../groupe2/steps1.php">Etape 1</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../groupe2/steps2.php">Etape 2</a>
@@ -92,26 +92,28 @@ if (empty($_SESSION['username'])) {
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../questionnaire/question.php" role="button" aria-haspopup="true" aria-expanded="false">Appli Groupe 3</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item text-center" href="../groupe3/steps1.php">Etape 1</a>
+            <div class="dropdown-menu text-center">
+              <a class="btn btn-outline-danger" href="../groupe3/reset_gpe3.php?id=1">Tout réinitialiser</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe3/steps2.php">Etape 2</a>
+              <a class="dropdown-item" href="../groupe3/steps1.php">Etape 1</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe3/steps3.php">Etape 3</a>
+              <a class="dropdown-item" href="../groupe3/steps2.php">Etape 2</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe3/steps4.php">Etape 4</a>
+              <a class="dropdown-item" href="../groupe3/steps3.php">Etape 3</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe3/steps5.php">Etape 5</a>
+              <a class="dropdown-item" href="../groupe3/steps4.php">Etape 4</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe3/steps6.php">Etape 6</a>
+              <a class="dropdown-item" href="../groupe3/steps5.php">Etape 5</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe3/steps7.php">Etape 7</a>
+              <a class="dropdown-item" href="../groupe3/steps6.php">Etape 6</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe3/steps8.php">Etape 8</a>
+              <a class="dropdown-item" href="../groupe3/steps7.php">Etape 7</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe3/steps9.php">Etape 9</a>
+              <a class="dropdown-item" href="../groupe3/steps8.php">Etape 8</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="../groupe3/end.php">Fin du rallye</a>
+              <a class="dropdown-item" href="../groupe3/steps9.php">Etape 9</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../groupe3/end.php">Fin du rallye</a>
             </div>
           </li>
         </ul>
