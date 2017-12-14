@@ -3,6 +3,35 @@ include('../../server.php');
 if (empty($_SESSION['username'])) {
   header('location: ../../login.php');
 }
+
+$errors = [];
+$infos = [];
+$activity = '';
+$adresse = '';
+$city = '';
+$contact = '';
+$director = '';
+$domain_activity = '';
+$done = false;
+$image = '';
+$mail = '';
+$name = "";
+$number_street = null;
+$phone = null;
+$postal_code = null;
+$president = '';
+$street = '';
+$text = '';
+$text1 = '';
+$text2 = '';
+$text3 = '';
+$text4 = '';
+$text5 = '';
+$title = '';
+$valid = true;
+$vice_director = '';
+$web = '';
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,7 +48,7 @@ if (empty($_SESSION['username'])) {
 <body>
 
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Connecté : <?php if (!empty($_SESSION['username'])) {
+      <a class="navbar-brand" href="#"><?php if (!empty($_SESSION['username'])) {
         echo $_SESSION['username'];
       } ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -111,6 +140,4 @@ if (empty($_SESSION['username'])) {
     </nav>
 
 
-    <div class="separate" style="margin-top: 70px;">
-
-    </div>
+    <div class="separate"></div>

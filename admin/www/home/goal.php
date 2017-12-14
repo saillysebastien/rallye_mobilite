@@ -22,7 +22,6 @@ while ($row = $sql->fetch_assoc()) {
   } else {
     $row['done'] = "Inactif";
   }
-
   printf("
   <tr>
   <td class = 'col-1'>%s</td>
@@ -36,6 +35,6 @@ while ($row = $sql->fetch_assoc()) {
   , $row['id']
   , $row['id']);
 }
-
  ?>
 </div>
+<?php include("../include/footer.php");

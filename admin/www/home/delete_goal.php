@@ -1,13 +1,6 @@
 <?php
 include('../include/header.php');
 
-$errors = [];
-$infos = [];
-
-$valid = true;
-$id = null;
-$title = '';
-
 if (isset($_GET['id']) && !empty(trim($_GET['id'])) && $_GET['id'] != 0) {
   $id = $_GET['id'];
 } else {
@@ -32,8 +25,8 @@ if ($valid) {
 ?>
 <div class="container-fluid text-center">
   <?php
-  include("../infos.php");
-  include("../errors.php");
+  include("../../infos.php");
+  include("../../errors.php");
   ?>
 </div>
-<?php include('../include/footer.php');?>
+<?php include('../include/footer.php');

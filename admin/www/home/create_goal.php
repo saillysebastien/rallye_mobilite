@@ -1,12 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos =[];
-$errors = [];
-
-$text = '';
-$done = false;
-
 if (isset($_POST['valider'])) {
   $valid = true;
   if (isset($_POST['text']) && !empty(trim($_POST['text']))) {
@@ -31,8 +25,8 @@ if (isset($_POST['valider'])) {
   <div class="col-12">
     <legend>Création d'un OBJECTIF pour la page d'accueil</legend>
     <?php
-    include("../infos.php");
-    include("../errors.php");
+    include("../../infos.php");
+    include("../../errors.php");
     ?>
     <div class="row justify-content-center">
       <form method="post" enctype="multipart/form-data">
@@ -54,4 +48,4 @@ if (isset($_POST['valider'])) {
   </div>
 </div>
 </div>
-<?php include('../include/footer.php');?>
+<?php include('../include/footer.php');

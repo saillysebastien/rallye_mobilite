@@ -1,19 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos = [];
-$errors = [];
-
-$valid = true;
-$title = '';
-$adresse = '';
-$president = '';
-$director = '';
-$vice_director = '';
-$phone = null;
-$mail = '';
-$done = false;
-
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
@@ -100,8 +87,8 @@ if ($_POST) {
   <div class="col-12">
     <legend>Modification d'une fiche CONTACT</legend>
     <?php
-    include('../infos.php');
-    include('../errors.php');
+    include('../../infos.php');
+    include('../../errors.php');
     ?>
     <div class="row justify-content-center">
       <form action="#" method="post" enctype="multipart/form-data">

@@ -1,22 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos =[];
-$errors = [];
-
-$valid = true;
-$title = '';
-$image = '';
-$number_street = null;
-$street = '';
-$postal_code = null;
-$city = '';
-$contact = '';
-$phone = null;
-$mail = '';
-$web = '';
-$done = false;
-
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
@@ -122,12 +106,12 @@ if ($_POST) {
   }
 }
 ?>
-<div class="container-fluid">
+<div class="container-fluid text-center">
   <div class="col-12">
     <legend>Modification d'une fiche FORMATION</legend>
     <?php
-    include('../infos.php');
-    include('../errors.php');
+    include('../../infos.php');
+    include('../../errors.php');
     ?>
     <div class="row justify-content-center text-center">
       <form method="post" enctype="multipart/form-data">
@@ -197,4 +181,4 @@ if ($_POST) {
     </div>
   </div>
 </div>
-<?php include('../include/footer.php');?>
+<?php include('../include/footer.php');

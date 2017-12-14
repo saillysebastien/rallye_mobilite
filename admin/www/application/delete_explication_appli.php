@@ -1,12 +1,6 @@
 <?php
 include('../include/header.php');
 
-$errors = [];
-$infos = [];
-
-$valid = true;
-$id = null;
-
 if (isset($_GET['id']) && !empty(trim($_GET['id'])) && $_GET['id'] != 0) {
   $id = $_GET['id'];
 } else {

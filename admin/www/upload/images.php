@@ -56,7 +56,7 @@
       );
     }
     ?>
-    <legend>Listes des images dans "explications"</legend>
+    <br /><legend>Listes des images dans "explications"</legend>
     <?php
     $sql2 = $db->query("SELECT * FROM explication");
     while($row = $sql2->fetch_assoc()) {
@@ -73,10 +73,10 @@
       <div class="alert alert-primary row col-12">
       <div class="col-4">Titre :</div>
       <div class="col-8">%s</div>
-      <div class ="btn-group">
+      </div>
+      <div class ="btn-group text-center">
       <a class="btn btn-success" href="../home/change-explication.php?id=%s">Modifier</a>
       <a class="btn btn-danger" onclick="return window.confirm(&quot;Voulez vraiment supprimer ce rébus ?&quot;);" href="../home/delete_explication.php?id=%s">Supprimer</a>
-      </div>
       </div>
       </div>
       </div>

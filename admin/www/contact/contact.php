@@ -1,6 +1,4 @@
-<?php
-include('../include/header.php');
-?>
+<?php include('../include/header.php');?>
 <div class='container text-center'>
   <div class='row justify-content-center'>
     <legend>Liste des CONTACTS</legend>
@@ -59,6 +57,4 @@ include('../include/header.php');
     </tbody>
   </div>
 </div>
-<?php
-include('../include/footer.php');
-?>
+<?php include('../include/footer.php');?>

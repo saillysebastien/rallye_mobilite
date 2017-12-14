@@ -1,23 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos =[];
-$errors = [];
-
-$title = '';
-$image = '';
-$number_street = null;
-$street = '';
-$postal_code = null;
-$city = '';
-$activity = '';
-$domain_activity = '';
-$contact = '';
-$phone = null;
-$mail = '';
-$web = '';
-$done = false;
-
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
   $sql = sprintf("SELECT * FROM entreprises WHERE id =%s", $_GET['id']);
@@ -130,8 +113,8 @@ if ($_POST) {
   <div class="col-12">
     <legend>Modification d'une fiche ENTREPRISE</legend>
     <?php
-    include("../infos.php");
-    include("../errors.php");
+    include("../../infos.php");
+    include("../../errors.php");
     ?>
     <div class="row justify-content-center">
       <form method="post" enctype="multipart/form-data">
@@ -211,4 +194,4 @@ if ($_POST) {
     </div>
   </div>
 </div>
-<?php include('../include/footer.php');?>
+<?php include('../include/footer.php');

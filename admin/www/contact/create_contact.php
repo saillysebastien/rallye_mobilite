@@ -1,19 +1,5 @@
 <?php
 include('../include/header.php');
-require('../../../config/connect.php');
-
-$infos = [];
-$errors = [];
-
-$valid = true;
-$title = '';
-$adresse = '';
-$president = '';
-$director = '';
-$vice_director = '';
-$phone = null;
-$mail = '';
-$done = false;
 
 if (isset($_POST['valider'])) {
   $title = $_POST['title'];
@@ -86,8 +72,8 @@ if (isset($_POST['valider'])) {
 <div class="container-fluid text-center">
   <legend>Création d'une fiche contact</legend>
   <?php
-  include("../infos.php");
-  include("../errors.php")
+  include("../../infos.php");
+  include("../../errors.php");
   ?>
   <div class="row justify-content-center">
     <form action="#" method="post" enctype="multipart/form-data">

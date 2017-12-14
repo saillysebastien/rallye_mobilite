@@ -1,21 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos = [];
-$errors = [];
-
-$valid = true;
-$title = '';
-$number_street = null;
-$street = '';
-$postal_code = null;
-$city = '';
-$contact = '';
-$phone = null;
-$mail = '';
-$web = '';
-$done = false;
-
 if (isset($_POST['upload'])) {
   $image = $_FILES['image'];
   $imageName = $_FILES['image']['name'];
@@ -115,8 +100,8 @@ if (isset($_POST['upload'])) {
 <div class="container-fluid text-center">
   <legend>Creation d'une fiche formation</legend>
   <?php
-  include('../infos.php');
-  include('../errors.php');
+  include('../../infos.php');
+  include('../../errors.php');
   ?>
   <div class="row justify-content-center">
     <form  action="#" method="post" enctype="multipart/form-data">
@@ -179,4 +164,4 @@ if (isset($_POST['upload'])) {
     </form>
   </div>
 </div>
-<?php include('../include/footer.php');?>
+<?php include('../include/footer.php');

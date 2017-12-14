@@ -1,16 +1,6 @@
 <?php
 include('../include/header.php');
 
-$errors = [];
-$infos= [];
-
-$id = null;
-$valid = true;
-$image = null;
-$text = "";
-$title = "";
-$done = false;
-
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
@@ -61,8 +51,8 @@ if ($_POST) {
 <div class="container create_home text-center">
   <legend>Création pour la rubrique accueil (photos et commentaires)</legend><br />
   <?php
-  include("../infos.php");
-  include("../errors.php");
+  include("../../infos.php");
+  include("../../errors.php");
   ?>
   <form  method="post" enctype="multipart/form-data" class="home">
     <div class="form-group">
@@ -94,4 +84,4 @@ if ($_POST) {
     <button type="submit" name="update" class="btn btn-primary">Valider</button>
   </form>
 </div>
-<?php include('../include/footer.php'); ?>
+<?php include('../include/footer.php');

@@ -1,12 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos = [];
-$errors = [];
-
-$title = '';
-$done = false;
-$text = '';
 if (isset($_POST['upload'])) {
   $image = $_FILES['image'];
   $imageName = $_FILES['image']['name'];
@@ -51,12 +45,10 @@ if (isset($_POST['upload'])) {
 <div class="container text-align create_home">
   <legend>Création pour la rubrique accueil (photos et commentaires)</legend>
   <?php
-  include("../infos.php");
-  include("../errors.php");
+  include("../../infos.php");
+  include("../../errors.php");
   ?>
-
   <form  action="create_caroussel.php" method="post" enctype="multipart/form-data" class="home">
-
     <div class="form-group">
       <label class="col-2" for="title">Lieu de la visite</label>
       <input type="text" placeholder="Uniquement le lieu exemple: Arvato" class="col-6" name="title" id="title" value="<?= htmlentities($title) ?>" />
@@ -81,4 +73,4 @@ if (isset($_POST['upload'])) {
     <button type="submit" name="upload" class="btn btn-primary">Valider</button>
   </form>
 </div>
-<?php include('../include/footer.php');?>
+<?php include('../include/footer.php');

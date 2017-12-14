@@ -1,7 +1,7 @@
 <?php include('../include/header.php');?>
 
 <div class = 'container-fluid text-center'>
-  <legend>Liste desexplications pour la page application</legend>
+  <legend>Liste des explications pour la page application</legend>
   <p>Attention à bien mettre les identifiants de vos phrases dans l'ordre croissant, plus l'identifiant (l'id) est haut plus la phrase sera basse dans le texte.</p>
   <table class = 'table table-bordered table-striped'>
     <thead>

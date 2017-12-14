@@ -1,13 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos = [];
-$errors = [];
-
-$valid = true;
-$text = '';
-$done = false;
-
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
@@ -51,8 +44,8 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
 <div class="container-fluid text-center">
   <legend>Modification d'une explication pour l'application</legend>
   <?php
-  include('../infos.php');
-  include('../errors.php');
+  include('../../infos.php');
+  include('../../errors.php');
   ?>
 
   <div class="row justify-content-center">

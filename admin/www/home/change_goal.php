@@ -1,12 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos =[];
-$errors = [];
-
-$text = '';
-$done = false;
-
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
   $sql = sprintf("SELECT * FROM goal WHERE id =%s", $_GET['id']);

@@ -1,11 +1,10 @@
 <?php
 include('../include/header.php');
+
 $three = '';
 $four = '';
 $five = '';
-
  ?>
-
 <div class="container-fluid text-center">
   <div class="row justify-content-center">
     <?php
@@ -97,3 +96,4 @@ $five = '';
   ?>
   </div>
 </div>
+<?php include("../include/footer.php");

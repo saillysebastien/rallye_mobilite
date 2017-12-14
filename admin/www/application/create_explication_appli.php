@@ -1,13 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos = [];
-$errors = [];
-
-$valid = true;
-$text = '';
-$done = false;
-
 if (isset($_POST['valider'])) {
   $text = $_POST['text'];
   if(!empty($text)) {
@@ -33,8 +26,8 @@ if (isset($_POST['valider'])) {
 <div class="container-fluid text-center">
   <legend>Création d'une explication pour l'application</legend>
   <?php
-  include('../infos.php');
-  include('../errors.php');
+  include('../../infos.php');
+  include('../../errors.php');
   ?>
   <div class="row justify-content-center">
     <form method="post" enctype="multipart/form-data">

@@ -1,14 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos =[];
-$errors = [];
-
-$title = '';
-$web = '';
-$image = '';
-$done = false;
-
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
   $sql = sprintf("SELECT * FROM mobility WHERE id =%s", $_GET['id']);
@@ -63,8 +55,8 @@ if ($_POST) {
   <div class="col-12">
     <legend>Modification d'un MOYEN DE TRANSPORT</legend>
     <?php
-    include("../infos.php");
-    include("../errors.php");
+    include("../../infos.php");
+    include("../../errors.php");
     ?>
     <div class="row justify-content-center">
       <form method="post" enctype="multipart/form-data">
@@ -99,4 +91,4 @@ if ($_POST) {
     </div>
   </div>
 </div>
-<?php include('../include/footer.php');?>
+<?php include('../include/footer.php');

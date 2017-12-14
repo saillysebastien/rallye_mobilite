@@ -1,9 +1,7 @@
 <?php
-
 include('../include/header.php');
 
 $sql = $db->query("SELECT * FROM formations ORDER BY title");
-
 printf("
 <div class='container-fluid  text-center'>
 <div class='row justify-content-center'>
@@ -63,6 +61,4 @@ while($row = $sql->fetch_assoc()){
 </tbody>
 </div>
 </div>
-<?php
-include('../include/footer.php');
-?>
+<?php include('../include/footer.php');

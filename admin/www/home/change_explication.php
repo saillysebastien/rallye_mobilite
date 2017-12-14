@@ -1,18 +1,6 @@
 <?php
 include('../include/header.php');
 
-$infos = [];
-$errors = [];
-
-$valid = true;
-$title = '';
-$text1 = '';
-$text2 = '';
-$text3 = '';
-$text4 = '';
-$text5 = '';
-$done = false;
-
 if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
   $id = $_GET['id'];
 
@@ -95,8 +83,8 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
 <div class="container-fluid text-center">
   <legend>Modification d'une explication pour l'accueil</legend>
   <?php
-  include('../infos.php');
-  include('../errors.php');
+  include('../../infos.php');
+  include('../../errors.php');
   ?>
 
   <div class="row justify-content-center">
@@ -154,4 +142,4 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
     </form>
   </div>
 </div>
-<?php include('../include/footer.php');?>
+<?php include('../include/footer.php');
